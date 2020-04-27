@@ -414,7 +414,7 @@ lab:
 
 1.  在浏览器地址栏中，通过在当前 URL 末尾追加后缀 **weatherforecast** 并按 Enter 键来更新 URL。
 
-    > **注意**：例如，如果你的 URL 为 https://smpapistudent.azurewebsites.net，则新的 URL 为 https://smpapistudent.azurewebsites.net/weatherforecast。
+    > **注意**：例如，如果你的 URL 为 https://smpapistudent.azurewebsites.net， 则新的 URL 为 https://smpapistudent.azurewebsites.net/weatherforecast。
 
 1.  找到作为使用 API 的结果返回的 JavaScript 对象表示法 (JSON) 数组。
 
@@ -454,7 +454,7 @@ lab:
 
 1.  在浏览器地址栏中，通过在当前 URL 末尾追加后缀 **“/weatherforecast”** 并按 Enter 键来更新 URL。
 
-    > **注意**：例如，如果你的 URL 为 https://smpapistudent.azurewebsites.net，则新的 URL 为 https://smpapistudent.azurewebsites.net/weatherforecast。
+    > **注意**：例如，如果你的 URL 为 https://smpapistudent.azurewebsites.net， 则新的 URL 为 https://smpapistudent.azurewebsites.net/weatherforecast。
 
 1.  观察作为使用 API 结果返回的 JSON 数组。
 

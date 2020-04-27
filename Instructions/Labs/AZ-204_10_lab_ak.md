@@ -231,7 +231,7 @@ lab:
 
     1.  在 **“选择 WebHook”** 对话框的 **“订阅终结点”** 文本框中，输入之前记录的 **“Web 应用URL”** 值，请确保使用 **“https://”** 前缀，然后添加后缀 **“/api/updates”**，最后选择 **“确认选择”**。
 
-        > **注**：例如，如果你的 **Web 应用 URL** 值为 **http://eventviewerstudent.azurewebsites.net/** ，那么 **订阅终结点 **应是 **https://eventviewerstudent.azurewebsites.net/api/updates** 。
+        > **注**：例如，如果你的 **Web 应用 URL** 值为 **http://eventviewerstudent.azurewebsites.net/** ，那么 **订阅终结点** 应是 **https://eventviewerstudent.azurewebsites.net/api/updates** 。
 
     1.  选择 **“创建”**。
   
@@ -462,7 +462,7 @@ lab:
         string topicHostname = new Uri(topicEndpoint).Host;
         ```
 
-    1.  添加以下代码行以调用 **[EventGridClient.PublishEventsAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.eventgrid.eventgridclient.publisheventswithhttpmessagesasync)”** 方法，将 **“topicHostname”** 和 **“事件”** 变量用作参数：
+    1.  添加以下代码行以调用 **[EventGridClient.PublishEventsAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.eventgrid.eventgridclient.publisheventswithhttpmessagesasync)** 方法，将 **“topicHostname”** 和 **“事件”** 变量用作参数：
 
         ```
         await client.PublishEventsAsync(topicHostname, events);

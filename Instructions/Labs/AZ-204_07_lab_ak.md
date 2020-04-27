@@ -322,7 +322,7 @@ lab:
     
     1.  在 **“输入值”** 文本框中，使用下列语法构造一个值： **@Microsoft.KeyVault(SecretUri=*Secret Identifier*)**
 
-        > **注**：你需要使用以上语法构建对 ***机密标识符*** 的引用。例如，如果机密标识符为 **https://securevaultstudent.vault.azure.net/secrets/storagecredentials/17b41386df3e4191b92f089f5efb4cbf**，则值为 **@Microsoft.KeyVault(SecretUri=https://securevaultstudent.vault.azure.net/secrets/storagecredentials/17b41386df3e4191b92f089f5efb4cbf)**
+        > **注**：你需要使用以上语法构建对 ***机密标识符*** 的引用。例如，如果机密标识符为 **https://securevaultstudent.vault.azure.net/secrets/storagecredentials/17b41386df3e4191b92f089f5efb4cbf** ，则值为 **@Microsoft.KeyVault(SecretUri=https://securevaultstudent.vault.azure.net/secrets/storagecredentials/17b41386df3e4191b92f089f5efb4cbf)**
     
     1.  将 **“部署槽设置”** 文本框保留设置为默认值。
 

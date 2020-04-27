@@ -493,19 +493,19 @@ lab:
 
 1.  通过将之前在实验中复制的 **“cdnmedia*[yourname]*”** 终结点的 **“终结点主机名”** URL 与相对路径 **“/campus.jpg”** 合并，为 **“campus.jpg”** 资源构建 URL 。
 
-    > **注意**：例如，如果你的 **“终结点主机名”** URL 是 **https://cdnmediastudent.azureedge.net/**，则新建的 URL 将是 **https://cdnmediastudent.azureedge.net/campus.jpg** 。
+    > **注意**：例如，如果你的 **“终结点主机名”** URL 是 **https://cdnmediastudent.azureedge.net/** ，则新建的 URL 将是 **https://cdnmediastudent.azureedge.net/campus.jpg** 。
 
 1.  通过将之前在实验中复制的 **cdnmedia*[yourname]*** 终结点的 **“终结点主机名”** URL 与相对路径 **/conference.jpg** 合并，为 **conference.jpg** 资源构建 URL 。
 
-    > **注意**：例如，如果你的** 终结点主机名** URL 为 **https://cdnmediastudent.azureedge.net/** ，则新建的 URL 为 **https://cdnmediastudent.azureedge.net/conference.jpg**。
+    > **注意**：例如，如果你的** 终结点主机名** URL 为 **https://cdnmediastudent.azureedge.net/** ，则新建的 URL 为 **https://cdnmediastudent.azureedge.net/conference.jpg** 。
 
 1.  通过将之前在实验中复制的 **cdnmedia*[yourname]*** 终结点的** 终结点主机名** URL 与相对路径 **/poster.jpg** 合并，为 **poster.jpg** 资源构建 URL 。
 
-    > **注意**：例如，如果你的 **终结点主机名** URL 为 **https://cdnmediastudent.azureedge.net/** ，则新建的 URL 为 **https://cdnmediastudent.azureedge.net/poster.jpg**。
+    > **注意**：例如，如果你的 **终结点主机名** URL 为 **https://cdnmediastudent.azureedge.net/** ，则新建的 URL 为 **https://cdnmediastudent.azureedge.net/poster.jpg** 。
 
 1.  通过将你之前在实验中复制的 **cdnvideo*[yourname]*** 终结点的 **终结点主机名** URL 与相对路径 **/welcome.mp4** 合并，为 **Welcome.mp4** 资源构建 URL 。
 
-    > **注意**：例如，如果你的 **终结点主机名** URL 为 **https://cdnvideostudent.azureedge.net/**，则新构建的 URL 为 **https://cdnvideostudent.azureedge.net/welcome.mp4**。
+    > **注意**：例如，如果你的 **终结点主机名** URL 为 **https://cdnvideostudent.azureedge.net/** ，则新构建的 URL 为 **https://cdnvideostudent.azureedge.net/welcome.mp4** 。
 
 1.  在任务栏上，右键选择 **“Microsoft Edge”** 图标或激活快捷菜单，然后选择 **“新窗口”**。
 
