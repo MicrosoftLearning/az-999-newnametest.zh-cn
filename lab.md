@@ -15,7 +15,7 @@
 | Azure PowerShell | https://docs.microsoft.com/powershell/azure/install-az-ps |
 | Azure CLI | https://docs.microsoft.com/cli/azure/install-azure-cli |
 | Azure 存储资源管理器 | https://azure.microsoft.com/features/storage-explorer/ |
-| Azure Data Studio | https://docs.microsoft.com/en-us/sql/azure-data-studio/ |
+| Azure Data Studio | https://docs.microsoft.com/zh-cn/sql/azure-data-studio/ |
 | Windows 版 Git | https://git-scm.com/download/win |
 | .NET Core 3.1.1 SDK | https://dotnet.microsoft.com/download |
 | .NET 工具 - HttpRepl | https://github.com/dotnet/HttpRepl |

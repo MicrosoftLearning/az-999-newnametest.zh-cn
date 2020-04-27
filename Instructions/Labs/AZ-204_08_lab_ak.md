@@ -240,7 +240,7 @@ lab:
 
     1.  在 **服务 URL** 文本框中，附加 **/headers** 值到当前值。
 
-        > **注**：例如，如果当前值为 **http://httpapi*[yourname]*.azurewebsites.net**，新值将是 **http://httpapi*[yourname]*.azurewebsites.net/headers**
+        > **注**：例如，如果当前值为 **http://httpapi*[yourname]*.azurewebsites.net** ，新值将是 **http://httpapi*[yourname]*.azurewebsites.net/headers**
 
     1.  选择 **“保存”**。
 

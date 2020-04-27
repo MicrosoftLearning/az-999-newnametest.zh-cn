@@ -104,7 +104,7 @@ lab:
     
     1.  在 **“资源组”** 列表中，选择 **“使用现有”**，然后选择你之前在本实验室中创建的 **“AutomatedWorkflow”** 组。
         
-    1.  在 **“逻辑应用名称”** 字段中，输入 **prodflow*[你的名字]***。
+    1.  在 **“逻辑应用名称”** 字段中，输入 **prodflow*[yourname]***。
 
     1.  在 **“选择位置”** 部分中，选择 **“区域”**。
 
@@ -164,7 +164,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，找到并选择你之前在本实验室中创建的 **“AutomatedWorkflow”** 资源组。
 
-1.  在 **“AutomatedWorkflow”** 边栏选项卡中，选择你之前在本实验室中创建的 **prodstor*[你的名字]*** 存储帐户。
+1.  在 **“AutomatedWorkflow”** 边栏选项卡中，选择你之前在本实验室中创建的 **prodstor*[yourname]*** 存储帐户。
 
 1.  在 **“存储帐户”** 边栏选项卡上，在 **“文件服务”** 部分，选择 **“文件共享”** 链接。
 
@@ -226,7 +226,7 @@ lab:
     
     1.  在 **“触发器”** 结果列表中，选择 **“收到 HTTP 请求时”**。
 
-1.  在 **收到 HTTP 请求时** 区域，执行以下操作来配置** 收到 HTTP 请求时（请求） **触发器：
+1.  在 **收到 HTTP 请求时** 区域，执行以下操作来配置 **收到 HTTP 请求时（请求）** 触发器：
     
     1.  在 **“添加新参数”** 列表中，选择 **“方法”**。
 
@@ -244,7 +244,7 @@ lab:
     
     1.  在 **“连接名称”** 字段中，输入 **“filesConnection”**。
     
-    1.  在 **“存储帐户”** 部分，选择之前在本实验室中创建的** prodstor*[yourname]*** 存储帐户，然后选择 **“创建”**。
+    1.  在 **“存储帐户”** 部分，选择之前在本实验室中创建的 **prodstor*[yourname]*** 存储帐户，然后选择 **“创建”**。
     
     1.  等待连接器资源完成创建。
 
@@ -332,7 +332,7 @@ lab:
 
     1.  在 **“逻辑应用”** 部分中，选择 **“浏览”**。 
     
-    1.  在 **“选择要导入的逻辑应用”** 对话框中，选择你之前在本实验中创建的 **prodflow*[你的名字]*** 逻辑应用，然后选择 **“选择”**。
+    1.  在 **“选择要导入的逻辑应用”** 对话框中，选择你之前在本实验中创建的 **prodflow*[yourname]*** 逻辑应用，然后选择 **“选择”**。
     
     1.  在 **“显示名称”** 文本框中，输入 **“元数据查找”**。
     
@@ -372,12 +372,12 @@ lab:
     httprepl <api-operation-request-url>
     ```
 
-    > **注意**：例如，如果 **URL** 是 **https://prodapimstudent.azure-api.net/manual/paths/invoke**，则命令将是 **httprepl https://prodapimstudent.azure-api.net/manual/paths/invoke**。
+    > **注意**：例如，如果 **URL** 是 **https://prodapimstudent.azure-api.net/manual/paths/invoke** ，则命令将是 **httprepl https://prodapimstudent.azure-api.net/manual/paths/invoke** 。
 
 1.  在工具提示中，输入以下命令，然后按 Enter，针对 API 终结点运行 **get** 命令：
 
     ```
-    获取
+    get
     ```
 
 1.  从函数应用观察 JSON 响应内容，该内容现在应包括：

@@ -120,7 +120,7 @@ lab:
     dotnet add package Microsoft.Identity.Client --version 4.7.1
     ```
 
-    > **注意**： **“dotnet add package”** 命令将从 NuGet 添加 **“Microsoft.Identity.Client”** 包。有关详细信息，请转到“Microsoft.Identity.Client”[](https://www.nuget.org/packages/Microsoft.Identity.Client/4.7.1)。
+    > **注意**： **“dotnet add package”** 命令将从 NuGet 添加 **“Microsoft.Identity.Client”** 包。有关详细信息，请转到 [Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Identity.Client/4.7.1)。
 
 1.  在命令提示符中，输入以下命令并按 “Enter”，以构建 .NET Core Web 应用程序：
 
@@ -190,7 +190,7 @@ lab:
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
-    公共类程序
+    public class Program
     {
         private const string _clientId = "<app-reg-client-id>";        
         private const string _tenantId = "<aad-tenant-id>";
@@ -209,22 +209,22 @@ lab:
     IPublicClientApplication app;
     ```
 
-1.  在 **Main** 方法中，通过使用静态 **PublicClientApplicationBuilder(https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationbuilder)** 类执行以下操作以构建公共客户端应用程序实例，然后将其存储在 *app* 变量中：
+1.  在 **Main** 方法中，通过使用静态 **[PublicClientApplicationBuilder](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationbuilder)** 类执行以下操作以构建公共客户端应用程序实例，然后将其存储在 *app* 变量中：
 
-    1.  添加以下代码行访问静态 **PublicClientApplicationBuilder(https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationbuilder)** 类：
+    1.  添加以下代码行访问静态 **[PublicClientApplicationBuilder](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationbuilder)** 类：
 
         ```
         PublicClientApplicationBuilder
         ```
 
-    1.  通过添加另一行代码以使用 **PublicClientApplicationBuilder** 类的 **Create()(https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationbuilder.create)** 方法更新上一行代码，并传入 *_clientId* 变量作为参数：
+    1.  通过添加另一行代码以使用 **PublicClientApplicationBuilder** 类的 **[Create()](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationbuilder.create)** 方法更新上一行代码，并传入 *_clientId* 变量作为参数：
 
         ```
         PublicClientApplicationBuilder
             .Create(_clientId)
         ```
 
-    1.  通过添加另一行代码来更新上一行代码，以使用基本 **AbstractApplicationBuilder<>(https://docs.microsoft.com/dotnet/api/microsoft.identity.client.abstractapplicationbuilder-1)** 类的 **WithAuthority()(https://docs.microsoft.com/dotnet/api/microsoft.identity.client.abstractapplicationbuilder-1.withauthority)** 方法，传递枚举值 **[AzureCloudInstance.AzurePublic](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.azurecloudinstance)** 和*_tenantId* 变量作为参数：
+    1.  通过添加另一行代码来更新上一行代码，以使用基本 **[AbstractApplicationBuilder<>](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.abstractapplicationbuilder-1)** 类的 **[WithAuthority()](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.abstractapplicationbuilder-1.withauthority)** 方法，传递枚举值 **[AzureCloudInstance.AzurePublic](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.azurecloudinstance)** 和 *_tenantId* 变量作为参数：
 
         ```
         PublicClientApplicationBuilder
@@ -232,7 +232,7 @@ lab:
             .WithAuthority(AzureCloudInstance.AzurePublic, _tenantId)
         ```
 
-    1.  通过添加另一行代码来更新上一行代码，以便使用基本 **AbstractApplicationBuilder<>** 类的 **WithRedirectUri()(https://docs.microsoft.com/dotnet/api/microsoft.identity.client.abstractapplicationbuilder-1.withredirecturi)** 方法，并传递字符串值 **http://localhost**：
+    1.  通过添加另一行代码来更新上一行代码，以便使用基本 **AbstractApplicationBuilder<>** 类的 **[WithRedirectUri()](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.abstractapplicationbuilder-1.withredirecturi)** 方法，并传递字符串值 **http://localhost** ：
 
         ```
         PublicClientApplicationBuilder
@@ -241,7 +241,7 @@ lab:
             .WithRedirectUri("http://localhost")
         ```
 
-    1.  通过添加另一行代码来更新上一行代码，以使用 **“PublicClientApplication”** 类的 **“Build()(https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationbuilder.build)”** 方法：
+    1.  通过添加另一行代码来更新上一行代码，以使用 **“PublicClientApplication”** 类的 **[Build()](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationbuilder.build)** 方法：
 
         ```
         PublicClientApplicationBuilder
@@ -261,7 +261,7 @@ lab:
             .Build();
         ```
 
-1.  在 **“Main”** 方法中，添加以下代码行以创建新的通用字符串 **“List<>(https://docs.microsoft.com/dotnet/api/system.collections.generic.list-1)”** ，单个值为 **“user.read”**：
+1.  在 **“Main”** 方法中，添加以下代码行以创建新的通用字符串 **[List<>](https://docs.microsoft.com/dotnet/api/system.collections.generic.list-1)** ，单个值为 **“user.read”**：
 
     ```
     List<string> scopes = new List<string> 
@@ -270,7 +270,7 @@ lab:
     };
     ```
 
-1.  在 **“主要”** 方法中，添加以下代码行以创建一个名为 *Result* 的新变量，该变量类型为 **AuthenticationResult(https://docs.microsoft.com/dotnet/api/microsoft.identity.client.authenticationresult)**：
+1.  在 **“主要”** 方法中，添加以下代码行以创建一个名为 *Result* 的新变量，该变量类型为 **[AuthenticationResult](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.authenticationresult)**：
 
     ```
     AuthenticationResult result;
@@ -281,20 +281,20 @@ lab:
     1.  添加以下代码行以访问 *app* 变量：
 
         ```
-        应用
+        app
         ```
 
-    1.  通过添加另一行代码以使用 **IPublicClientApplicationBuilder** 接口的 **AcquireTokenInteractive()(https://docs.microsoft.com/dotnet/api/microsoft.identity.client.ipublicclientapplication.acquiretokeninteractive)** 方法更新前一行代码，并将 *scopes* 变量作为参数传递：
+    1.  通过添加另一行代码以使用 **IPublicClientApplicationBuilder** 接口的 **[AcquireTokenInteractive()](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.ipublicclientapplication.acquiretokeninteractive)** 方法更新前一行代码，并将 *scopes* 变量作为参数传递：
 
         ```
-        应用
+        app
             .AcquireTokenInteractive(scopes)
         ```
 
-    1.  通过添加另一行代码来更新上一行代码，可以使用 **[AbstractAcquireTokenParameterBuilder](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.abstractacquiretokenparameterbuilder-1)** 类的 **ExecuteAsync()(https://docs.microsoft.com/dotnet/api/microsoft.identity.client.abstractacquiretokenparameterbuilder-1.executeasync)** 方法：
+    1.  通过添加另一行代码来更新上一行代码，可以使用 **[AbstractAcquireTokenParameterBuilder](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.abstractacquiretokenparameterbuilder-1)** 类的 **[ExecuteAsync()](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.abstractacquiretokenparameterbuilder-1.executeasync)** 方法：
 
         ```
-        应用
+        app
             .AcquireTokenInteractive(scopes)
             .ExecuteAsync();
         ```
@@ -302,7 +302,7 @@ lab:
     1.  使用 **“等待”** 关键字添加更多代码以异步处理表达式，从而更新上一行代码：
     
         ```
-        等待应用
+        await app
             .AcquireTokenInteractive(scopes)
             .ExecuteAsync();
         ```
@@ -315,7 +315,7 @@ lab:
             .ExecuteAsync();
         ```
 
-1.  在 **“主要”** 方法中，添加以下代码行以使用 **Console.WriteLine** 方法将 **AuthenticationResult.AccessToken(https://docs.microsoft.com/dotnet/api/microsoft.identity.client.authenticationresult.accesstoken)** 成员的值呈现到控制台：
+1.  在 **“主要”** 方法中，添加以下代码行以使用 **Console.WriteLine** 方法将 **[AuthenticationResult.AccessToken](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.authenticationresult.accesstoken)** 成员的值呈现到控制台：
 
     ```
     Console.WriteLine($"Token:\t{result.AccessToken}");
@@ -401,7 +401,7 @@ lab:
     dotnet add package Microsoft.Graph --version 1.21.0
     ```
 
-    > **注意**： **“dotnet add package”** 命令将从 NuGet 添加 **“Microsoft.Graph”** 包。有关详细信息，请转到“Microsoft.Graph”[](https://www.nuget.org/packages/Microsoft.Graph/1.21.0)。
+    > **注意**： **“dotnet add package”** 命令将从 NuGet 添加 **“Microsoft.Graph”** 包。有关详细信息，请转到[ Microsoft.Graph](https://www.nuget.org/packages/Microsoft.Graph/1.21.0)。
 
 1.  在命令提示符中输入以下命令，然后选择“Enter”从 NuGet 中导入 1.0.0-preview.2 版的 **“Microsoft.Graph.Auth”**：
 
@@ -409,7 +409,7 @@ lab:
     dotnet add package Microsoft.Graph.Auth --version 1.0.0-preview.2
     ```
 
-    > **注意**： **dotnet add package** 命令将从 NuGet 添加 **Microsoft.Graph.Auth** 包。有关详细信息，请转到“Microsoft.Graph.Auth”[](https://www.nuget.org/packages/Microsoft.Graph.Auth/1.0.0-preview.2)。
+    > **注意**： **dotnet add package** 命令将从 NuGet 添加 **Microsoft.Graph.Auth** 包。有关详细信息，请转到 [Microsoft.Graph.Auth](https://www.nuget.org/packages/Microsoft.Graph.Auth/1.0.0-preview.2)。
 
 1.  在命令提示符中，输入以下命令并按 “Enter”，以构建 .NET Core Web 应用程序：
 

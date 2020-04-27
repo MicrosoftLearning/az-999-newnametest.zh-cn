@@ -56,7 +56,7 @@ lab:
 
     > **注意**： **Cloud Shell** 图标使用大于符号 (\>) 和下划线字符 (\_) 表示。
 
-1.  如果这是你首次使用订阅打开 Cloud Shell，则可使用 **欢迎使用** Azure Cloud Shell 向导 **配置 Cloud Shell。在向导中执行以下操作：
+1.  如果这是你首次使用订阅打开 Cloud Shell，则可使用 **欢迎使用 Azure Cloud Shell 向导** 配置 Cloud Shell。在向导中执行以下操作：
     
     -   当对话框提示你创建一个新的存储帐户以开始使用 shell 时，接受默认设置，然后选择 **“创建存储”**。 
 
@@ -151,7 +151,7 @@ lab:
 
     1.  在 **“发布”** 部分，选择 **“Docker 容器”**。
 
-    1.  在 **“操作系统”** 部分，选择 Linux**。
+    1.  在 **“操作系统”** 部分，选择 **Linux**。
 
     1.  在 **“区域”** 下拉列表中，选择 **“美国东部”** 地区。
 
@@ -161,7 +161,7 @@ lab:
 
     1.  将 **“SKU 和大小”** 部分保留设置为默认值。
 
-    1.  选择 **“下一步：”** Docker**。
+    1.  选择 **下一步： Docker**。
 
 1.  在 **“Docker”** 标签页上，执行以下操作：
 
@@ -175,7 +175,7 @@ lab:
 
     1.  选择 **“审阅 + 创建”**。
 
-1.  在 **“查看 + 创建”**选项卡中，查看在上述步骤中选择的选项。
+1.  在 **“查看 + 创建”** 选项卡中，查看在上述步骤中选择的选项。
 
 1.  选择 **“创建”**，使用指定的配置创建 Web 应用。 
   
@@ -231,7 +231,7 @@ lab:
 
     1.  在 **“选择 WebHook”** 对话框的 **“订阅终结点”** 文本框中，输入之前记录的 **“Web 应用URL”** 值，请确保使用 **“https://”** 前缀，然后添加后缀 **“/api/updates”**，最后选择 **“确认选择”**。
 
-        > **注**：例如，如果你的 **Web 应用 URL** 值为 **http://eventviewerstudent.azurewebsites.net/**，那么 **订阅终结点 **应是 **https://eventviewerstudent.azurewebsites.net/api/updates**。
+        > **注**：例如，如果你的 **Web 应用 URL** 值为 **http://eventviewerstudent.azurewebsites.net/** ，那么 **订阅终结点 **应是 **https://eventviewerstudent.azurewebsites.net/api/updates** 。
 
     1.  选择 **“创建”**。
   
@@ -296,7 +296,7 @@ lab:
 1.  在命令提示符中，输入以下命令并按 “Enter”，以构建 .NET Core Web 应用程序：
 
     ```
-    dotnet 版本
+    dotnet build
     ```
 
 1.  选择 **“终止终端”** 或者 **“回收站”** 图标以关闭当前打开的终端和所有关联的进程。
@@ -310,8 +310,8 @@ lab:
 1.  添加以下代码行，以便从由 NuGet 导入的 **“Microsoft.Azure.EventGrid”** 包中导入 **“Microsoft.Azure.EventGrid”** 和 **“Microsoft.Azure.EventGrid.Models”** 命名空间：
 
     ```
-    使用 Microsoft.Azure.EventGrid;
-    使用 Microsoft.Azure.EventGrid.Models;
+    using Microsoft.Azure.EventGrid;
+    using Microsoft.Azure.EventGrid.Models;
     ```
     
 1.  添加以下代码行，为此文件将使用的内置命名空间添加 **using** 指令：
@@ -325,7 +325,7 @@ lab:
 1.  输入以下代码，创建一个新的 **“Program”类**：
 
     ```
-    公共类 Program
+    public class Program
     {
     }
     ``` 
@@ -357,13 +357,13 @@ lab:
 1.  查看 **“Program.cs”** 文件，现在应该包含以下代码行：
 
     ```
-    使用 Microsoft.Azure.EventGrid;
-    使用 Microsoft.Azure.EventGrid.Models;
+    using Microsoft.Azure.EventGrid;
+    using Microsoft.Azure.EventGrid.Models;
     using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
-    公共类程序
+    public class Program
     {
         private const string topicEndpoint = <topic-endpoint>";
         private const string topicKey = "<topic-key>";
@@ -384,7 +384,7 @@ lab:
         TopicCredentials credentials = new TopicCredentials(topicKey);
         ```
 
-    1.  添加以下代码行以创建一个名为 **“客户端”** 的新变量，其类型为 **“EventGridClient()” **， 将 **“凭据”** 变量用作构造函数参数：
+    1.  添加以下代码行以创建一个名为 **“客户端”** 的新变量，其类型为 **“EventGridClient()”**， 将 **“凭据”** 变量用作构造函数参数：
 
         ```
         EventGridClient client = new EventGridClient(credentials);
@@ -413,7 +413,7 @@ lab:
         {
             Id = Guid.NewGuid().ToString(),
             EventType = "Employees.Registration.New",
-            EventTime = DateTime.Now，
+            EventTime = DateTime.Now,
             Subject = $"New Employee: {firstPerson.FullName}",
             Data = firstPerson,
             DataVersion = "1.0.0"
@@ -443,7 +443,7 @@ lab:
         {
             Id = Guid.NewGuid().ToString(),
             EventType = "Employees.Registration.New",
-            EventTime = DateTime.Now，
+            EventTime = DateTime.Now,
             Subject = $"New Employee: {secondPerson.FullName}",
             Data = secondPerson,
             DataVersion = "1.0.0"
@@ -462,7 +462,7 @@ lab:
         string topicHostname = new Uri(topicEndpoint).Host;
         ```
 
-    1.  添加以下代码行以调用 **“EventGridClient.PublishEventsAsync(https://docs.microsoft.com/dotnet/api/microsoft.azure.eventgrid.eventgridclient.publisheventswithhttpmessagesasync)”** 方法，将 **“topicHostname”** 和 **“事件”** 变量用作参数：
+    1.  添加以下代码行以调用 **[EventGridClient.PublishEventsAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.eventgrid.eventgridclient.publisheventswithhttpmessagesasync)”** 方法，将 **“topicHostname”** 和 **“事件”** 变量用作参数：
 
         ```
         await client.PublishEventsAsync(topicHostname, events);
@@ -494,7 +494,7 @@ lab:
         {
             Id = Guid.NewGuid().ToString(),
             EventType = "Employees.Registration.New",
-            EventTime = DateTime.Now，
+            EventTime = DateTime.Now,
             Subject = $"New Employee: {firstPerson.FullName}",
             Data = firstPerson,
             DataVersion = "1.0.0"
@@ -532,7 +532,7 @@ lab:
 1.  在打开的命令提示符处，输入以下命令并按“Enter”键，以运行 .NET Web 应用程序：
 
     ```
-    dotnet 运行
+    dotnet run
     ```
 
     > **注意**：如果出现任何生成错误，请查看存放于 **“Allfiles (F):\\Allfiles\\Labs\\10\\Solution\\EventPublisher”** 文件夹的  **Program.cs** 文件。

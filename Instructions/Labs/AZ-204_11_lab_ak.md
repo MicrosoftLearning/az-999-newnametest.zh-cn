@@ -130,7 +130,7 @@ lab:
     dotnet add package Azure.Storage.Queues --version 12.0.0
     ```
 
-    > **注意**： **“dotnet add package”** 命令将从 NuGet 添加 **“Azure.Storage.Queues”包**。有关详细信息，请转到“Azure.Storage.Queues”[](https://www.nuget.org/packages/Azure.Storage.Queues/12.0.0)。
+    > **注意**： **“dotnet add package”** 命令将从 NuGet 添加 **“Azure.Storage.Queues”包**。有关详细信息，请转到 [Azure.Storage.Queues](https://www.nuget.org/packages/Azure.Storage.Queues/12.0.0)。
 
 1.  在命令提示符中，输入以下命令并按 “Enter”，以构建 .NET Core Web 应用程序：
 
@@ -200,7 +200,7 @@ lab:
     using System;
     using System.Threading.Tasks;
 
-    公共类程序
+    public class Program
     {
         private const string storageConnectionString = "<storage-connection-string>";
         private const string queueName = "messagequeue";
@@ -213,7 +213,7 @@ lab:
 
 #### 任务 3：验证 Azure 存储访问
 
-1.  在 **“Main”** 方法中，创建类型为 **“QueueClient”** 的名为“client”** 的新变量，添加以下代码行以连接到存储帐户：
+1.  在 **“Main”** 方法中，创建类型为 **“QueueClient”** 的名为 **“client”** 的新变量，添加以下代码行以连接到存储帐户：
 
     ```
     QueueClient client = new QueueClient(storageConnectionString, queueName);  
@@ -288,7 +288,7 @@ lab:
         int batchSize = 10;
         ```
 
-    1.  添加以下代码行以创建一个名为“visibilityTimeout”** 的类型为 **“TimeSpan”** 的变量，其值为 **“2.5 秒”**：
+    1.  添加以下代码行以创建一个名为 **“visibilityTimeout”** 的类型为 **“TimeSpan”** 的变量，其值为 **“2.5 秒”**：
 
         ```
         TimeSpan visibilityTimeout = TimeSpan.FromSeconds(2.5d);
@@ -308,7 +308,7 @@ lab:
         await client.ReceiveMessagesAsync(batchSize, visibilityTimeout);
         ```
 
-    1.  通过添加更多代码来更新上一行代码，将表达式的结果存储在名为 **“messages”** 的新变量中，该变量的类型为 **“Response<QueueMessage[]>(https://docs.microsoft.com/dotnet/api/azure.response-1)”** ：
+    1.  通过添加更多代码来更新上一行代码，将表达式的结果存储在名为 **“messages”** 的新变量中，该变量的类型为 **[Response<QueueMessage[]>](https://docs.microsoft.com/dotnet/api/azure.response-1)** ：
 
         ```
         Response<QueueMessage[]> messages = await client.ReceiveMessagesAsync(batchSize, visibilityTimeout);
@@ -316,7 +316,7 @@ lab:
 
 1.  在 **Main** 方法中，请执行以下操作以循环访问并呈现每个消息的属性：
 
-    1.  添加以下代码行以创建一个“foreach”** **循环，该迭代存储在类型为“QueueMessage”**[](https://docs.microsoft.com/dotnet/api/azure.storage.queues.models.queuemessage)**的“消息”变量的“**Value(https://docs.microsoft.com/dotnet/api/azure.response-1.value)”** 属性中的每个*消息*：
+    1.  添加以下代码行以创建一个 **“foreach”** 循环，该迭代存储在类型为 **[QueueMessage[]](https://docs.microsoft.com/dotnet/api/azure.storage.queues.models.queuemessage)** 的 *“消息”* 变量的“**[Value](https://docs.microsoft.com/dotnet/api/azure.response-1.value)”** 属性中的每个消息：
 
         ```
         foreach(QueueMessage message in messages?.Value)
@@ -410,7 +410,7 @@ lab:
 
 1.  在 **“Azure 存储资源管理器”** 应用程序中，在 **“资源管理器”** 窗格中，找到并展开之前在本实验室中创建的 **asyncstor*[yourname]*** 存储帐户。
 
-1.  在 **asyncstor*[yourname]*** 存储帐户中，找到并展开** 队列** 节点。
+1.  在 **asyncstor*[yourname]*** 存储帐户中，找到并展开 **队列** 节点。
 
 1.  在 **“队列”** 节点，打开之前使用 .NET 代码在本实验室中创建的 **messagequeue** 队列。
 
@@ -424,7 +424,7 @@ lab:
 
     1.  在 **“到期时间”** 下拉列表中，选择 **“小时”**。
 
-    1.  确保未选中 **“以 Base 64 格式编码消息正文”**复选框。
+    1.  确保未选中 **“以 Base 64 格式编码消息正文”** 复选框。
 
     1.  选择 **“确定”**。
 
@@ -436,7 +436,7 @@ lab:
     dotnet run
     ```
 
-    > **注意**：如果出现任何生成错误，请查看位于 **“Allfiles (F):\\Allfiles\\Labs\\11\\Solution\\MessageProcessor”** 文件夹中的 **“Program.cs”**文件。
+    > **注意**：如果出现任何生成错误，请查看位于 **“Allfiles (F):\\Allfiles\\Labs\\11\\Solution\\MessageProcessor”** 文件夹中的 **“Program.cs”** 文件。
 
 1.  观察当前运行的控制台应用程序的输出。输出包括你创建的新消息。
 
@@ -446,7 +446,7 @@ lab:
 
 1.  在 **“Visual Studio Code”** 窗口的“资源管理器”窗格中，展开 **“Program.cs”** 文件。
 
-1.  在 **Program.cs** 文件的代码编辑器选项卡上，找到 **Main** 方法中现有的 ** foreach** 循环：
+1.  在 **Program.cs** 文件的代码编辑器选项卡上，找到 **Main** 方法中现有的 **foreach** 循环：
 
     ```
     foreach(QueueMessage message in messages?.Value)
@@ -492,9 +492,9 @@ lab:
 
 1.  选择 **“终止终端”** 或者 **“回收站”** 图标以关闭当前打开的终端和所有关联的进程。
 
-1.  返回存储资源管理器，然后找到并展开你之前在本实验室中创建的 **asyncstOR*[你的姓名 ]*** 存储帐户。
+1.  返回存储资源管理器，然后找到并展开你之前在本实验室中创建的 **asyncstor*[yourname]*** 存储帐户。
 
-1.  在 **asyncstOR*[你的姓名]*** 存储帐户中，找到并展开 **队列** 节点。
+1.  在 **asyncstor*[yourname]*** 存储帐户中，找到并展开 **队列** 节点。
 
 1.  在 **“队列”** 节点，打开之前使用 .NET 代码在本实验室中创建的 **messagequeue** 队列。
 
@@ -537,7 +537,7 @@ lab:
     1.  添加以下代码行以呈现你发送消息的内容：
 
         ```
-        Console.WriteLine($"已发送的消息：\t{greeting}");        
+        Console.WriteLine($"Sent Message:\t{greeting}");        
         ```
 
 1.  查看 **Main** 方法，现在应包括：
@@ -573,9 +573,9 @@ lab:
 
 #### 任务 2：使用存储资源管理器查看排队的消息
 
-1.  返回到存储资源管理器，然后找到并展开你之前在本实验室中创建的 **asyncstor*[你的姓名]*** 存储帐户。
+1.  返回到存储资源管理器，然后找到并展开你之前在本实验室中创建的 **asyncstor*[yourname]*** 存储帐户。
 
-1.  在 **asyncstOR*[你的姓名]*** 存储帐户中，找到并展开 **队列** 节点。
+1.  在 **asyncstor*[yourname]*** 存储帐户中，找到并展开 **队列** 节点。
 
 1.  在 **“队列”** 节点，打开之前使用 .NET 代码在本实验室中创建的 **messagequeue** 队列。
 

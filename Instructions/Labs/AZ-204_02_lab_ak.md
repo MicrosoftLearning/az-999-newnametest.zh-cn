@@ -284,7 +284,7 @@ lab:
     httprepl <function-app-url>
     ```
 
-    > **注意**：例如，如果你的 URL 是 **https://funclogicstudent.azurewebsites.net**，则你的命令就是 **httprepl https://funclogicstudent.azurewebsites.net**。
+    > **注意**：例如，如果你的 URL 是 **https://funclogicstudent.azurewebsites.net** ，则你的命令就是 **httprepl https://funclogicstudent.azurewebsites.net** 。
 
 1.  在工具提示下，输入以下命令，然后按 Enter 以浏览到相对的 **“api”** 目录：
 
@@ -596,7 +596,7 @@ lab:
     httprepl <function-app-url>
     ```
 
-    > **注意**：例如，如果你的 URL 是 **https://funclogicstudent.azurewebsites.net**，则你的命令就是 **httprepl https://funclogicstudent.azurewebsites.net**。
+    > **注意**：例如，如果你的 URL 是 **https://funclogicstudent.azurewebsites.net** ，则你的命令就是 **httprepl https://funclogicstudent.azurewebsites.net** 。
 
 1.  在工具提示下，输入以下命令，然后按 Enter 以浏览到相对的 **“api”** 终结点：
 
@@ -677,7 +677,7 @@ lab:
 1.  在命令提示符中输入以下命令，然后按 Enter 删除 **无服务器** 资源组：
 
     ```
-    AZ 组 删除 --名称 无服务器 --否-等待 --是
+    az group delete --name Serverless --no-wait --yes
     ```
     
 1.  关闭门户里的 Cloud Shell 窗格。

@@ -227,7 +227,7 @@ lab:
 1.  输入以下命令并，按“Enter”键以在当前目录中创建新的 .NET Core 控制台应用程序：
 
     ```
-    dotnet new console --output .--name ipcheck
+    dotnet new console --output . --name ipcheck
     ```
 
 1.  输入以下命令，并按“Enter”键，以便在名为 **Dockerfile** 的 **\~/clouddrive/ipcheck** 目录中创建一个新文件：

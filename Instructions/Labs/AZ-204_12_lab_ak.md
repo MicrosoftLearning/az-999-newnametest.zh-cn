@@ -64,11 +64,11 @@ lab:
 
 1.  在 **“市场”** 搜索结果边栏选项卡中，选择“Application **Insights”** 结果。
 
-1.  在“Application **Insights”** 边栏选项卡中，选择**“创建”** 。
+1.  在 **“Application Insights”** 边栏选项卡中，选择 **“创建”** 。
 
-1.  从第二个“Application **Insights”** 边栏选项卡中查找选项卡，例如 **“基本”**。
+1.  从第二个 **“Application Insights”** 边栏选项卡中查找选项卡，例如 **“基本”**。
 
-    > **注意**： 每个选项卡都代表在工作流中新建 “Application Insights”实例的一个步骤。你可以随时选择“查看 + **创建”** 跳过其余选项卡。
+    > **注意**： 每个选项卡都代表在工作流中新建 “Application Insights”实例的一个步骤。你可以随时选择 **“查看 + 创建”** 跳过其余选项卡。
 
 1.  在 **“基本信息”** 选项卡中，执行以下操作：
     
@@ -106,7 +106,7 @@ lab:
 
 1.  在搜索文本框中，输入 **“Web”**，然后按 Enter。
 
-1.  在 **Marketplace** 搜索结果边栏选项卡中，选择 Web 应用****结果。
+1.  在 **Marketplace** 搜索结果边栏选项卡中，选择 **Web 应用** 结果。
 
 1.  在 **“Web 应用”** 边栏选项卡中，选择 **“创建”**。
 
@@ -186,13 +186,13 @@ lab:
     
     1.  在 **“实例限制”** 部分的 **“最小”** 字段，输入 **“2”**。
     
-    1.  在 **“实例限制”**部分的 **“最大”**文本框中，输入 **“8”**。
+    1.  在 **“实例限制”** 部分的 **“最大”**文本框中，输入 **“8”**。
     
-    1.  在 **“实例限制”**部分的 **“默认值”**字段，输入 **“3”**。
+    1.  在 **“实例限制”** 部分的 **“默认值”** 字段，输入 **“3”**。
     
     1.  选择 **“添加规则”**。在显示的 **“缩放规则”** 弹出窗口中，将所有字段保留设置为默认值，然后选择 **“添加”**。
     
-    1.  在该部分中，选择** “保存”**。 
+    1.  在该部分中，选择 **“保存”**。 
 
     > **注意**：等待保存操作完成后再继续本实验室内容。
 
@@ -215,7 +215,7 @@ lab:
 1.  在 **“Open”** 命令提示符中，输入以下命令并按 Enter 键以在当前目录中创建一个名为 **“SimpleApi”** 的 .NET Web API 应用程序：
 
     ```
-    dotnet new webapi --output .--name SimpleApi
+    dotnet new webapi --output . --name SimpleApi
     ```
 
 1.  在命令提示符中，输入以下命令并按 Enter 键以将 2.13.0 版本的 **Microsoft.ApplicationInsights** 从 NuGet 导入到当前项目：
@@ -224,7 +224,7 @@ lab:
     dotnet add package Microsoft.ApplicationInsights --version 2.13.0
     ```
 
-    > **注意**：**dotnet add package** 命令将从 NuGet 添加 **Microsoft.ApplicationInsights** 包。有关详细信息，请前往“Microsoft.ApplicationInsights”[](https://www.nuget.org/packages/Microsoft.ApplicationInsights/2.13.0)。
+    > **注意**：**dotnet add package** 命令将从 NuGet 添加 **Microsoft.ApplicationInsights** 包。有关详细信息，请前往 [Microsoft.ApplicationInsights](https://www.nuget.org/packages/Microsoft.ApplicationInsights/2.13.0)。
 
 1.  在命令提示符中，输入以下命令并按 Enter，以从 NuGet 导入 2.13.0 版本的 **Microsoft.ApplicationInsights.AspNetCore**：
 
@@ -232,7 +232,7 @@ lab:
     dotnet add package Microsoft.ApplicationInsights.AspNetCore --version 2.13.0
     ```
 
-    > **注意**：**dotnet add package** 命令从 NuGet 添加 **Microsoft.ApplicationInsights.AspNetCore** 包。有关详细信息，请前往“Microsoft.ApplicationInsights.AspNetCore”[](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.13.0)。
+    > **注意**：**dotnet add package** 命令从 NuGet 添加 **Microsoft.ApplicationInsights.AspNetCore** 包。有关详细信息，请前往 [Microsoft.ApplicationInsights.AspNetCore](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.13.0)。
 
 1.  在命令提示符处，输入以下命令并按 Enter 键，将 2.13.0 版本的 **Microsoft.ApplicationInsights.PerfCounterCollector** 从 NuGet 导入当前项目：
 
@@ -482,7 +482,7 @@ lab:
 
 1.  在门户中，选择 **“资源组”**。
 
-1.  在 **“资源组”**边栏选项卡中，找到并选择你之前在本实验室中创建的 **“MonitoredAssets”** 资源组。
+1.  在 **“资源组”** 边栏选项卡中，找到并选择你之前在本实验室中创建的 **“MonitoredAssets”** 资源组。
 
 1.  在 **“MonitoredAssets”** 边栏选项卡中，选择之前在本实验室中创建的 **instrm*[yourname]*** Application Insights 帐户。
 

@@ -70,7 +70,7 @@ lab:
 
     1.  在 **“资源组”** 部分，选择 **“新建”**，输入 **“SecureFunction”**，然后选择 **“确定”**。
 
-    1.  在 **“存储帐户名称”** 字段中，输入 **securestor*[你的名字]***。
+    1.  在 **“存储帐户名称”** 字段中，输入 **securestor*[yourname]***。
 
     1.  在 **“位置”** 下拉列表中，选择 **“美国东部”** 区域。
 
@@ -160,7 +160,7 @@ lab:
     
     1.  在 **“资源组”** 部分，选择 **“使用现有”**，然后从列表中选择 **“SecureFunction”**。
     
-    1.  在 **“函数应用名称”** 文本框中，输入 **securefunc*[你的名字]***。
+    1.  在 **“函数应用名称”** 文本框中，输入 **securefunc*[yourname]***。
 
     1.  在 **“发布”** 部分，选择 **“代码”**。
 
@@ -172,7 +172,7 @@ lab:
 
 1.  在 **“托管”** 选项卡中，执行以下操作：
 
-    1.  在 **“存储帐户”** 下拉列表中，选择你之前在本实验中创建的 **securestor*[你的名字]*** 存储帐户。
+    1.  在 **“存储帐户”** 下拉列表中，选择你之前在本实验中创建的 **securestor*[yourname]*** 存储帐户。
 
     1.  在 **“操作系统”** 部分，选择 **“Windows”**。
 
@@ -322,7 +322,7 @@ lab:
     
     1.  在 **“输入值”** 文本框中，使用下列语法构造一个值： **@Microsoft.KeyVault(SecretUri=*Secret Identifier*)**
 
-        > **注**：你需要使用以上语法构建对 ***机密标识符*** 的引用。例如，如果机密标识符为 **“https://securevaultstudent.vault.azure.net/secrets/storagecredentials/17b41386df3e4191b92f089f5efb4cbf”**，则值为 **“@Microsoft.KeyVault(SecretUri=https://securevaultstudent.vault.azure.net/secrets/storagecredentials/17b41386df3e4191b92f089f5efb4cbf)”**
+        > **注**：你需要使用以上语法构建对 ***机密标识符*** 的引用。例如，如果机密标识符为 **https://securevaultstudent.vault.azure.net/secrets/storagecredentials/17b41386df3e4191b92f089f5efb4cbf**，则值为 **@Microsoft.KeyVault(SecretUri=https://securevaultstudent.vault.azure.net/secrets/storagecredentials/17b41386df3e4191b92f089f5efb4cbf)**
     
     1.  将 **“部署槽设置”** 文本框保留设置为默认值。
 
@@ -466,7 +466,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，找到并选择你之前在本实验室中创建的 **“SecureFunction”** 资源组。
 
-1.  在 **“SecureFunction”** 边栏选项卡中，选择你之前在本实验室中创建的 **securestor*[你的名字]*** 存储帐户。
+1.  在 **“SecureFunction”** 边栏选项卡中，选择你之前在本实验室中创建的 **securestor*[yourname]*** 存储帐户。
 
 1.  在 **“存储帐户”** 边栏选项卡中，选择 **“Blob 服务”** 部分的 **“容器”** 链接。
 
