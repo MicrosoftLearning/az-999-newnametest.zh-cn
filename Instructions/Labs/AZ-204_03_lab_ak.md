@@ -1,7 +1,8 @@
 ﻿---
 lab:
     title: '实验室：使用适用于 .NET 的 Azure 存储 SDK 检索 Azure 存储的资源和元数据'
-    module: '模块 03：开发使用 blob 存储的解决方案'
+    az204Module: '模块 03：开发使用 blob 存储的解决方案'
+    az020Module: '模块 03：开发使用 blob 存储的解决方案'
     type: '参考答案'
 ---
 
@@ -455,7 +456,7 @@ lab:
     }
     ```
 
-1.  在 **EnumerateContainersAsync** 方法中，输入以下代码，使用 **BlobServiceClient** 类的 **GetBlobContainerClient** 方法获取 **BlobContainerClient** 类的新实例，并传入 **containerName** 参数：
+1.  在 **EnumerateBlobsAsync** 方法中，输入以下代码，使用 **BlobContainerClient** 类的 **GetBlobContainerClient** 方法获取 **BlobServiceClient** 类的新实例，并传入 **containerName** 参数：
 
     ```
     BlobContainerClient container = client.GetBlobContainerClient(containerName);
@@ -580,7 +581,7 @@ lab:
     {      
         BlobContainerClient container = client.GetBlobContainerClient(containerName);
         
-        await container.CreateIfNotExistsAsync();
+        await container.CreateIfNotExistsAsync(PublicAccessType.Blob);
         
         await Console.Out.WriteLineAsync($"New Container:\t{container.Name}");
         
@@ -779,18 +780,6 @@ lab:
     1.  对话框提示你在开始使用 shell 前，先新建一个存储帐户。接受默认设置并选择 **“创建存储”** 。 
 
     > **注意**：等待 Cloud Shell 完成首次设置过程后，再继续本实验室内容。如果 Cloud Shell 配置选项未显示，这很可能是因为你在本课程实验室中使用的是现有订阅。实验是假设你使用的是新订阅的情况下编写的。
-
-1.  在门户的 **Cloud Shell** 命令提示符中，输入以下命令，然后选择“输入”以列出订阅中的所有资源组：
-
-    ```
-    az group list
-    ```
-
-1.  在命令提示符中，键入以下命令，然后按“Enter”查看用于删除资源组的可用命令列表：
-
-    ```
-    az group delete --help
-    ```
 
 #### 任务 2：删除资源组
 

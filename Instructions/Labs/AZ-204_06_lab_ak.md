@@ -1,7 +1,8 @@
 ﻿---
 lab:
     title: '实验室：使用 MSAL 和 .NET SDK 对 Microsoft Graph 进行身份验证和查询'
-    module: '模块 06：实施用户身份验证和授权'
+    az204Module: '模块 06：实施用户身份验证和授权'
+    az020Module: '模块 06：实施用户身份验证和授权'
     type: '答案要点'
 ---
 
@@ -102,7 +103,7 @@ lab:
 
 1.  在 **“文件”** 菜单上，选择 **“打开文件夹”**。
 
-1.  在打开的 **“文件资源管理器”** 窗格中，前往 **“Allfiles (F):\\Allfiles\\Labs\\07\\Starter\\GraphClient”**，然后选择 **“选择文件夹”**。
+1.  在打开的 **“文件资源管理器”** 窗格中，前往 **“Allfiles (F):\\Allfiles\\Labs\\06\\Starter\\GraphClient”**，然后选择 **“选择文件夹”**。
 
 1.  在 **“Visual Studio Code”** 窗口中，右键单击或激活“资源管理器”窗格的快捷菜单，然后选择 **“在终端中打开”**。
 
@@ -361,7 +362,7 @@ lab:
     dotnet run
     ```
 
-    > **注意**：如果出现任何生成错误，请查看位于 **“Allfiles (F):\\Allfiles\\Labs\\07\\Solution\\GraphClient”** 文件夹中的 **“Program.cs”** 文件。
+    > **注意**：如果出现任何生成错误，请查看位于 **“Allfiles (F):\\Allfiles\\Labs\\06\\Solution\\GraphClient”** 文件夹中的 **“Program.cs”** 文件。
 
 1.  正在运行的控制台应用程序将自动打开默认浏览器的实例。
 
@@ -596,7 +597,7 @@ lab:
     dotnet run
     ```
 
-    > **注意**：如果出现任何生成错误，请查看位于 **“Allfiles (F):\\Allfiles\\Labs\\07\\Solution\\GraphClient”** 文件夹中的 **“Program.cs”** 文件。
+    > **注意**：如果出现任何生成错误，请查看位于 **“Allfiles (F):\\Allfiles\\Labs\\06\\Solution\\GraphClient”** 文件夹中的 **“Program.cs”** 文件。
 
 1.  观察当前正在运行的控制台应用程序输出的消息。在消息中记录代码的值。你将在稍后的实验室中使用此值。
 

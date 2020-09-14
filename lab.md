@@ -11,13 +11,13 @@
 | Visual Studio Code PowerShell 扩展 | https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell |
 | Visual Studio Code C# 扩展 | https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp |
 | Visual Studio Code Docker 扩展 | https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker |
-| PowerShell 6 | https://github.com/PowerShell/PowerShell/releases/latest/ |
+| PowerShell 6 | https://github.com/PowerShell/PowerShell/releases/tag/v6.2.4 |
+| .NET Core 3.1 SDK | https://dotnet.microsoft.com/download/dotnet-core/3.1 |
 | Azure PowerShell | https://docs.microsoft.com/powershell/azure/install-az-ps |
 | Azure CLI | https://docs.microsoft.com/cli/azure/install-azure-cli |
-| Azure 存储资源管理器 | https://azure.microsoft.com/features/storage-explorer/ |
+| Azure Storage Explorer | https://azure.microsoft.com/features/storage-explorer/ |
 | Azure Data Studio | https://docs.microsoft.com/zh-cn/sql/azure-data-studio/ |
 | Windows 版 Git | https://git-scm.com/download/win |
-| .NET Core 3.1.1 SDK | https://dotnet.microsoft.com/download |
 | .NET 工具 - HttpRepl | https://github.com/dotnet/HttpRepl |
 | .NET 工具 - 实体框架核心工具 | https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet |
 | Windows 终端 | https://www.microsoft.com/p/windows-terminal-preview/9n0dx20hk701 |

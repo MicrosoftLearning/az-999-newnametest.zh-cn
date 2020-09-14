@@ -1,7 +1,8 @@
 ﻿---
 lab:
     title: '实验室：发布和订阅事件网格事件'
-    module: '模块 10：开发基于事件的解决方案'
+    az204Module: '模块 10：开发基于事件的解决方案'
+    az020Module: '模块 09：开发基于事件的解决方案'
     type: '答案要点'
 ---
     
@@ -68,7 +69,7 @@ lab:
     az --version
     ```
 
-#### 任务 3：注册 Microsoft.EventGrid 提供程序
+#### 任务 3：查看 Microsoft.EventGrid 提供程序注册
 
 1.  在门户中的 **“Cloud Shell”** 命令提示符处，执行以下操作：
 
@@ -144,7 +145,6 @@ lab:
     
     1.  将 **“订阅”** 文本框保留设置为默认值。
     
-
     1.  在 **“资源组”** 部分，选择 **“PubSubEvents”**。
 
     1.  在 **“名称”** 文本框中，输入“**eventviewer*[yourname]***” 。
@@ -365,7 +365,7 @@ lab:
 
     public class Program
     {
-        private const string topicEndpoint = <topic-endpoint>";
+        private const string topicEndpoint = "<topic-endpoint>";
         private const string topicKey = "<topic-key>";
         
         public static async Task Main(string[] args)
@@ -511,7 +511,7 @@ lab:
         {
             Id = Guid.NewGuid().ToString(),
             EventType = "Employees.Registration.New",
-            EventTime = DateTime.Now，
+            EventTime = DateTime.Now,
             Subject = $"New Employee: {secondPerson.FullName}",
             Data = secondPerson,
             DataVersion = "1.0.0"
@@ -568,18 +568,6 @@ lab:
     1.  对话框提示你在开始使用 shell 前，先新建一个存储帐户。接受默认设置并选择 **“创建存储”**。
 
     > **注意**：等待 Cloud Shell 完成首次设置过程后，再继续本实验室内容。如果 Cloud Shell 配置选项未显示，很可能是因为你使用的是本课程实验中的现有订阅。实验是假设你使用的是新订阅的情况下编写的。
-
-1.  在 **“Cloud Shell”** 命令提示符中，输入以下命令并按 Enter 以列出订阅中的所有资源组：
-
-    ```
-    az group list
-    ```
-
-1.  输入以下命令，然后选择“回车键”以获取用于删除资源组的可用命令列表：
-
-    ```
-    az group delete --help
-    ```
 
 #### 任务 2：删除资源组
 
