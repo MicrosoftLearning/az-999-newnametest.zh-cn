@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     title: '实验室：使用 Azure Functions 实现任务处理操作逻辑'
     az204Module: '模块 02：实现 Azure Functions'

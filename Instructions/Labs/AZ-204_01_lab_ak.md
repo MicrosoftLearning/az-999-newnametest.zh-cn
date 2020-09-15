@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     title: '实验室:在 Azure 平台即服务 (PaaS) 产品上构建 Web 应用程序'
     az204Module: '模块 01：创建 Azure App 服务 Web 应用'

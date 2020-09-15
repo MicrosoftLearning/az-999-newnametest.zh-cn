@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     title: '实验室: 监控部署到 Azure 的服务'
     az204Module: '模块 12：监视和优化 Azure 解决方案'

@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     title: '实验室：使用适用于 .NET 的 Azure 存储 SDK 检索 Azure 存储的资源和元数据'
     az204Module: '模块 03：开发使用 blob 存储的解决方案'
