@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     title: '实验室：使用 MSAL 和 .NET SDK 对 Microsoft Graph 进行身份验证和查询'
     az204Module: '模块 06：实施用户身份验证和授权'
