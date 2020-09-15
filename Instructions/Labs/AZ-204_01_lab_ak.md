@@ -425,7 +425,7 @@ lab:
     cd F:\Allfiles\Labs\01\Starter\Web\
     ```
 
-1.	输入以下命令，然后选择 **“Enter”将“web.zip”** 文件部署到之前在此实验室中创建的 Web 应用：
+1.	输入以下命令，然后选择 “Enter”将 **“web.zip”** 文件部署到之前在此实验室中创建的 Web 应用：
 
     ```
     az webapp deployment source config-zip --resource-group ManagedPlatform --src web.zip --name <name-of-your-web-app>

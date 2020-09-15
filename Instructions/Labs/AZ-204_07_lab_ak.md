@@ -125,7 +125,7 @@ lab:
     
     1.  在 **“资源组”** 部分，选择 **“使用现有”**，然后从列表中选择 **“SecureFunction”**。
     
-    1.  在 **“密钥保管库名称”** 文本框中，输入 **“securevault*[yourname]*”**。
+    1.  在 **“密钥保管库名称”** 文本框中，输入 “**securevault*[yourname]***”。
 
     1.  在 **“区域”** 下拉列表中，选择 **“美国东部”** 地区。
         
@@ -163,7 +163,7 @@ lab:
     
     1.  在 **“资源组”** 部分，选择 **“使用现有”**，然后从列表中选择 **“SecureFunction”**。
     
-    1.  在 **“函数应用名称”** 文本框中，输入 **“securefunc*[yourname]*”**。
+    1.  在 **“函数应用名称”** 文本框中，输入 “**securefunc*[yourname]***”。
 
     1.  在 **“发布”** 部分，选择 **“代码”**。
 
@@ -177,11 +177,11 @@ lab:
 
 1.  在 **“托管”** 选项卡中，执行以下操作：
 
-    1.  在 **“存储帐户”** 下拉列表中，选择你之前在本实验室中创建的 **“securestor*[yourname]*”**存储帐户。
+    1.  在 **“存储帐户”** 下拉列表中，选择你之前在本实验室中创建的 “**securestor*[yourname]***”存储帐户。
 
     1.  在 **“操作系统”** 部分，选择 **“Windows”**。
 
-    1.  在 **“计划类型”** 下拉列表中，选择 **“消耗（无服务器）”**选项。
+    1.  在 **“计划类型”** 下拉列表中，选择 **“消耗（无服务器）”** 选项。
 
     1.  选择 **“查看 + 创建”**。
 
@@ -203,7 +203,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，找到并选择你之前在本实验室中创建的 **“SecureFunction”** 资源组。
 
-1.  从 **“SecureFunction”** 边栏选项卡中，选择你先前在本实验室中创建的 **“securefunc[yourname]”** 函数应用。
+1.  从 **“SecureFunction”** 边栏选项卡中，选择你先前在本实验室中创建的 “**securefunc*[yourname]***” 函数应用。
 
 1.  在 **“应用服务”** 边栏选项卡中，选择 **“设置”** 部分的 **“标识”** 选项。
 
@@ -221,7 +221,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，找到并选择你之前在本实验室中创建的 **“SecureFunction”** 资源组。
 
-1.  在 **“SecureFunction”** 边栏选项卡中，选择你之前在本实验室中创建的 **“securevault*[yourname]*”** 密钥保管库。
+1.  在 **“SecureFunction”** 边栏选项卡中，选择你之前在本实验室中创建的 “**securevault*[yourname]***” 密钥保管库。
 
 1.  在 **“密钥保管库”** 边栏选项卡中，选择位于 **“设置”** 部分的 **“机密”** 链接。
 
@@ -229,7 +229,7 @@ lab:
 
 1.  在 **“创建机密”** 边栏选项卡中，执行以下操作：
     
-    1.  在“上传选项”****下拉列表中，选择“手动”****。
+    1.  在 **“上传选项”** 下拉列表中，选择 **“手动”**。
     
     1.  在 **“名称”** 文本框中，输入 **“storagecredentials”**。
     
@@ -265,7 +265,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，找到并选择你之前在本实验室中创建的 **“SecureFunction”** 资源组。
 
-1.  在 **“SecureFunction”** 边栏选项卡中，选择你之前在本实验室中创建的 **“securevault*[yourname]*”** 密钥保管库。
+1.  在 **“SecureFunction”** 边栏选项卡中，选择你之前在本实验室中创建的 “**securevault*[yourname]***” 密钥保管库。
 
 1.  在 **“Key Vault”** 边栏选项卡中，选择位于 **“设置”** 部分的 **“访问策略”** 链接。
 
@@ -275,7 +275,7 @@ lab:
     
     1.  选择 **“选择主体”** 链接。
     
-    1.  在 **“主体”** 边栏选项卡中，找到并选择名为 **“securefunc*[yourname]*”** 的服务主体，然后选择 **”选择“**。
+    1.  在 **“主体”** 边栏选项卡中，找到并选择名为 “**securefunc*[yourname]***” 的服务主体，然后选择 **”选择“**。
 
         > **注意**：你之前在本实验室中创建的系统分配的托管标识将与 Azure Function 资源具有相同的名称。
     
@@ -305,7 +305,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，找到并选择你之前在本实验室中创建的 **“SecureFunction”** 资源组。
 
-1.  从 **“SecureFunction”** 边栏选项卡中，选择你先前在本实验室中创建的 **“securefunc*[yourname]*”** 函数应用。
+1.  从 **“SecureFunction”** 边栏选项卡中，选择你先前在本实验室中创建的 “**securefunc*[yourname]***” 函数应用。
 
 1.  在 **“应用服务”** 边栏选项卡中，选择 **“设置”** 部分中的 **“配置”** 选项。
 
@@ -317,7 +317,7 @@ lab:
     
     1.  在 **“输入值”** 文本框中，使用下列语法构造一个值：**@Microsoft.KeyVault(SecretUri=*Secret Identifier*)**
 
-        > **注意**：你需要使用以上语法生成对**机密标识符**的引用。例如，如果机密标识符为 **https://securevaultstudent.vault.azure.net/secrets/storagecredentials/17b41386df3e4191b92f089f5efb4cbf**，则值为 **@Microsoft.KeyVault (SecretUri=https://securevaultstudent.vault.azure.net/secrets/storagecredentials/17b41386df3e4191b92f089f5efb4cbf)**
+        > **注意**：你需要使用以上语法生成对**机密标识符**的引用。例如，如果机密标识符为 **https://securevaultstudent.vault.azure.net/secrets/storagecredentials/17b41386df3e4191b92f089f5efb4cbf** ，则值为 **@Microsoft.KeyVault (SecretUri=https://securevaultstudent.vault.azure.net/secrets/storagecredentials/17b41386df3e4191b92f089f5efb4cbf)**
     
     1.  将 **“部署槽设置”** 文本框保留设置为默认值。
 
@@ -335,7 +335,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，找到并选择你之前在本实验室中创建的 **“SecureFunction”** 资源组。
 
-1.  从 **“SecureFunction”** 边栏选项卡中，选择你先前在本实验室中创建的 **“securefunc*[yourname]*”** 函数应用。
+1.  从 **“SecureFunction”** 边栏选项卡中，选择你先前在本实验室中创建的 “**securefunc*[yourname]***” 函数应用。
 
 1.  在 **“应用服务”** 边栏选项卡中，从 **“函数”** 部分选择 **“函数”** 选项。
 
@@ -466,7 +466,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，找到并选择你之前在本实验室中创建的 **“SecureFunction”** 资源组。
 
-1.  在 **“SecureFunction”** 边栏选项卡中，选择你之前在本实验室中创建的 **“securestor*[yourname]*”** 存储帐户。
+1.  在 **“SecureFunction”** 边栏选项卡中，选择你之前在本实验室中创建的 “**securestor*[yourname]***” 存储帐户。
 
 1.  在 **“存储帐户”** 边栏选项卡中，选择 **“Blob 服务”** 部分的 **“容器”** 链接。
 
@@ -478,7 +478,7 @@ lab:
     
     1.  在 **“公共访问级别”** 下拉列表中，选择 **“Blob（仅限 blob 匿名读取访问权限）”**，然后选择 **“确定”**。
 
-1.  返回 **“容器”** 部分，选择新创建的 **“drop”**容器。
+1.  返回 **“容器”** 部分，选择新创建的 **“drop”** 容器。
 
 1.  在 **“容器”** 边栏选项卡中，选择 **“上传”**。
 
@@ -526,7 +526,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，找到并选择你之前在本实验室中创建的 **“SecureFunction”** 资源组。
 
-1.  从 **“SecureFunction”** 边栏选项卡中，选择你先前在本实验室中创建的 **“securefunc*[yourname]*”**函数应用。
+1.  从 **“SecureFunction”** 边栏选项卡中，选择你先前在本实验室中创建的 “**securefunc*[yourname]***” 函数应用。
 
 1.  在 **“应用服务”** 边栏选项卡中，选择 **“设置”** 部分中的 **“配置”** 选项。
 
@@ -554,7 +554,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，找到并选择你之前在本实验室中创建的 **“SecureFunction”** 资源组。
 
-1.  从 **“SecureFunction”** 边栏选项卡中，选择你先前在本实验室中创建的 **“securefunc*[yourname]*”** 函数应用。
+1.  从 **“SecureFunction”** 边栏选项卡中，选择你先前在本实验室中创建的 “**securefunc*[yourname]***” 函数应用。
 
 1.  在 **“应用服务”** 边栏选项卡中，从 **“开发工具”** 部分选择 **“应用服务编辑器（预览版）”** 选项 。
 
@@ -587,7 +587,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，找到并选择你之前在本实验室中创建的 **“SecureFunction”** 资源组。
 
-1.  从 **“SecureFunction”** 边栏选项卡中，选择你先前在本实验室中创建的 **“securefunc*[yourname]*”** 函数应用。
+1.  从 **“SecureFunction”** 边栏选项卡中，选择你先前在本实验室中创建的 “**securefunc*[yourname]***”*函数应用。
 
 1.  在 **“应用服务”** 边栏选项卡中，从 **“函数”** 部分选择 **“函数”** 选项。
 

@@ -164,7 +164,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，找到并选择你之前在本实验室中创建的 **“AutomatedWorkflow”** 资源组。
 
-1.  在 **“AutomatedWorkflow”** 边栏选项卡中，选择你之前在本实验室中创建的 **prodstor*[你的名字]*** 存储帐户。
+1.  在 **“AutomatedWorkflow”** 边栏选项卡中，选择你之前在本实验室中创建的 **prodstor*[yourname]*** 存储帐户。
 
 1.  在 **“存储帐户”** 边栏选项卡上，在 **“文件服务”** 部分，选择 **“文件共享”** 链接。
 
@@ -332,7 +332,7 @@ lab:
 
     1.  在 **“逻辑应用”** 部分中，选择 **“浏览”**。 
     
-    1.  在 **“选择要导入的逻辑应用”** 对话框中，选择你之前在本实验中创建的 **prodflow*[你的名字]*** 逻辑应用，然后选择 **“选择”**。
+    1.  在 **“选择要导入的逻辑应用”** 对话框中，选择你之前在本实验中创建的 **prodflow*[yourname]*** 逻辑应用，然后选择 **“选择”**。
     
     1.  在 **“显示名称”** 文本框中，输入 **“元数据查找”**。
     
@@ -372,7 +372,7 @@ lab:
     httprepl <api-operation-request-url>
     ```
 
-    > **注意**：例如，如果 **URL** 是 **https://prodapimstudent.azure-api.net/manual/paths/invoke**，则命令将是 **httprepl https://prodapimstudent.azure-api.net/manual/paths/invoke**。
+    > **注意**：例如，如果 **URL** 是 **https://prodapimstudent.azure-api.net/manual/paths/invoke** ，则命令将是 **httprepl https://prodapimstudent.azure-api.net/manual/paths/invoke** 。
 
 1.  查看 httprepl 工具显示的错误消息。出现此消息的原因是该工具正在搜索用于“遍历”API 的 Swagger 定义文件。由于逻辑应用程序未生成 Swagger 定义文件，因此需要手动遍历该 API。
 

@@ -291,7 +291,7 @@ lab:
     httprepl <function-app-url>
     ```
 
-    > **注意**：例如，如果你的 URL 是 **https://funclogicstudent.azurewebsites.net**，则你的命令就是 **httprepl https://funclogicstudent.azurewebsites.net**。
+    > **注意**：例如，如果你的 URL 是 **https://funclogicstudent.azurewebsites.net** ，则你的命令就是 **httprepl https://funclogicstudent.azurewebsites.net** 。
 
 1.  查看 httprepl 工具显示的错误消息。出现此消息的原因是该工具正在搜索用于“遍历”API 的 Swagger 定义文件。由于逻辑应用程序未生成 Swagger 定义文件，因此需要手动遍历该 API。
 
@@ -361,7 +361,7 @@ lab:
 
 1.  在 **“新建函数”** 弹出窗口中，执行以下操作：
     
-    1.  在“模板”****选项卡内，选择“计时器触发器”****。
+    1.  在 **“模板”** 选项卡内，选择 **“计时器触发器”**。
 
     1.  在 **“详细信息”** 选项卡内，找到 **“新建函数”** 文本框并输入 **“Recurring”**。
 
@@ -431,7 +431,7 @@ lab:
 
 1.  在 Azure 门户的“导航”窗口，选择 **“资源组”** 链接。
 
-1.  在 **“资源组”** 边栏选项卡中，找到并选择你之前在本实验室中创建的 **“无服务器”**资源组。
+1.  在 **“资源组”** 边栏选项卡中，找到并选择你之前在本实验室中创建的 **“无服务器”** 资源组。
 
 1.  在 **“无服务器”** 边栏选项卡中，选择之前在本实验室中创建的 **funcstor*[yourname]*** 存储帐户。
 
@@ -451,11 +451,11 @@ lab:
 
 1.	在 **“容器”** 边栏选项卡中，选择 **“上传”**。
 
-1.	在 **“上传 blob”**窗口中，执行以下操作：
+1.	在 **“上传 blob”** 窗口中，执行以下操作：
 
     1.  在 **“文件”** 部分，选择 **“文件夹”** 图标。
 
-    1.  在 **“文件资源管理器”** 窗口中，浏览到 **“Allfiles (F):\\Allfiles\\Labs\\02\\Starter”**，选择 **“settings.json”**文件，然后选择 **“打开”**。
+    1.  在 **“文件资源管理器”** 窗口中，浏览到 **“Allfiles (F):\\Allfiles\\Labs\\02\\Starter”**，选择 **“settings.json”** 文件，然后选择 **“打开”**。
 
     1.  确保选中 **“如果文件存储已经存在，则覆盖”** 复选框，然后选择 **“上传”**。 
     
@@ -583,7 +583,7 @@ lab:
     httprepl <function-app-url>
     ```
 
-    > **注意**：例如，如果你的 URL 是 **https://funclogicstudent.azurewebsites.net**，则你的命令就是 **httprepl https://funclogicstudent.azurewebsites.net**。
+    > **注意**：例如，如果你的 URL 是 **https://funclogicstudent.azurewebsites.net** ，则你的命令就是 **httprepl https://funclogicstudent.azurewebsites.net** 。
 
 1.  在工具提示下，输入以下命令，然后按 Enter 以浏览到相对的 **“api”** 终结点：
 
