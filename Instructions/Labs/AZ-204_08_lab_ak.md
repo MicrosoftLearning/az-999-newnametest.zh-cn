@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     az204Title: 'Lab 08: 使用 Azure 中的服务创建多层解决方案'
     az020Title: 'Lab 08: 使用 Azure 中的服务创建多层解决方案'
