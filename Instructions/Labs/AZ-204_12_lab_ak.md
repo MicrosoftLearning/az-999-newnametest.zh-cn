@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     az204Title: 'Lab 12: 使用 Azure 内容分发网络增强 Web 应用程序'
     az204Module: 'Module 12: 在解决方案中集成缓存和内容交付'
