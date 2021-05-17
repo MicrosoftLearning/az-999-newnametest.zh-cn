@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     az204Title: 'Lab 11: 监视部署到 Azure 的服务'
     az020Title: 'Lab 11: 监视部署到 Azure 的服务'
