@@ -1,441 +1,553 @@
----
+﻿---
 lab:
-    title: '实验室：使用逻辑应用自动执行业务流程'
-    az204Module: '模块 09：开发应用服务逻辑应用'
-    type: '参考答案'
+    az204Title: 'Lab 09: 发布和订阅事件网格事件'
+    az020Title: 'Lab 09: 发布和订阅事件网格事件'
+    az204Module: 'Module 09: 开发基于事件的解决方案'
+    az020Module: 'Module 09: 开发基于事件的解决方案'
+    type: '答案要点'
 ---
     
-# 实验室: 使用逻辑应用自动执行业务流程
-# 学生实验室答案密钥
+# 实验室 09：发布和订阅事件网格事件
+# 学生实验室答案要点
 
 ## Microsoft Azure 用户界面
 
-鉴于 Microsoft 云工具的动态特性，Azure UI 在此培训内容开发后可能会发生更改。这些更改可能会导致实验室说明和实验室步骤不匹配。
+鉴于 Microsoft 云工具的动态特性，Azure UI 在此培训内容开发后可能会发生更改。这些更改可能会导致实验室说明和实验室步骤不一致。
 
-当社区要求我们进行更改时，Microsoft 将更新此培训课程。但是，由于云更新频繁发生，因此在此培训内容更新之前，你可能会遇到 UI 更改情况。**如果发生这种情况，请适应这些更改，并根据需要在实验中熟悉这些更改**。
+当社区要求我们进行更改时，Microsoft 将更新此培训课程。但是，由于云更新频繁发生，因此在此培训内容更新之前，你可能会遇到 UI 更改情况。**如果发生这种情况，请适应这些更改，并根据需要在实验室中熟悉这些更改。**
 
 ## 说明
 
-### 开始前
+### 准备工作
 
 #### 登录实验室虚拟机
 
-使用以下凭据登录到 Windows 10 虚拟机 (VM)：
-    
--   用户名：**管理员**
+使用以下凭据登录 Windows 10 虚拟机 (VM)：
 
--   密码：**Pa55w.rd**
+- 用户名：**Admin**
 
-> **注意**：你的讲师将提供连接到虚拟实验室环境的说明。
+- 密码：**Pa55w.rd**
 
-#### 评价已安装的应用程序
+> **备注**：你的讲师将提供连接到虚拟实验室环境的说明。
+
+#### 查看已安装的应用程序
 
 在你的 Windows 10 桌面上找到任务栏。任务栏里有本实验室中你将使用的应用程序的图标：
-    
--   Microsoft Edge
 
--   文件资源管理器
+- Microsoft Edge
 
--   Windows 终端
+- Microsoft Visual Studio Code
 
-### 练习 1 ：创建 Azure 资源
+### 练习 1：创建 Azure 资源
 
 #### 任务 1：打开 Azure 门户
 
-1.  在任务栏上，选择 **“Microsoft Edge”** 图标。
+1. 在任务栏上，选择 **“Microsoft Edge”** 图标。
 
-1.  在打开的浏览器窗口中，转到 Azure 门户 (<https://portal.azure.com>)。
+1. 在打开的浏览器窗口中，转到 Azure 门户 (<https://portal.azure.com>)。
 
-1.  输入你的 Microsoft 帐户的电子邮件地址，然后选择 **“下一个”**。
+1. 输入你的 Microsoft 帐户的电子邮件地址，然后选择 **“下一步”**。
 
-1.  输入你的 Microsoft 帐户的密码，然后选择 **“登录”**。
+1. 输入 Microsoft 帐户的密码，然后选择 **“登录”**。
 
-    > **注意**：第一次登录 Azure 门户时，你会看到一个门户教程。选择 **“开始使用”**，跳过教程。
+    > **备注**：第一次登录 Azure 门户时，你会看到一个门户教程。选择 **“开始使用”**，以跳过导览并开始使用门户。
 
-#### 任务 2：创建 API 管理资源
+#### 任务 2：打开 Azure Cloud Shell
 
-1.  在 Azure 门户的导航窗格上，选择 **“创建资源”**。
+1. 在 Azure 门户中，选择 **“Cloud Shell”** 图标以打开一个新的 shell 实例。
 
-1.  来自 **新** 边栏选项卡，找到 **搜索市场** 文本框。
+    > **备注**： **“Cloud Shell”** 图标使用大于符号 (\>) 和下划线字符 (\_) 表示。
 
-1.  在搜索框中，输入 **“API”**，然后按 Enter 键。
+1. 如果这是你首次使用订阅打开 Cloud Shell，则可使用**欢迎使用 Azure Cloud Shell 向导**配置 Cloud Shell。在向导中执行以下操作：
 
-1.  在 **“市场”** 搜索结果边栏选项卡中，选择 **“API 管理”** 结果。
+    - 当对话框提示你创建一个新的存储帐户以开始使用 shell 时，接受默认设置，然后选择 **“创建存储”**。
 
-1.  在 **“API 管理”** 边栏选项卡中，选择 **“创建”**。
+    > **备注**：等待 Cloud Shell 完成初始设置过程后，再继续本实验室。如果 **Cloud Shell** 配置选项未显示，很可能是因为你使用的是本课程实验室中的现有订阅。实验是假设你使用的是新订阅的情况下编写的。
 
-1.  在 **“API 管理服务”** 边栏选项卡中，执行以下操作：
-    
-    1.  在 **“名称”** 文本框中，输入 **prodapim*[yourname]***。
-    
-    1.  将 **“订阅”** 文本框设置为默认值。
-    
-    1.  在 **“资源组”** 部分，选择 **“新建”**，在文本框中输入 **“AutomatedWorkflow”**，然后选择 **“确定”**。
-    
-    1.  在 **“位置”** 列表中，选择 **“美国东部”**。
-    
-    1.  在 **“组织名称”** 文本框中，输入 **“Contoso”**。
-    
-    1.  将 **“管理员电子邮件”** 文本框设置为默认值。
-    
-    1.  在 **“定价层”** 列表中，选择 **“消耗 (99.9 SLA, %)”**，然后选择 **“创建”**。
-    
-    > **注意**：等待 Azure 完成 API 管理资源的创建，再继续本实验室内容。资源创建时你会收到通知。
+1. 在 Azure 门户中，在 **Cloud Shell** 命令提示符处输入以下命令，然后选择 “Enter” 获取 Azure 命令行接口 (Azure CLI) 工具的版本：
 
-#### 任务 3：创建逻辑应用资源
+    ```bash
+    az --version
+    ```
 
-1.  在 Azure 门户的导航窗格中，选择 **“+ 创建资源”**。
+#### 任务 3：查看 Microsoft.EventGrid 提供程序注册
 
-1.  在 **“新建”** 边栏选项卡中，找到 **“搜索市场”** 字段。
+1. 在门户中的 **“Cloud Shell”** 命令提示符处，执行以下操作：
 
-1.  在搜索字段中，输入 **“Logic”**，然后选择“Enter”。
+    1. 输入以下命令并选择 “Enter” 以获取 Azure CLI 根级别的子组和命令列表：
 
-1.  在 **“全部内容”** 搜索结果边栏选项卡中，选择 **“逻辑应用”**。
+        ```bash
+        az --help
+        ```
 
-1.  在 **“逻辑应用”** 边栏选项卡中，选择 **“创建”**。
+    1. 输入以下命令，然后选择 “Enter” 以获取资源提供程序可用的命令列表：
 
-1.  在 **“逻辑应用”** 边栏选项卡中，查看边栏选项卡上的各选项卡，例如 **“基本”**、**“标记”** 和 **“查看 + 创建”**。
+        ```bash
+        az provider --help
+        ```
 
-    > **注意**：每个标签页都代表在工作流中新建“逻辑应用”的一个步骤。你可以随时选择 **“查看 + 创建”** 跳过其余选项卡。
+    1. 输入以下命令，然后按 “Enter” 键以列出所有当前注册的提供程序：
 
-1.  选择 **“基本”** 选项卡，然后在选项卡区域内执行以下操作：
-       
-    1.  保留 **“订阅”** 字段设置为默认值。
-    
-    1.  在 **“资源组”** 列表中，选择 **“使用现有”**，然后选择你之前在本实验室中创建的 **“AutomatedWorkflow”** 组。
-        
-    1.  在 **“逻辑应用名称”** 字段中，输入 **prodflow*[你的名字]***。
+        ```bash
+        az provider list
+        ```
 
-    1.  在 **“选择位置”** 部分中，选择 **“区域”**。
+    1. 输入以下命令，然后按 “Enter” 键以仅列出当前注册的提供程序的命名空间：
 
-    1.  在 **“位置”** 列表中，选择 **“美国东部”**。
-    
-    1.  在 **“日志分析”** 部分，选择 **“关”**。
-    
-    1.  选择 **“审阅 + 创建”**。
+        ```bash
+        az provider list --query "[].namespace"
+        ```
 
-1.  在 **“查看 + 创建”** 选项卡中，查看在之前步骤中指定的选项。
+    1. 查看当前注册的提供程序列表。请注意，**Microsoft.EventGrid** 提供程序当前包含在提供程序列表中。
 
-1.  选择 **“创建”** 以使用指定的配置创建逻辑应用。
+1. 关闭 Cloud Shell 窗格。
 
-    > **注意**：等待 Azure 完成创建逻辑应用资源，再继续本实验室内容。资源创建时你会收到通知。
+#### 任务 4：创建自定义事件网格主题
 
-#### 任务 4：创建存储帐户
+1. 在 Azure 门户的导航窗格上，选择 **“创建资源”**。
 
-1.  在 Azure 门户导航窗格中，选择 **“所有服务”**。
+1. 在 **“新建”** 边栏选项卡，找到 **“搜索市场”** 文本框。
 
-1.  在 **“所有服务”** 边栏选项卡中，选择 **“存储帐户”**。
+1. 在搜索框中输入 **“事件网格主题”**，然后按 Enter。
 
-1.  在 **“存储帐户”** 边栏选项卡中，获取存储帐户实例列表，然后选择 **“添加”**。
+1. 在 **“全部内容”** 搜索结果边栏选项卡中，选择 **“事件网格主题”** 结果。
 
-1.  在 **“创建存储帐户”** 边栏选项卡中，观察边栏选项卡中的选项卡，如 **“基本信息”**、**“标记”** 和 **“查看 + 创建”**。
+1. 在 **“事件网格主题”** 边栏选项卡中，选择 **“创建”**。
 
-    > **注意**：每个标签页代表工作流中创建新存储帐户的一个步骤。你可以随时选择 **“查看 + 创建”** 跳过其余选项卡。
+1. 在 **“创建主题”** 边栏选项卡上，执行以下操作：
 
-1.  选择 **“基本”** 选项卡，然后在选项卡区域内执行以下操作：
-    
-    1.  将 **“订阅”** 文本框保留设置为默认值。
-    
-    1.  在 **“资源组”** 部分中，选择你之前在本实验室中创建的 **“AutomatedWorkflow”** 组。
-    
-    1.  在 **“存储帐户名称”** 文本框中，输入 “**prodstor*[yourname]***”。
-    
-    1.  在 **“位置”** 列表中，选择 **“（美国）美国东部”** 区域。
-    
-    1.  在 **“性能”** 部分，选择 **“标准”**。
-    
-    1.  在 **“帐户类型”** 列表中，选择 **“StorageV2（常规用途 v2）”**。
-    
-    1.  在 **“复制”** 列表中，选择 **“本地冗余存储(LRS)”**。
-    
-    1.  在 **“访问层级(默认)”** 部分，确保选择 **“热”**。
-    
-    1.  选择 **“查看 + 创建”**。
+    1. 在 **“名称”** 文本框中，输入 **hrtopic*[yourname]***。
 
-1.  在 **“查看 + 创建”** 选项卡中，查看在之前步骤中指定的选项。
+    1. 在 **“资源组”** 部分，选择 **“新建”**，输入 **“PubSubEvents”**，然后选择 **“确定”**。
 
-1.  选择 **“创建”**，使用指定的配置创建存储帐户。
+    1. 在 **“位置”** 下拉列表中，选择 **“(US) 美国东部”** 区域。
 
-    > **注意**：在 **“部署”** 边栏选项卡中，等待创建任务完成后再继续本实验室。
+    1. 从 **“事件架构”** 下拉列表中，选择 **“事件网格架构”**，然后选择 **“创建”**。
+  
+    > **备注**：等待 Azure 完成创建主题，再继续本实验室操作。创建主题时会收到通知。
 
-#### 任务 5：将示例内容上传到 Azure 文件
+#### 任务 5：将 Azure 事件网格查看器部署到 Web 应用
 
-1.  在 Azure 门户导航窗格中，选择 **“资源组”** 链接。
+1. 在 Azure 门户的导航窗格上，选择 **“创建资源”**。
 
-1.  在 **“资源组”** 边栏选项卡中，找到并选择你之前在本实验室中创建的 **“AutomatedWorkflow”** 资源组。
+1. 在 **“新建”** 边栏选项卡，找到 **“搜索市场”** 文本框。
 
-1.  在 **“AutomatedWorkflow”** 边栏选项卡中，选择你之前在本实验室中创建的 **prodstor*[yourname]*** 存储帐户。
+1. 在搜索框中，输入 **“Web”**，然后按 Enter。
 
-1.  在 **“存储帐户”** 边栏选项卡上，在 **“文件服务”** 部分，选择 **“文件共享”** 链接。
+1. 在 **“全部内容”** 搜索结果边栏选项卡中，选择 **“Web 应用”** 结果。
 
-1.  在 **“文件共享”** 部分，选择 **“+ 文件共享”**。
+1. 在 **“Web 应用”** 边栏选项卡上，选择 **“创建”**。
 
-1.  在 **“文件共享”** 弹出窗口中，执行以下操作：
-    
-    1.  在 **“名称”** 文本框中，输入 **“元数据”**。
-    
-    1.  在 **“配额”** 文本框中，输入 **“1”** (GiB)。
-    
-    1.  选择 **“创建”**。
+1. 在第二个 **“Web 应用”** 边栏选项卡中，找到边栏选项卡中的选项卡，如 **“基本”**。
 
-1.  返回 **“文件共享”** 部分，选择新创建的 **“元数据”** 共享。
+    > **备注**：每个选项卡都代表在工作流中新建 Web 应用的一个步骤。你可以随时选择 **“查看 + 创建”** 跳过其余选项卡。
 
-1.	在 **“文件共享”** 边栏选项卡中，选择 **“上传”** 。
+1. 在 **“基本信息”** 选项卡上，执行以下操作：
 
-1.	在 **“上传文件”** 对话框中，执行以下操作：
+    1. 将 **“订阅”** 文本框设置为默认值。
 
-    1.  在 **“文件”** 部分，选择 **“文件夹”** 图标。
+    1. 在 **“资源组”** 部分，选择 **“PubSubEvents”**。
 
-    1.  在 **“文件资源管理器”** 窗口中，浏览到 **“Allfiles (F):\\Allfiles\\Labs\\09\\Starter”**，选择以下文件，然后选择 **“打开”**：
+    1. 在 **“名称”** 文本框中，输入 **eventviewer*[yourname]***。
 
-        -   **item_00.json**
-        
-        -   **item_01.json**
-        
-        -   **item_02.json**
-        
-        -   **item_03.json**
-        
-        -   **item_04.json** 
+    1. 在 **“发布”** 部分，选择 **“Docker 容器”**。
 
-    1.  确保选中 **“如果文件存储已经存在，则覆盖”** 复选框，然后选择 **“上传”**。 
-    
-    > **注意**：等待 blob 上传完成，然后再继续本实验室。
+    1. 在 **“操作系统”** 部分，选择 **“Linux”**。
+
+    1. 在 **“区域”** 下拉列表中，选择 **“美国东部”** 区域。
+
+    1. 在 **“Linux 计划(美国东部)”** 部分，选择 **“新建”**。 
+
+    1. 在 **“名称”** 文本框中，输入值 **“EventPlan”**，然后选择 **“确定”**。
+
+    1. 将 **“SKU 和大小”** 部分保留设置为默认值。
+
+    1. 选择 **“下一步: Docker”**。
+
+1. 在 **“Docker”** 选项卡上，执行以下操作：
+
+    1. 在 **“选项”** 下拉列表中，选择 **“单个容器”**。
+
+    1. 在 **“映像源”** 下拉列表中，选择 **“Docker 中心”**。
+
+    1. 在 **“访问类型”** 下拉列表中，选择 **“公共”**。
+
+    1. 在 **“映像和标记”** 文本框中，输入 **“microsoftlearning/azure-event-grid-viewer:latest”**。
+
+    1. 选择 **“查看 + 创建”**。
+
+1. 在 **“查看 + 创建”** 选项卡中，查看在上述步骤中选择的选项。
+
+1. 选择 **“创建”**，使用指定的配置创建 Web 应用。 
+  
+    > **备注**：等待 Azure 完成 Web 应用的创建后再继续本实验室。你将会在应用创建完毕后收到通知。
 
 #### 回顾
 
-在本练习中，你创建了本实验室所需的所有资源。
+在本练习中，你创建了在本实验剩余时间里将用到的“事件网格主题”和“Web 应用”。
 
-### 练习2：使用逻辑应用实现工作流
+### 练习 2：创建事件网格订阅
 
-#### 任务 1：创建工作流触发器
+#### 任务 1：访问事件网格查看器 Web 应用程序
 
-1.  在 Azure 门户导航窗格中，选择 **“资源组”**。
+1. 在 Azure 门户的“导航”窗格中，选择 **“资源组”**。
 
-1.  在 **“资源组”** 边栏选项卡中，选择你之前在本实验室中创建的 **“AutomatedWorkflow”** 资源组。
+1. 在 **“资源组”** 边栏选项卡中，选择之前在本实验室中创建的 **“PubSubEvents”** 资源组。
 
-1.  在 **“AutomatedWorkflow”** 边栏选项卡中，选择你之前在本实验室中创建的 **prodflow*[yourname]*** 逻辑应用。
+1. 在 **“PubSubEvents”** 边栏选项卡上，选择你之前在本实验室中创建的 **eventviewer*[yourname]*** Web 应用。
 
-1.  在 **“逻辑应用设计器”** 边栏选项卡中，选择 **“空白逻辑应用”** 模板。
+1. 在 **“应用服务”** 边栏选项卡的 **“设置”** 部分，选择 **“属性”** 链接。
 
-1.  在 **“设计器”** 区域，执行以下操作以添加 **“收到 HTTP 请求时（请求）”** 触发器：
-    
-    1.  在 **“搜索连接器和触发器”** 字段，输入 **“HTTP”**。
-    
-    1.  在类别列表中，选择 **“请求”**。
-    
-    1.  在 **“触发器”** 结果列表中，选择 **“收到 HTTP 请求时”**。
+1. 在 **“属性”** 部分，记录 **“URL”** 文本框的值。你将在稍后的实验室中使用此值。
 
-1.  在**收到 HTTP 请求时**区域，执行以下操作来配置 **收到 HTTP 请求时（请求）** 触发器：
-    
-    1.  在 **“添加新参数”** 列表中，选择 **“方法”**。
+1. 选择 **“概述”**。
 
-    1.  在 **“方法”** 列表中，选择 **“GET”**。
+1. 在 **“概述”** 部分，选择 **“浏览”**。
 
-#### 任务 2：创建一个查询 Azure 存储文件共享的操作
+1. 查看当前运行的 **“Azure 事件网格查看器”** Web 应用程序。在接下来的实验室中，请保持 Web 应用程序的运行状态。
 
-1.  在 **“设计器”** 区域，选择 **“+ 新步骤”**，然后执行以下操作以添加一个 **“列出文件（Azure 文件存储）”** 操作：
-    
-    1.  在 **“搜索连接器和触发器”** 字段，输入 **“文件”**。
-    
-    1.  在类别列表中，选择 **“Azure 文件存储”**。
-    
-    1.  在 **“操作”** 结果列表中，选择 **“列出文件”**。
-    
-    1.  在 **“连接名称”** 字段中，输入 **“filesConnection”**。
-    
-    1.  在 **“存储帐户”** 部分，选择之前在本实验室中创建的 **prodstor*[yourname]*** 存储帐户，然后选择 **“创建”**。
-    
-    1.  等待连接器资源完成创建。
+    > **备注**：当事件发送到终结点后，该 Web 应用程序将启动实时更新。我们将在整个实验过程中用它来监视事件。
 
-        > **注意**：这些资源需要一到五分钟才能创建完成。
+1. 返回显示 Azure 门户的当前打开的浏览器窗口。
 
-1.  在 **“列出文件”** 区域的 **“文件夹”** 文本框，输入 **“/metadata”**。
-    
-#### 任务 3：创建一个投射列表项属性的操作
+#### 任务 2：创建新的订阅
 
-1.  在 **“设计器”** 区域，选择 **“+ 新建步骤”**。
+1. 在 Azure 门户的“导航”窗格中，选择 **“资源组”**。
 
-1.  在 **“设计器”** 区域，执行以下操作以添加 **“选择（数据操作）”** 操作：
-    
-    1.  在 **“搜索连接器和触发器”** 字段中，输入 **“select”**。
-    
-    1.  在类别列表中，选择 **“数据操作”**。
-    
-    1.  在 **“操作”** 结果列表中，选择 **“选择”**。
+1. 在 **“资源组”** 边栏选项卡中，选择之前在本实验室中创建的 **“PubSubEvents”** 资源组。
 
-1.  在 **“选择”** 区域，执行以下操作来配置 **“选择(数据操作)”** 操作：
-    
-    1.  在 **“列出文件”** 类别内 **“动态内容”** 列表中的 **“来自”** 字段中，选择 **“值”**。 
-    
-    1.  在 **“映射”** 字段中，选择 **“切换至文本模式”**。
+1. 在 **“PubSubEvents”** 边栏选项卡上，选择你之前在本实验室中创建的 **hrtopic*[yourname]*** 事件网格主题。
 
-    1.  在 **“列出文件”** 类别内 **“动态内容”** 列表中的 **“映射”** 字段中，选择 **“名称”**。
-    
-#### 任务 4：生成 HTTP 响应操作
+1. 在 **“事件网格主题”** 边栏选项卡，选择 **“+ 事件订阅”**。
 
-1.  在 **“设计器”** 区域，选择 **“+ 新步骤”**，然后执行以下操作以添加一个 **“响应(请求)”** 操作：
- 
-    1.  在 **“搜索连接器和触发器”** 字段，输入 **“response”**。
-       
-    1.  在 **“操作”** 结果列表中，选择 **“响应”**。
+1. 在 **“创建事件订阅”** 边栏选项卡中，执行以下操作：
 
-1.  在 **“响应”** 区域，执行以下操作以配置 **“响应(请求)”** 操作：
+    1. 在 **“名称”** 文本框中，输入 **“basicsub”**。
 
-    1.  在 **“状态代码”** 文本框中，输入 **“200”**。
+    1. 在 **“事件架构”** 列表中，选择 **“事件网格架构”**。
 
-    1.  在 **“选择”** 类别内的 **“动态内容”** 列表的 **“正文”** 字段中，选择 **“输出”**。
+    1. 在 **“终结点类型”** 列表中，选择 **“Web Hook”**。
 
-1.  在 **“设计器”** 区域，选择 **“保存”**。
+    1. 选择 **“终结点”**。
+
+    1. 在 **“选择 Web Hook”** 对话框的 **“订阅者终结点”** 文本框中，输入之前记录的 **“Web 应用 URL”** 值，请确保使用 **“https://”** 前缀，然后添加后缀 **“/api/updates”**，最后选择 **“确认选择”**。
+
+        > **备注**：例如，如果 **Web 应用 URL** 值为 ``http://eventviewerstudent.azurewebsites.net/``，则**订阅者终结点**将为 ``https://eventviewerstudent.azurewebsites.net/api/updates``。
+
+    1. 选择 **“创建”**。
+  
+    > **备注**：等待 Azure 完成创建订阅再继续本实验室操作。创建订阅时会收到通知。
+
+#### 任务 3：观察订阅验证事件
+
+1. 返回该浏览器窗口，其中显示 **“Azure 事件网格查看器”** Web 应用程序。
+
+1. 查看在订阅创建过程中创建的 **Microsoft.EventGrid.SubscriptionValidationEvent** 事件。
+
+1. 选择事件并查看其 JSON 内容。
+
+1. 返回到当前打开显示 Azure 门户的浏览器窗口。
+
+#### 任务 4：记录订阅凭据
+
+1. 在 Azure 门户的“导航”窗格中，选择 **“资源组”**。
+
+1. 在 **“资源组”** 边栏选项卡中，选择之前在本实验室中创建的 **“PubSubEvents”** 资源组。
+
+1. 在 **“PubSubEvents”** 边栏选项卡上，选择你之前在本实验室中创建的 **hrtopic*[yourname]*** 事件网格主题。
+
+1. 在 **“事件网格主题”** 边栏选项卡中，记录 **“主题终结点”** 字段的值。你将在稍后的实验室中使用此值。
+
+1. 在 **“设置”** 类别中，选择 **“访问密钥”** 链接。
+
+1. 在 **“访问密钥”** 部分，记录 **“密钥 1”** 文本框的值。你将在稍后的实验室中使用此值。
 
 #### 回顾
 
-在本练习中，生成了一个基本工作流，该工作流在由 HTTP GET 请求触发时开始。然后它会查询存储服务，枚举结果，最后将这些结果作为 HTTP 响应返回。
+在本练习中，你创建了一个新的订阅并进行了注册验证，然后记录了将新事件发布到该主题所需的凭据。
 
-### 练习 3：使用 Azure API 管理作为逻辑应用的代理
+### 练习 3：在 .NET 上发布事件网格事件
 
-#### 任务 1：创建新产品
+#### 任务 1：创建 .NET 项目
 
-1.  在 Azure 门户导航窗格中，选择 **“资源组”**。
+1. 在 **“启动”** 屏幕上，选择 **“Visual Studio Code”** 磁贴。
 
-1.  在 **“资源组”** 边栏选项卡中，选择你之前在本实验室中创建的 **“AutomatedWorkflow”** 资源组。
+1. 在 **“文件”** 菜单上，选择 **“打开文件夹”**。
 
-1.  在 **“AutomatedWorkflow”** 边栏选项卡中，选择你在本实验室前面部分创建的 **prodapim*[yourname]*** API 管理资源。
+1. 在打开的 **“文件资源管理器”** 窗口中，前往 **“Allfiles (F):\\Allfiles\\Labs\\09\\Starter\\EventPublisher”**，然后选择 **“选择文件夹”**。
 
-1.  在 **“API 管理”** 部分的 **“API 管理服务”** 边栏选项卡中，选择 **“产品”**。
+1. 在 **“Visual Studio Code”** 窗口中，右键单击或激活 **“资源管理器”** 窗格的快捷菜单，然后选择 **“在终端中打开”**。
 
-1.  在 **“产品”** 部分，选择 **“+ 添加”**。
+1. 在打开的命令提示符窗口中，输入以下命令并选择“Enter”以在当前文件夹中新建一个名为 **“EventPublisher”** 的 .NET 项目：
 
-1.  在 **“添加产品”** 对话框中，执行以下操作：
-
-    1.  在 **“显示名称”** 文本框中，输入 **“免费”**。
-
-    1.  在 **“Id”** 文本框中，输入 **“free”**。
-
-    1.  在 **“描述”** 文本框中，输入 **“供匿名使用免费层”**。
-
-    1.  在 **“状态”** 部分，选择 **“已发布”**。
-
-    1.  确保清除选择 **“需要订阅”** 复选框。
-
-    1.  选择 **“创建”**。
-
-#### 任务 2：创建与逻辑应用集成的 API
-
-1.  在 **“API 管理服务”** 边栏选项卡中，在 **“API 管理”** 部分，选择 **“API”**。
-
-1.  在 **“添加新的 API”** 部分中选择 **“逻辑应用”**。
-
-1.  在 **“从逻辑应用创建”** 对话框中，执行以下操作：
-
-    1.  选择 **“完全”**。
-
-    1.  在 **“逻辑应用”** 部分中，选择 **“浏览”**。 
-    
-    1.  在 **“选择要导入的逻辑应用”** 对话框中，选择你之前在本实验中创建的 **prodflow*[yourname]*** 逻辑应用，然后选择 **“选择”**。
-    
-    1.  在 **“显示名称”** 文本框中，输入 **“元数据查找”**。
-    
-    1.  在 **“名称”** 文本框中，输入 **“元数据查找”**。
-
-    1.  在 **“描述”** 文本框中，输入 **“查找元数据 JSON 文件”**。
-
-    1.  将 **“API URL 后缀”** 文本框留空。
-
-    1.  在 **“产品”** 列表中，选择 **“免费”**。
-
-    1.  选择 **“创建”**。 
-
-    > **注意**：等待新 API 完成创建。
-
-#### 任务 3：测试 API 操作
-
-1.  在 **“设计”** 选项卡中，选择 **“测试”**。
-
-1.  在 **“测试”** 选项卡上，执行以下操作：
-
-    1.  选择单个 **GET** 操作。
-
-    1.  复制 **“请求 URL”** 字段的值。（稍后将在实验室中使用此值。）
-
-    1.  选择 **“发送”**。
-
-    1.  在 **“HTTP 响应”** 部分，观察测试请求的 JSON 结果。
-
-#### 任务 4：使用 httprepl 验证端到端解决方案
-
-1.  在任务栏上，选择 **Windows Terminal** 图标。
-
-1.  在打开的命令提示符处，输入以下命令，然后按 Enter 以启动 **“httprepl”** 工具，将基 URI设置为之前你在本实验复制的用于 API 操作的 **“请求 URL”** 的值。
-
-    ```
-    httprepl <api-operation-request-url>
+    ```powershell
+    dotnet new console --name EventPublisher --output .
     ```
 
-    > **注意**：例如，如果 **URL** 是 **https://prodapimstudent.azure-api.net/manual/paths/invoke** ，则命令将是 **httprepl https://prodapimstudent.azure-api.net/manual/paths/invoke** 。
+    > **备注**：**dotnet new** 命令将在与项目同名的文件夹中创建一个新的 **“控制台”** 项目。
 
-1.  查看 httprepl 工具显示的错误消息。出现此消息的原因是该工具正在搜索用于“遍历”API 的 Swagger 定义文件。由于逻辑应用程序未生成 Swagger 定义文件，因此需要手动遍历该 API。
+1. 在命令提示符处，输入以下命令并按 Enter，从 NuGet 导入 4.1.0 版本的 **“Azure.Messaging.EventGrid”**：
 
-1.  在工具提示中，输入以下命令，然后按 Enter，针对 API 终结点运行 **get** 命令：
-
-    ```
-    get
+    ```powershell
+    dotnet add package Azure.Messaging.EventGrid --version 4.1.0
     ```
 
-1.  观察 JSON 响应内容，该内容现在应包括：
+    > **备注**：**dotnet add package** 命令将从 NuGet 添加 **Microsoft.Azure.EventGrid** 包。有关详细信息，请前往 [Azure.Messaging.EventGrid](https://www.nuget.org/packages/Azure.Messaging.EventGrid/4.1.0)。
 
-    ```
-    [ 
-        "item_00.json",
-        "item_01.json",
-        "item_02.json",
-        "item_03.json",
-        "item_04.json"
-    ]
+1. 在命令提示符处，输入以下命令，然后按 Enter 以生成 .NET Web 应用程序：
+
+    ```powershell
+    dotnet build
     ```
 
-1.  输入以下命令，然后按 Enter 退出 **“httprepl”** 应用程序：
+1. 选择 **“终止终端”** 或者 **“回收站”** 图标以关闭当前打开的终端和所有关联的进程。
 
+#### 任务 2：修改 Program 类以连接到事件网格
+
+1. 在 **“Visual Studio Code”** 窗口的“资源管理器”窗格中，打开 **Program.cs** 文件。
+
+1. 在 **Program.cs** 文件的代码编辑器选项卡中，删除现有文件中的所有代码。
+
+1. 添加以下代码行，通过从 NuGet 导入的 **“Azure.Messaging.EventGrid”** 包导入 **“Azure”** 和 **“Azure.Messaging.EventGrid”** 命名空间：
+
+    ```csharp
+    using Azure;
+    using Azure.Messaging.EventGrid;
     ```
-    exit
+
+1. 添加以下代码行，为此文件将使用的内置命名空间添加 **using** 指令：
+
+    ```csharp
+    using System;
+    using System.Threading.Tasks;
     ```
 
-1.  关闭当前正在运行的 Windows Terminal 应用程序。
+1. 输入以下代码，创建一个新的 **Program** 类：
 
-1.	从 Azure 门户返回浏览器窗口。
+    ```csharp
+    public class Program
+    {
+    }
+    ```
+
+1. 在 **“Program”** 类中，输入以下代码行以创建一个名为 **“topicEndpoint”** 的新字符串常数：
+
+    ```csharp
+    private const string topicEndpoint = "";
+    ```
+
+1. 将字符串常数 **“topicEndpoint”** 的值设置为你之前在本实验室中所记录事件网格主题的 **“主题终结点”**，从而将其更新。
+
+1. 在 **Program** 类中，输入以下代码行以创建一个名为 **topicKey** 的新字符串常量：
+
+    ```csharp
+    private const string topicKey = "";
+    ```
+
+1. 将字符串常量 **topicKey** 的值设置为你之前在本实验室中记录的事件网格主题的**密钥**，从而将其更新。
+
+1. 在 **Program** 类中，输入以下代码以创建新的异步 **Main** 方法：
+
+    ```csharp
+    public static async Task Main(string[] args)
+    {
+    }
+    ```
+
+1. 查看 **“Program.cs”** 文件，现在应该包含以下代码行：
+
+    ```csharp
+    using System;
+    using System.Threading.Tasks;
+    using Azure;
+    using Azure.Messaging.EventGrid;
+
+    public class Program
+    {
+        private const string topicEndpoint = "<topic-endpoint>";
+        private const string topicKey = "<topic-key>";
+        
+        public static async Task Main(string[] args)
+        {
+        }
+    }
+    ```
+
+#### 任务 3：发布新事件
+
+1. 在 **Main** 方法中，执行以下操作以将事件列表发布到你的主题终结点：
+
+    1. 添加以下代码行，使用 **topicEndpoint** 字符串常量作为构造函数参数创建类型为 **Uri** 的新变量 **endpoint**：
+
+        ```csharp
+        Uri endpoint = new Uri(topicEndpoint); 
+        ```
+
+    1. 添加以下代码行，使用 **topicKey** 字符串常量作为构造函数参数创建类型为 **[AzureKeyCredential](https://docs.microsoft.com/dotnet/api/azure.azurekeycredential)** 的新变量 **credential**：
+
+        ```csharp
+        AzureKeyCredential credential = new AzureKeyCredential(topicKey);
+        ```
+
+    1. 添加以下代码行，使用 **endpoint** 和 **credential** 变量作为构造函数参数创建类型为 **[EventGridPublisherClient](https://docs.microsoft.com/dotnet/api/azure.messaging.eventgrid.eventgridpublisherclient)** 的新变量 **client**：
+
+        ```csharp
+        EventGridPublisherClient client = new EventGridPublisherClient(endpoint, credential);
+        ```
+
+    1. 添加以下代码块，创建类型为 **[EventGridEvent](https://docs.microsoft.com/dotnet/api/azure.messaging.eventgrid.eventgridevent)** 的新变量 **firstEvent**，并使用示例数据填充该变量：
+
+        ```csharp
+        EventGridEvent firstEvent = new EventGridEvent(
+            subject: $"New Employee: Alba Sutton",
+            eventType: "Employees.Registration.New",
+            dataVersion: "1.0",
+            data: new
+            {
+                FullName = "Alba Sutton",
+                Address = "4567 Pine Avenue, Edison, WA 97202"
+            }
+        );
+        ```
+
+    1. 添加以下代码块，创建类型为 **[EventGridEvent](https://docs.microsoft.com/dotnet/api/azure.messaging.eventgrid.eventgridevent)** 的新变量 **secondEvent**，并使用示例数据填充该变量：
+
+        ```csharp
+        EventGridEvent secondEvent = new EventGridEvent(
+            subject: $"New Employee: Alexandre Doyon",
+            eventType: "Employees.Registration.New",
+            dataVersion: "1.0",
+            data: new
+            {
+                FullName = "Alexandre Doyon",
+                Address = "456 College Street, Bow, WA 98107"
+            }
+        );
+        ```
+
+    1. 添加以下代码行以异步调用 **[EventGridPublisherClient.SendEventAsync](https://docs.microsoft.com/dotnet/api/azure.messaging.eventgrid.eventgridpublisherclient.sendeventasync)** 方法，将 **firstEvent** 变量用作参数：
+
+        ```csharp
+        await client.SendEventAsync(firstEvent);
+        ```
+
+    1. 添加以下代码行，在控制台显示 **“首个事件已发布”** 消息：
+
+        ```csharp
+        Console.WriteLine("First event published");
+        ```
+
+    1. 添加以下代码行以异步调用 **[EventGridPublisherClient.SendEventAsync](https://docs.microsoft.com/dotnet/api/azure.messaging.eventgrid.eventgridpublisherclient.sendeventasync)** 方法，将 **secondEvent** 变量用作参数：
+
+        ```csharp
+        await client.SendEventAsync(secondEvent);
+        ```
+
+    1. 添加以下代码行，在控制台显示 **“第二个事件已发布”** 消息：
+
+        ```csharp
+        Console.WriteLine("Second event published");
+        ```
+
+1. 查看 **Main** 方法，现在应包括：
+
+    ```csharp
+    public static async Task Main(string[] args)
+    {
+        Uri endpoint = new Uri(topicEndpoint);
+        AzureKeyCredential credential = new AzureKeyCredential(topicKey);
+        EventGridPublisherClient client = new EventGridPublisherClient(endpoint, credential);
+        
+        EventGridEvent firstEvent = new EventGridEvent(
+            subject: $"New Employee: Alba Sutton",
+            eventType: "Employees.Registration.New",
+            dataVersion: "1.0",
+            data: new
+            {
+                FullName = "Alba Sutton",
+                Address = "4567 Pine Avenue, Edison, WA 97202"
+            }
+        );
+
+        EventGridEvent secondEvent = new EventGridEvent(
+            subject: $"New Employee: Alexandre Doyon",
+            eventType: "Employees.Registration.New",
+            dataVersion: "1.0",
+            data: new
+            {
+                FullName = "Alexandre Doyon",
+                Address = "456 College Street, Bow, WA 98107"
+            }
+        );
+
+        await client.SendEventAsync(firstEvent);
+        Console.WriteLine("First event published");
+
+        await client.SendEventAsync(secondEvent);
+        Console.WriteLine("Second event published");
+    }
+    ```
+
+1. 保存 **Program.cs** 文件。
+
+1. 在 **“Visual Studio Code”** 窗口中，右键单击或激活“资源管理器”窗格的快捷菜单，然后选择 **“在终端中打开”**。
+
+1. 在打开的命令提示符处，输入以下命令并按 “Enter” 键，以运行 .NET Web 应用程序：
+
+    ```powershell
+    dotnet run
+    ```
+
+    > **备注**：如果出现任何生成错误，请查看位于 **“Allfiles (F):\\Allfiles\\Labs\\09\\Solution\\EventPublisher”** 文件夹中的 **Program.cs** 文件。
+
+1. 观察从当前正在运行的控制台应用程序中输出的成功消息。
+
+1. 选择 **“终止终端”** 或者 **“回收站”** 图标以关闭当前打开的终端和所有关联的进程。
+
+#### 任务 4：查看发布的事件
+
+1. 使用 **“Azure 事件网格查看器”** Web 应用程序返回到浏览器窗口。
+
+1. 查看由控制台应用程序创建的 **Employees.Registration.New** 事件。
+
+1. 选择任何事件并查看其 JSON 内容。
+
+1. 返回 Azure 门户。
 
 #### 回顾
 
-在本练习中，将 Azure API 管理用作代理触发了逻辑应用工作流。
+在本练习中，使用 .NET 控制台应用程序将新事件发布到事件网格主题上。
 
-### 练习 4：清理订阅 
+### 练习 4：清理订阅
 
-#### 任务 1：打开 Azure Cloud Shell 并列出资源组
+#### 任务 1：打开 Azure Cloud Shell
 
-1.  在 Azure 门户中，选择 **“Cloud Shell”** 图标以打开一个新的 shell 实例。
+1. 在 Azure 门户中，选择 **“Cloud Shell”** 图标以打开一个新的 shell 实例。
 
-    > **注意**： **Cloud Shell** 图标使用大于符号 (\>) 和下划线字符 (\_) 表示。
+    > **备注**：**“Cloud Shell”** 图标使用大于符号 (\>) 和下划线字符 (\_) 表示。
 
-1.  如果这是你第一次使用订阅打开 Cloud Shell，你可以使用 **欢迎来到 Azure Cloud Shell 向导** 来配置 Cloud Shell 的初次使用。在向导中执行以下操作：
-    
-    1.  对话框提示你在开始使用 shell 前，先新建一个存储帐户。接受默认设置并选择 **“创建存储”**。 
+1. 如果这是你第一次使用订阅打开 Cloud Shell，则可以使用 **“欢迎使用 Azure Cloud Shell 向导”** 来配置 Cloud Shell，以便首次使用。在向导中执行以下操作：
 
-    > **注意**：等待 Cloud Shell 完成首次设置过程后，再继续本实验室。如果 Cloud Shell 配置选项未显示，很可能是因为你使用的是本课程实验中的现有订阅。实验是假设你使用的是新订阅的情况下编写的。
+    1. 对话框提示你配置 shell。选择 **“Bash”**，查看选定的订阅，然后选择 **“创建存储”**。
+
+    > **备注**：等待 Cloud Shell 完成首次设置过程后，再继续本实验室。如果 Cloud Shell 配置选项未显示，很可能是因为你使用的是本课程实验室中的现有订阅。实验是假设你使用的是新订阅的情况下编写的。
 
 #### 任务 2：删除资源组
 
-1.  输入以下命令，然后按下 Enter 键以删除 **AutomatedWorkflow** 资源组：
+1. 输入以下命令，然后按 Enter 删除 **PubSubEvents** 资源组：
 
-    ```
-    az group delete --name AutomatedWorkflow --no-wait --yes
+    ```bash
+    az group delete --name PubSubEvents --no-wait --yes
     ```
 
-1.  关闭“Cloud Shell”窗格。
+1. 关闭门户中的 Cloud Shell 窗格。
 
 #### 任务 3：关闭活动应用程序
 
--   关闭当前正在运行的 Microsoft Edge 应用程序。
+1. 关闭当前正在运行的 Microsoft Edge 应用程序。
 
-#### 复习
+1. 关闭当前正在运行的 “Visual Studio Code” 应用程序。
+
+#### 回顾
 
 在本练习中，你通过删除本实验室中使用的资源组清理订阅。

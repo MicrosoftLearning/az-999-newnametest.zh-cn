@@ -1,299 +1,138 @@
----
+﻿---
 lab:
-    title: '实验室：发布和订阅事件网格事件'
-    az204Module: '模块 10：开发基于事件的解决方案'
-    az020Module: '模块 09：开发基于事件的解决方案'
+    az204Title: 'Lab 10: 使用 Azure 队列存储异步处理消息'
+    az020Title: 'Lab 10: 使用 Azure 队列存储异步处理消息'
+    az204Module: 'Module 10: 开发基于消息的解决方案'
+    az020Module: 'Module 10: 开发基于消息的解决方案'
     type: '答案要点'
 ---
-    
-# 实验室: 发布和订阅事件网格事件
-# 学生实验室答案密钥
+
+# 实验室 10：使用 Azure 队列存储异步处理消息
+# 学生实验室答案要点
 
 ## Microsoft Azure 用户界面
 
-鉴于 Microsoft 云工具的动态特性，Azure UI 在此培训内容开发后可能会发生更改。这些更改可能会导致实验说明和实验步骤不匹配。
+鉴于 Microsoft 云工具的动态特性，Azure UI 在此培训内容开发后可能会发生更改。这些更改可能会导致实验室说明和实验室步骤不一致。
 
-当社区要求我们进行更改时，Microsoft 将更新此培训课程。但是，由于云更新频繁发生，因此在此培训内容更新之前，你可能会遇到 UI 更改情况。 **如果发生这种情况，请适应这些更改，并根据需要在实验中熟悉这些更改。**
+当社区要求我们进行更改时，Microsoft 将更新此培训课程。但是，由于云更新频繁发生，因此在此培训内容更新之前，你可能会遇到 UI 更改情况。**如果发生这种情况，请适应这些更改，并根据需要在实验室中熟悉这些更改。**
 
 ## 说明
 
-### 开始前
+### 准备工作
 
-#### 登录实验室虚拟机
+#### 登录到实验室虚拟机
 
-使用以下凭据登录 Windows 10 虚拟机 (VM)：
+使用以下凭据登录到 Windows 10 虚拟机 (VM)：
     
--   用户名： **管理员**
+-   用户名： **Admin**
 
 -   密码： **Pa55w.rd**
 
-> **注意**：你的讲师将提供连接到虚拟实验室环境的说明。
+> **备注**：你的讲师将提供连接到虚拟实验室环境的说明。
 
-#### 评价已安装的应用程序
+#### 查看已安装的应用程序
 
 在你的 Windows 10 桌面上找到任务栏。任务栏里有本实验室中你将使用的应用程序的图标：
     
 -   Microsoft Edge
 
--   Microsoft Visual Studio Code
+-   Visual Studio Code
 
-### 练习 1 ：创建 Azure 资源
+-   Azure 存储资源管理器
 
-#### 任务1：打开 Azure 门户
+### 练习 1：创建 Azure 资源
+
+#### 任务 1：打开 Azure 门户
 
 1.  在任务栏上，选择 **“Microsoft Edge”** 图标。
 
 1.  在打开的浏览器窗口中，转到 Azure 门户 (<https://portal.azure.com>)。
 
-1.  输入你的 Microsoft 帐户的电子邮件地址，然后选择 **“下一个”**。
+1.  输入你的 Microsoft 帐户的电子邮件地址，然后选择 **“下一步”**。
 
-1.  输入你的 Microsoft 帐户的密码，然后选择 **“登录”**。
+1.  输入 Microsoft 帐户的密码，然后选择 **“登录”**。
 
-    > **注意**：第一次登录 Azure 门户时，你会看到一个门户教程。选择 **“开始使用”**，以跳过教程并开始使用门户。
+    > **备注**：第一次登录 Azure 门户时，你会看到一个门户教程。选择 **“开始使用”**，以跳过导览并开始使用门户。
 
-#### 任务 2：打开 Azure Cloud Shell
+#### 任务 2：创建存储帐户
 
-1.  在门户中，选择 **“Cloud Shell”** 图标打开一个新的 shell 实例。
+1.  在 Azure 门户的“导航”窗格中，选择 **“所有服务”**。
 
-    > **注意**： **Cloud Shell** 图标使用大于符号 (\>) 和下划线字符 (\_) 表示。
+1.  在 **“所有服务”** 边栏选项卡中，选择 **“存储帐户”**。
 
-1.  如果这是你首次使用订阅打开 Cloud Shell，则可使用 **欢迎使用 Azure Cloud Shell 向导** 配置 Cloud Shell。在向导中执行以下操作：
+1.  在 **“存储帐户”** 边栏选项卡上，获取存储帐户实例列表。
+
+1.  在 **“存储帐户”** 边栏选项卡上，选择 **“新建”**。
+
+1.  在 **“创建存储帐户”** 边栏选项卡上，查看边栏选项卡上的选项卡，如 **“基本”**、**“标记”** 和 **“查看 + 创建”**。
+
+    > **备注**：每个选项卡代表工作流中创建新存储帐户的一个步骤。你可以随时选择 **“查看 + 创建”** 跳过其余选项卡。
+
+1.  选择 **“基本信息”** 选项卡，然后在选项卡区域内执行以下操作：
     
-    -   当对话框提示你创建一个新的存储帐户以开始使用 shell 时，接受默认设置，然后选择 **“创建存储”**。 
-
-    > **注意**：等待 Cloud Shell 完成初始设置过程后，再继续本实验室。如果你未看到 **Cloud Shell** 配置选项，这很可能是因为你在本课程实验中使用的是现有订阅。实验是假设你使用的是新订阅的情况下编写的。
-
-1.  在 Azure 门户中，在 **Cloud Shell** 命令提示符处输入以下命令，然后选择“Enter”获取 Azure 命令行接口 (Azure CLI) 工具的版本：
-
-    ```
-    az --version
-    ```
-
-#### 任务 3：查看 Microsoft.EventGrid 提供程序注册
-
-1.  在门户中的 **“Cloud Shell”** 命令提示符处，执行以下操作：
-
-    1.  输入以下命令并选择“Enter”以获取 Azure CLI 根级别的子组和命令列表：
-
-        ```
-        az --help
-        ```
-
-    1.  输入以下命令，然后选择“Enter”以获取资源提供程序可用的命令列表：
-
-        ```
-        az provider --help
-        ```
-
-    1.  输入以下命令，然后按“Enter”键以列出所有当前注册的提供程序：
-
-        ```
-        az provider list
-        ```
-
-    1.  输入以下命令，然后按“Enter”键以仅列出当前注册的提供程序的命名空间：
-
-        ```
-        az provider list --query "[].namespace"
-        ```
-
-    1.  查看当前注册的提供程序列表。请注意， **Microsoft.EventGrid** 提供程序当前包含在提供程序列表中。
-
-1.  关闭 Cloud Shell 窗格。
-
-#### 任务 4：创建自定义事件网格主题
-
-1.  在 Azure 门户的导航窗格上，选择 **“创建资源”**。
-
-1.  在 **“新建”** 边栏选项卡，找到 **“搜索市场”** 文本框。
-
-1.  在搜索框中输入 **“事件网格”**，然后选择“Enter”。
-
-1.  在 **"Everything"** 搜索结果边栏选项卡中，选择 **“事件网格主题”** 结果。
-
-1.  在 **“事件网格主题”** 边栏选项卡中，选择 **“创建”**。
-
-1.  在 **“创建主题”** 边栏选项卡上，执行以下操作：
-
-    1.  在 **“名称”** 文本框中，输入**hrtopic*[yourname]***。
+    1.  将 **“订阅”** 文本框设置为默认值。
     
-    1.  在 **“资源组”** 部分，选择 **“新建”**，输入 **“PubSubEvents”**，然后选择 **“确定”**。
-
-    1.  在 **“位置”** 下拉列表中，选择 **“(US) 美国东部”** 地区。
-
-    1.  从 **“事件架构”** 下拉列表中，选择 **“事件网格架构”**，然后选择 **“创建”**。
-  
-    > **注意**：等待 Azure 完成创建主题，再继续本实验室。你将会在应用创建完毕后收到通知。
-
-#### 任务 5：将 Azure 事件网格查看器部署到 Web 应用
-
-1.  在 Azure 门户的导航窗格上，选择 **“创建资源”**。
-
-1.  在 **“新建”** 边栏选项卡，找到 **“搜索市场”** 文本框。
-
-1.  在搜索文本框中，输入 **“Web”**，然后按 Enter。
-
-1.  在 **“全部内容”** 搜索结果边栏选项卡中，选择 **“Web 应用”** 结果。
-
-1.  在 **“Web 应用”** 边栏选项卡中，选择 **“创建”**。
-
-1.  在第二个 **“Web 应用”** 边栏选项卡中，找到边栏选项卡中的选项卡，如 **“基本”**。
-
-    > **注意**：每个标签页都代表在工作流中新建 Web 应用的一个步骤。你可以随时选择 **“查看 + 创建”** 跳过其余选项卡。
-
-1.  在 **“基本信息”** 选项卡中执行以下操作：
+    1.  在 **“资源组”** 部分，选择 **“新建”**，输入 **“AsyncProcessor”**，然后选择 **“确定”**。
     
-    1.  将 **“订阅”** 文本框保留设置为默认值。
+    1.  在 **“存储帐户名称”** 文本框中，输入 **“asyncstor[yourname]”**。
     
-    1.  在 **“资源组”** 部分，选择 **“PubSubEvents”**。
+    1.  在 **“位置”** 列表中，选择 **“(美国)美国东部”** 区域。
+    
+    1.  在 **“性能”** 部分中，选择 **“标准”**。
+    
+    1.  在 **“帐户类型”** 列表中，选择 **“StorageV2(常规用途 v2)”**。
+    
+    1.  在 **“复制”** 列表中，选择 **“本地冗余存储(LRS)”**。
+        
+    1.  选择 **“查看 + 创建”**。
 
-    1.  在 **“名称”** 文本框中，输入“**eventviewer*[yourname]***” 。
+1.  在 **“查看 + 创建”** 选项卡中，查看在之前步骤中指定的选项。
 
-    1.  在 **“发布”** 部分，选择 **“Docker 容器”**。
+1.  选择 **“创建”**，使用指定的配置创建存储帐户。
 
-    1.  在 **“操作系统”** 部分，选择 **Linux**。
+    > **备注**：在 **“部署”** 边栏选项卡中，等待创建任务完成后再继续本实验室。
 
-    1.  在 **“区域”** 下拉列表中，选择 **“美国东部”** 地区。
+1.	选择 **“部署”** 边栏选项卡中的 **“前往资源”** 按钮，以转到新创建的存储帐户。
 
-    1.  在 **“Linux 计划（美国东部）”** 部分，选择 **“新建”**。 
+1.	在 **“储存帐户”** 边栏选项卡上，找到 **“设置”** 部分，然后选择 **“访问密钥”**。
 
-    1.  在 **“名称”** 文本框中，输入值 **EventPlan**，然后选择 **“确定”**。
+1.	在 **“访问密钥”** 边栏选项卡中，选择任意一个密钥并记录 **“连接字符串”** 框中的任意一个值。你稍后将在本实验室中使用此值。
 
-    1.  将 **“SKU 和大小”** 部分保留设置为默认值。
-
-    1.  选择 **下一步： Docker**。
-
-1.  在 **“Docker”** 标签页上，执行以下操作：
-
-    1.  在 **“选项”** 下拉列表中，选择 **“单个容器”**。
-
-    1.  在 **“映像源”** 下拉列表中，选择 **“Docker 中心”**。
-
-    1.  在 **“访问类型”** 下拉列表中，选择 **“公共”**。
-
-    1.  在 **“映像和标记”** 文本框中，输入 **“microsoftlearning/azure-event-grid-viewer:latest”**。
-
-    1.  选择 **“审阅 + 创建”**。
-
-1.  在 **“查看 + 创建”** 选项卡中，查看在上述步骤中选择的选项。
-
-1.  选择 **“创建”**，使用指定的配置创建 Web 应用。 
-  
-    > **注意**：等待 Azure 完成创建 Web 应用再继续本实验。你将会在应用创建完毕后收到通知。
+    > **备注**：你选择哪个连接字符串无关紧要。它们可以互换。
 
 #### 回顾
 
-在本练习中，你创建了在本实验剩余时间里将用到的“事件网格主题”和“Web 应用”。
+在本练习中，你创建了一个新的 Azure 存储帐户，将在实验室的其余部分使用该帐户。
 
-### 练习 2：创建事件网格订阅
-
-#### 任务 1：访问事件网格查看器 Web 应用程序
-
-1.  在 Azure 门户的导航窗格中，选择 **“资源组”**。
-
-1.  在 **“资源组”** ”边栏选项卡中，选择之前在本实验中创建的 **“PubSubEvents”** 资源组。
-
-1.  在 **“PubSubEvents”** 边栏选项卡中，选择之前在本实验中创建的“**eventviewer*[yourname]***” Web 应用。
-
-1.  在 **“应用服务”** 边栏选项卡的 **“设置”** 部分，选择 **“属性”** 链接。
-
-1.  在 **“属性”** 部分，记录 **“URL”** 文本框的值。你将在稍后的实验室中使用此值。
-
-1.  选择 **“概述”**。
-
-1.  在 **“概述”** 部分，选择 **“浏览”**。
-
-1.  观察当前正在运行的 **Azure 事件网格查看器** Web 应用程序。在接下来的实验中，请保持 Web 应用程序的运行状态。
-
-    > **注意**：当事件发送到终结点后，该 Web 应用程序将启动实时更新。我们将在整个实验过程中用它来监视事件。
-
-1.  返回显示 Azure 门户的当前打开的浏览器窗口。
-
-#### 任务 2：创建新的订阅
-
-1.  在 Azure 门户的导航窗格中，选择 **“资源组”**。
-
-1.  在 **“资源组”** 边栏选项卡中，选择之前在本实验中创建的 **“PubSubEvents”** 资源组。
-
-1.  在 **“PubSubEvents”** 边栏选项卡中，选择之前在本实验中创建的 “**hrtopic*[yourname]***” 事件网格主题。
-
-1.  在 **“事件网格主题”** 边栏选项卡，选择 **“+事件订阅”**。
-
-1.  在 **“创建事件订阅”** 边栏选项卡中，执行以下操作：
-
-    1.  在 **“名称”** 文本框中，输入 **“basicsub”**。
-
-    1.  在 **“事件架构”** 列表中，选择 **“事件网格架构”**。
-    
-    1.  在 **“终结点类型”** 列表中，选择 **“Web Hook”**。
-
-    1.  选择 **“终结点”**。
-
-    1.  在 **“选择 WebHook”** 对话框的 **“订阅终结点”** 文本框中，输入之前记录的 **“Web 应用URL”** 值，请确保使用 **“https://”** 前缀，然后添加后缀 **“/api/updates”**，最后选择 **“确认选择”**。
-
-        > **注**：例如，如果你的 **Web 应用 URL** 值为 **http://eventviewerstudent.azurewebsites.net/** ，那么 **订阅终结点** 应是 **https://eventviewerstudent.azurewebsites.net/api/updates** 。
-
-    1.  选择 **“创建”**。
-  
-    > **注意**：等待 Azure 完成创建订阅再继续本实验室。你将会在应用创建完毕后收到通知。
-
-#### 任务 3：观察订阅验证事件
-
-1.  返回该浏览器窗口，其中显示 **“Azure 事件网格查看器”** Web 应用程序。
-
-1.  查看 **Microsoft.EventGrid.SubscriptionValidationEvent** 在订阅创建过程中创建的事件。
-
-1.  选择事件并查看其 JSON 内容。
-
-1.  返回到当前打开显示 Azure 门户的浏览器窗口。
-
-#### 任务 4：记录订阅凭据
-
-1.  在 Azure 门户的导航窗格中，选择 **“资源组”**。
-
-1.  在 **“资源组”** 边栏选项卡中，选择之前在本实验中创建的 **“PubSubEvents”** 资源组。
-
-1.  在 **“PubSubEvents”** 边栏选项卡中，选择之前在本实验中创建的 “**hrtopic*[yourname]***” 事件网格主题。
-
-1.  在 **“事件网格主题”** 边栏选项卡中，记录 **“主题终结点”** 字段的值。你将在稍后的实验室中使用此值。
-
-1.  在 **“设置”** 类别中，选择 **“访问密钥”** 链接。
-
-1.  在 **“访问密钥”** 部分，记录 **“密钥 1”** 文本框的值。你将在稍后的实验室中使用此值。
-
-#### 回顾
-
-在本练习中，你创建了一个新的订阅并进行了注册验证，然后记录了将新事件发布到该主题所需的凭据。
-
-### 练习 3：在 .NET 上发布事件网格事件
+### 练习 2：在 .NET 项目中配置 Azure 存储 SDK 
 
 #### 任务 1：创建 .NET 项目
 
 1.  在 **“启动”** 屏幕上，选择 **“Visual Studio Code”** 磁贴。
 
-1.  在 **“文件”** 菜单上，选择 **“打开文件夹”**。
+1.  在 **“文件”** 菜单中，选择 **“打开文件夹”**。
 
-1.  在打开的 **“文件资源管理器”** 窗口中，前往 **"Allfiles (F):\\Allfiles\\Labs\\10\\Starter\\EventPublisher"**，然后选择 **“选择文件夹”**。
+1.  在打开的 **“文件资源管理器”** 窗格中，浏览到 **“Allfiles (F):\\Allfiles\\Labs\\10\\Starter\\MessageProcessor”**，然后选择 **“选择文件夹”**。
 
 1.  在 **“Visual Studio Code”** 窗口中，右键单击或激活“资源管理器”窗格的快捷菜单，然后选择 **“在终端中打开”**。
 
-1.  在打开的命令提示符窗口中，输入以下命令并选择“Enter”以在当前文件夹中新建一个名为 **“EventPublisher”** 的 .NET 项目：
+1.  在打开的命令提示符处，输入以下命令并按 Enter，在当前文件夹中创建一个名为 **MessageProcessor** 的新 .NET 项目：
 
     ```
-    dotnet new console --name EventPublisher --output .
+    dotnet new console --name MessageProcessor --output .
     ```
 
-    > **注意**： **“dotnet new”** 命令将在与项目同名的文件夹中创建一个新的 **“控制台”** 项目。
+    > **备注**：**dotnet new** 命令将在与项目同名的文件夹中创建一个新的 **“控制台”** 项目。
 
-1.  在命令提示符处输入以下命令并选择 "Enter"，以从 NuGet 导入 3.2.0 版本的 **Microsoft.Azure.EventGrid**：
+1.  在命令提示符处，输入以下命令并按 Enter，从 NuGet 添加 12.0.0 版本的 **“Azure.Storage.Queues”**：
 
     ```
-    dotnet add package Microsoft.Azure.EventGrid --version 3.2.0
+    dotnet add package Azure.Storage.Queues --version 12.0.0
     ```
 
-    > **注意**：**dotnet add package** 命令将从 NuGet 中添加 **Microsoft.Azure.EventGrid** 包。有关详情，请转到 [Microsoft.Azure.EventGrid](https://www.nuget.org/packages/Microsoft.Azure.EventGrid/3.2.0)。
+    > **备注**：**dotnet add package** 命令将从 NuGet 添加 **Azure.Storage.Queues** 包。有关详细信息，请转到 [“Azure.Storage.Queues”](https://www.nuget.org/packages/Azure.Storage.Queues/12.0.0)。
 
-1.  在命令提示符中，输入以下命令并按 “Enter”，以构建 .NET Core Web 应用程序：
+1.  在命令提示符处，输入以下命令，然后按 Enter 以生成 .NET Web 应用程序：
 
     ```
     dotnet build
@@ -301,28 +140,29 @@ lab:
 
 1.  选择 **“终止终端”** 或者 **“回收站”** 图标以关闭当前打开的终端和所有关联的进程。
 
-#### 任务 2：修改 Program 类以连接到事件网格
+#### 任务 2：编写代码以访问 Azure 存储
 
-1.  在 **“Visual Studio Code”** 窗口的“资源管理器”窗格中，展开 **“Program.cs”** 文件。
+1.  在 **“Visual Studio Code”** 窗口的“资源管理器”窗格中，打开 **Program.cs** 文件。
 
-1.  在 **“Program.cs”** 文件的代码编辑器选项卡中，删除现有文件中的所有代码。
+1.  在 **Program.cs** 文件的代码编辑器选项卡中，删除现有文件中的所有代码。
 
-1.  添加以下代码行，以便从由 NuGet 导入的 **“Microsoft.Azure.EventGrid”** 包中导入 **“Microsoft.Azure.EventGrid”** 和 **“Microsoft.Azure.EventGrid.Models”** 命名空间：
+1.  添加以下代码行，通过从 NuGet 导入的 **“Azure.Storage.Queues”** 包导入 **“Azure”**、**“Azure.Storage.Queues”** 和 **“Azure.Storage.Queues.Models”** 命名空间：
 
     ```
-    using Microsoft.Azure.EventGrid;
-    using Microsoft.Azure.EventGrid.Models;
+    using Azure;
+    using Azure.Storage.Queues;
+    using Azure.Storage.Queues.Models;
     ```
     
 1.  添加以下代码行，为此文件将使用的内置命名空间添加 **using** 指令：
 
     ```
     using System;
-    using System.Collections.Generic;
+    using System.Text;
     using System.Threading.Tasks;
     ```
 
-1.  输入以下代码，创建一个新的 **“Program”类**：
+1.  输入以下代码，创建一个新的 **Program** 类：
 
     ```
     public class Program
@@ -330,23 +170,21 @@ lab:
     }
     ``` 
 
-1.  在 **“Program”** 类中，输入以下代码行以创建一个名为 **“topicEndpoint”** 的新字符串常数：
+1.  在 **Program** 类中，输入以下代码行，创建一个名为 **“storageConnectionString”** 的新字符串常量：
 
     ```
-    private const string topicEndpoint = "";
+    private const string storageConnectionString = "";
     ```
 
-1.  将字符串常数 **“topicEndpoint”** 的值设置为你之前在本实验室中所记录事件网格主题的 **“主题终结点”**，从而将其更新。
+1.  通过将 **storageConnectionString** 字符串常量的值设置为你之前在本实验室中记录的存储帐户的**连接字符串**来更新该字符串常量。
 
-1.  在 **Program** 类中，输入以下代码行以创建一个名为 **topicKey** 的新字符串常量：
+1.  在 **Program** 类中，输入以下代码行，创建一个名为 **queueName** 且值为 **“messagequeue”** 的新字符串常量：
 
     ```
-    private const string topicKey = "";
+    private const string queueName = "messagequeue";
     ```
 
-1.  将字符串常量 **topicKey** 的值设置为你之前在本实验中记录的事件网格主题 **Key**，并更新该字符串常量。
-
-1.  在 **“Program”** 类中，输入以下代码以创建新的异步 **“Main”方法**：
+1.  在 **Program** 类中，输入以下代码以创建新的异步 **Main** 方法：
 
     ```
     public static async Task Main(string[] args)
@@ -354,174 +192,63 @@ lab:
     }
     ```
 
-1.  查看 **“Program.cs”** 文件，现在应该包含以下代码行：
+1.  查看 **Program.cs** 文件，该文件现在应包括：
 
     ```
-    using Microsoft.Azure.EventGrid;
-    using Microsoft.Azure.EventGrid.Models;
+    using Azure;
+    using Azure.Storage.Queues;
+    using Azure.Storage.Queues.Models;
     using System;
-    using System.Collections.Generic;
+    using System.Text;
     using System.Threading.Tasks;
 
     public class Program
     {
-        private const string topicEndpoint = "<topic-endpoint>";
-        private const string topicKey = "<topic-key>";
-        
+        private const string storageConnectionString = "<storage-connection-string>";
+        private const string queueName = "messagequeue";
+
         public static async Task Main(string[] args)
         {
         }
     }
     ```
 
-#### 任务 3：发布新事件
+#### 任务 3：验证 Azure 存储访问
 
-1.  在 **Main** 方法中，执行以下操作以将事件列表发布到你的主题终结点：
+1.  在 **Main** 方法中，通过创建类型为 **“QueueClient”** 的新变量 *client*，添加以下代码行以连接到存储帐户：
 
-    1.  添加以下代码行来创建一个名为 **"credentials"** 的变量，其类型为 **"TopicCredentials()"**，将 **"topicKey"** 字符串常量用作构造函数参数：
+    ```
+    QueueClient client = new QueueClient(storageConnectionString, queueName);  
+    ```
 
-        ```
-        TopicCredentials credentials = new TopicCredentials(topicKey);
-        ```
+1.  在 **Main** 方法中，添加以下代码行，通过异步方式创建队列（如果尚不存在）：
 
-    1.  添加以下代码行以创建一个名为 **“客户端”** 的新变量，其类型为 **“EventGridClient()”**， 将 **“凭据”** 变量用作构造函数参数：
+    ```        
+    await client.CreateAsync();
+    ```
 
-        ```
-        EventGridClient client = new EventGridClient(credentials);
-        ```
+1.  在 **Main** 方法中，添加以下代码行以呈现“帐户元数据”部分的标题：
 
-    1.  添加以下代码行以创建一个名为 **events** 的新变量，其类型为 **List<EventGridEvent>**。
+    ```
+    Console.WriteLine($"---Account Metadata---");
+    ```
+    
+1.  在 **Main** 方法中，添加以下代码行以呈现队列终结点的统一资源标识符 (URI)：
 
-        ```
-        List<EventGridEvent> events = new List<EventGridEvent>();
-        ```
+    ```
+    Console.WriteLine($"Account Uri:\t{client.Uri}");
+    ```
 
-    1.  添加以下代码行以创建一个匿名类型、名为 **firstPerson** 的新变量：
-
-        ```
-        var firstPerson = new
-        {
-            FullName = "Alba Sutton",
-            Address = "4567 Pine Avenue, Edison, WA 97202"
-        };
-        ```
-
-    1.  添加以下代码块以创建一个名为 **“firstEvent”** 的新变量，其类型为 **“EventGridEvent”**，然后将示例数据填充到 **“EventGridEvent”** 变量中：
-
-        ```
-        EventGridEvent firstEvent = new EventGridEvent
-        {
-            Id = Guid.NewGuid().ToString(),
-            EventType = "Employees.Registration.New",
-            EventTime = DateTime.Now,
-            Subject = $"New Employee: {firstPerson.FullName}",
-            Data = firstPerson.ToString(),
-            DataVersion = "1.0.0"
-        };
-        ```
-
-    1.  添加以下代码行，将 **"firstEvent"** 实例添加到你的 **“事件”** 列表中：
-
-        ```
-        events.Add(firstEvent);
-        ```
-
-    1.  添加以下代码行以创建一个匿名类型、名为 **secondPerson** 的新变量：
-
-        ```
-        var secondPerson = new
-        {
-            FullName = "Alexandre Doyon",
-            Address = "456 College Street, Bow, WA 98107"
-        };
-        ```
-
-    1.  添加以下代码块，创建一个名为 **"secondEvent"** 的新变量，其类型为 **"EventGridEvent"**，然后将示例数据填充到 **"EventGridEvent"** 变量中：
-
-        ```
-        EventGridEvent secondEvent = new EventGridEvent
-        {
-            Id = Guid.NewGuid().ToString(),
-            EventType = "Employees.Registration.New",
-            EventTime = DateTime.Now,
-            Subject = $"New Employee: {secondPerson.FullName}",
-            Data = secondPerson.ToString(),
-            DataVersion = "1.0.0"
-        };
-        ```
-
-    1.  添加以下代码行，以将 **"secondEvent"** 实例添加到你的 **“事件”** 列表中：
-
-        ```
-        events.Add(secondEvent);
-        ```
-
-    1.  添加以下代码行，以从 **“topicEndpoint”** 变量中获取 **Hostname**：
-
-        ```
-        string topicHostname = new Uri(topicEndpoint).Host;
-        ```
-
-    1.  添加以下代码行以调用 **[EventGridClient.PublishEventsAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.eventgrid.eventgridclient.publisheventswithhttpmessagesasync)** 方法，将 **“topicHostname”** 和 **“事件”** 变量用作参数：
-
-        ```
-        await client.PublishEventsAsync(topicHostname, events);
-        ```
-
-    1.  添加以下代码行，以将 **“事件已发布”** 消息呈现到控制台：
-
-        ```
-        Console.WriteLine("Events published");
-        ```
-
-1.  查看 **Main** 方法，现在应包括：
+1.  查看 **Main** 方法，该方法现在应包括：
 
     ```
     public static async Task Main(string[] args)
     {
-        TopicCredentials credentials = new TopicCredentials(topicKey);
-        EventGridClient client = new EventGridClient(credentials);
+        QueueClient client = new QueueClient(storageConnectionString, queueName);        
+        await client.CreateAsync();
 
-        List<EventGridEvent> events = new List<EventGridEvent>();
-
-        var firstPerson = new
-        {
-            FullName = "Alba Sutton",
-            Address = "4567 Pine Avenue, Edison, WA 97202"
-        };
-
-        EventGridEvent firstEvent = new EventGridEvent
-        {
-            Id = Guid.NewGuid().ToString(),
-            EventType = "Employees.Registration.New",
-            EventTime = DateTime.Now,
-            Subject = $"New Employee: {firstPerson.FullName}",
-            Data = firstPerson,
-            DataVersion = "1.0.0"
-        };
-        events.Add(firstEvent);
-
-        var secondPerson = new
-        {
-            FullName = "Alexandre Doyon",
-            Address = "456 College Street, Bow, WA 98107"
-        };
-        
-        EventGridEvent secondEvent = new EventGridEvent
-        {
-            Id = Guid.NewGuid().ToString(),
-            EventType = "Employees.Registration.New",
-            EventTime = DateTime.Now,
-            Subject = $"New Employee: {secondPerson.FullName}",
-            Data = secondPerson,
-            DataVersion = "1.0.0"
-        };
-        events.Add(secondEvent);
-
-        string topicHostname = new Uri(topicEndpoint).Host;
-        await client.PublishEventsAsync(topicHostname, events);
-
-        Console.WriteLine("Events published");
+        Console.WriteLine($"---Account Metadata---");
+        Console.WriteLine($"Account Uri:\t{client.Uri}");
     }
     ```
 
@@ -529,62 +256,371 @@ lab:
 
 1.  在 **“Visual Studio Code”** 窗口中，右键单击或激活“资源管理器”窗格的快捷菜单，然后选择 **“在终端中打开”**。
 
-1.  在打开的命令提示符处，输入以下命令并按“Enter”键，以运行 .NET Web 应用程序：
+1.  在打开的命令提示符处，输入以下命令并按 “Enter” 键，以运行 .NET Web 应用程序：
 
     ```
     dotnet run
     ```
 
-    > **注意**：如果出现任何生成错误，请查看存放于 **“Allfiles (F):\\Allfiles\\Labs\\10\\Solution\\EventPublisher”** 文件夹的  **Program.cs** 文件。
+    > **备注**：如果出现任何生成错误，请查看位于 **“Allfiles (F):\\Allfiles\\Labs\\10\\Solution\\MessageProcessor”** 文件夹中的 **“Program.cs”** 文件。
 
-1.  观察从当前正在运行的控制台应用程序中输出的成功消息。
+1.  观察当前运行的控制台应用程序的输出。输出包含队列端点的元数据。
 
 1.  选择 **“终止终端”** 或者 **“回收站”** 图标以关闭当前打开的终端和所有关联的进程。
 
-#### 任务 4：观察已发布事件
+#### 回顾
 
-1.  使用 **“Azure 事件网格查看器”** Web 应用程序返回到浏览器窗口。
+在本练习中，你将 .NET 项目配置为访问存储服务并处理通过该服务提供的队列。
 
-1.  查看由控制台应用程序创建的 **Employees.Registration.New** 事件。
+### 练习 3：从队列中读取消息
 
-1.  选择任何事件并查看其 JSON 内容。
+#### 任务 1：编写代码以访问队列消息
 
-1.  返回 Azure 门户。
+1.  在 **Main** 方法中，添加以下代码行以呈现“现有消息”部分的标题：
+
+    ```
+    Console.WriteLine($"---Existing Messages---");
+    ```
+
+1.  在 **Main** 方法中，执行以下操作，以创建在检索队列消息时将使用的变量：
+
+    1.  添加以下代码行，以创建一个类型为 **int**、值为 **10** 的变量 *batchSize*：
+
+        ```
+        int batchSize = 10;
+        ```
+
+    1.  添加以下代码行，以创建一个类型为 **TimeSpan**、值为 **“2.5 秒”** 的变量 *visibilityTimeout*：
+
+        ```
+        TimeSpan visibilityTimeout = TimeSpan.FromSeconds(2.5d);
+        ```
+
+1.  在 **Main** 方法中，执行以下操作，从队列服务中异步检索一批消息：
+
+    1.  添加以下代码行，以调用 **“QueueClient”** 类的 **“ReceiveMessagesAsync”** 异步方法，并将 *“batchSize”* 和 *“visibilityTimeout”* 变量作为参数传入：
+
+        ```
+        client.ReceiveMessagesAsync(batchSize, visibilityTimeout);
+        ```
+
+    1.  通过添加更多代码来更新上一行代码，以使用 **await** 关键字异步处理表达式：
+
+        ```
+        await client.ReceiveMessagesAsync(batchSize, visibilityTimeout);
+        ```
+
+    1.  通过添加更多代码来更新上一行代码，将表达式的结果存储在类型为 **[Response<QueueMessage[]>](https://docs.microsoft.com/dotnet/api/azure.response-1)** 的 *messages* 新变量中：
+
+        ```
+        Response<QueueMessage[]> messages = await client.ReceiveMessagesAsync(batchSize, visibilityTimeout);
+        ```
+
+1.  在 **Main** 方法中，执行以下操作以迭代并呈现每个消息的属性：
+
+    1.  添加以下代码行以创建一个 **foreach** 循环，该循环遍历存储在类型为 **[QueueMessage[]](https://docs.microsoft.com/dotnet/api/azure.storage.queues.models.queuemessage)** 的 *messages* 变量的 **[Value](https://docs.microsoft.com/dotnet/api/azure.response-1.value)** 属性中的每条消息：
+
+        ```
+        foreach(QueueMessage message in messages?.Value)
+        {
+        }
+        ```
+
+    1.  在 **foreach** 循环中，添加另一行代码以呈现每个 **QueueMessage** 实例的 **“MessageId”** 和 **“MessageText”** 属性：
+    
+        ```
+        Console.WriteLine($"[{message.MessageId}]\t{message.MessageText}");
+        ```
+
+1.  查看 **Main** 方法，该方法现在应包括：
+
+    ```
+    public static async Task Main(string[] args)
+    {
+        // Existing code removed for brevity
+
+        Console.WriteLine($"---Existing Messages---");
+        int batchSize = 10;
+        TimeSpan visibilityTimeout = TimeSpan.FromSeconds(2.5d);
+        
+        Response<QueueMessage[]> messages = await client.ReceiveMessagesAsync(batchSize, visibilityTimeout);
+
+        foreach(QueueMessage message in messages?.Value)
+        {
+            Console.WriteLine($"[{message.MessageId}]\t{message.MessageText}");
+        }
+    }
+    ```
+
+1.  保存 **Program.cs** 文件。
+
+1.  在 **“Visual Studio Code”** 窗口中，右键单击或激活“资源管理器”窗格的快捷菜单，然后选择 **“在终端中打开”**。
+
+1.  在打开的命令提示符中，输入以下命令并选择 Enter 以生成 .NET Web 应用程序：
+
+    ```
+    dotnet build
+    ```
+
+    > **备注**：如果出现任何生成错误，请查看位于 **“Allfiles (F):\\Allfiles\\Labs\\10\\Solution\\MessageProcessor”** 文件夹中的 **“Program.cs”** 文件。
+
+1.  选择 **“终止终端”** 或者 **“回收站”** 图标以关闭当前打开的终端和所有关联的进程。
+
+#### 任务 2：测试消息队列访问
+
+1.  在 **“Visual Studio Code”** 窗口中，右键单击或激活“资源管理器”窗格的快捷菜单，然后选择 **“在终端中打开”**。
+
+1.  在打开的命令提示符处，输入以下命令并按 “Enter” 键，以运行 .NET Web 应用程序：
+
+    ```
+    dotnet run
+    ```
+
+    > **备注**：如果出现任何生成错误，请查看位于 **“Allfiles (F):\\Allfiles\\Labs\\10\\Solution\\MessageProcessor”** 文件夹中的 **“Program.cs”** 文件。
+
+1.  观察当前运行的控制台应用程序的输出。输出表明队列中没有消息。
+
+1.  选择 **“终止终端”** 或者 **“回收站”** 图标以关闭当前打开的终端和所有关联的进程。
+
+1.  在 Azure 门户的“导航”窗格中，选择 **“资源组”** 链接。
+
+1.  在 **“资源组”** 边栏选项卡中，找到并选择你之前在本实验室中创建的 **“AsyncProcessor”** 资源组。
+
+1.  在 **“AsyncProcessor”** 边栏选项卡中，选择你之前在本实验室中创建的 “**asyncstor*[yourname]***” 存储帐户。
+
+1.  在 **“存储帐户”** 边栏选项卡中，选择 **“概述”**。 
+
+1.  在 **“概述”** 部分，选择 **“在资源管理器中打开”**。
+
+1.  在 **“Azure 存储资源管理器”** 窗口中，选择 **“打开 Azure 存储资源管理器”**。
+
+    > **备注**：如果这是你第一次使用门户打开存储资源管理器，可能会提示你允许门户未来打开这些类型的链接。你应接受该提示。
+
+1.  在 **“Azure 存储资源管理器”** 应用程序中，你会注意到要求登录到 Azure 帐户的提示。通过执行以下操作登录：
+
+    1.  在弹出对话框中，选择 **“登录”**。
+
+    1.  在 **“连接到 Azure 存储”** 窗口中，选择 **“添加 Azure 帐户”**，在 **“Azure 环境”** 列表中选择 **“Azure”**，然后选择 **“下一步”**。
+
+    1.  在 **“登录到你的帐户”** 弹出窗口中，输入你的 Microsoft 帐户的电子邮件地址，然后选择 **“下一步”**。
+
+    1.  仍在 **“登录到你的帐户”** 弹出窗口，输入 Microsoft 帐户的密码，然后选择 **“登录”**。
+
+    1.  在 **“帐户管理”** 窗格中，选择 **“应用”**。
+
+    1.  你发现你已返回到填充了订阅信息的 **“资源管理器”** 窗格。
+
+1.  在 **“Azure 存储资源管理器”** 应用程序的 **“资源管理器”** 窗格中，找到并展开之前在本实验室中创建的 “**asyncstor*[yourname]***” 存储帐户。
+
+1.  在 “**asyncstor*[yourname]***” 存储帐户中，找到并展开 **“队列”** 节点。
+
+1.  在 **“队列”** 节点中，使用 .NET 代码打开之前在本实验室中创建的 **messagequeue** 队列。
+
+1.  在 **“messagequeue”** 选项卡中，选择 **“添加消息”**。
+
+1.  在 **“添加消息”** 弹出窗口中，执行以下操作：
+
+    1.  在 **“消息正文”** 文本框中输入值 **“Hello World”**。
+
+    1.  在 **“到期时间”** 文本框中，输入值 **“12”**。
+
+    1.  在 **“到期时间”** 下拉列表中，选择 **“小时”**。
+
+    1.  确保未选中 **“以 Base 64 格式编码消息正文”** 复选框。
+
+    1.  选择 **“确定”**。
+
+1.  返回到 **“Visual Studio Code”** 窗口，右键单击或激活“资源管理器”窗格的快捷菜单，然后选择 **“在终端中打开”**。
+
+1.  在打开的命令提示符处，输入以下命令并按 “Enter” 键，以运行 .NET Web 应用程序：
+
+    ```
+    dotnet run
+    ```
+
+    > **备注**：如果出现任何生成错误，请查看位于 **“Allfiles (F):\\Allfiles\\Labs\\10\\Solution\\MessageProcessor”** 文件夹中的 **“Program.cs”** 文件。
+
+1.  观察当前运行的控制台应用程序的输出。输出包括你创建的新消息。
+
+1.  选择 **“终止终端”** 或者 **“回收站”** 图标以关闭当前打开的终端和所有关联的进程。
+
+#### 任务 3：删除加入队列的消息
+
+1.  在 **“Visual Studio Code”** 窗口的“资源管理器”窗格中，打开 **Program.cs** 文件。
+
+1.  在 **Program.cs** 文件的代码编辑器选项卡上，找到 **Main** 方法中现有的 **foreach** 循环：
+
+    ```
+    foreach(QueueMessage message in messages?.Value)
+    {
+        Console.WriteLine($"[{message.MessageId}]\t{message.MessageText}");
+    }
+    ```
+
+1.  在 **foreach** 循环中，添加一行新代码以调用 **QueueMessage** 类的 **DeleteMessageAsync** 方法，并传递 *message* 变量的 **MessageId** 和 **PopReceipt** 属性：
+
+    ```
+    await client.DeleteMessageAsync(message.MessageId, message.PopReceipt);
+    ```
+
+1.  查看 **Main** 方法，该方法现在应包括：
+
+    ```
+    public static async Task Main(string[] args)
+    {
+        // Existing code removed for brevity
+        
+        foreach(QueueMessage message in messages?.Value)
+        {
+            Console.WriteLine($"[{message.MessageId}]\t{message.MessageText}");
+            await client.DeleteMessageAsync(message.MessageId, message.PopReceipt);
+        }
+    }
+    ```
+
+1.  **保存** **Program.cs** 文件。
+
+1.  在 **“Visual Studio Code”** 窗口中，右键单击或激活“资源管理器”窗格的快捷菜单，然后选择 **“在终端中打开”**。
+
+1.  在打开的命令提示符处，输入以下命令并按 “Enter” 键，以运行 .NET Web 应用程序：
+
+    ```
+    dotnet run
+    ```
+
+    > **备注**：如果出现任何生成错误，请查看位于 **“Allfiles (F):\\Allfiles\\Labs\\10\\Solution\\MessageProcessor”** 文件夹中的 **“Program.cs”** 文件。
+
+1.  观察当前运行的控制台应用程序的输出。之前在实验室中创建的消息仍然存在，因为先前没有将其删除。
+
+1.  选择 **“终止终端”** 或者 **“回收站”** 图标以关闭当前打开的终端和所有关联的进程。
+
+1.  返回“存储资源管理器”，然后查找之前在本实验室中创建的 “**asyncstor*[yourname]***” 存储帐户。
+
+1.  在 “**asyncstor*[yourname]***” 存储帐户中，找到并展开 **“队列”** 节点。
+
+1.  在 **“队列”** 节点中，使用 .NET 代码打开之前在本实验室中创建的 **messagequeue** 队列。
+
+1.  观察队列中的空消息列表。
+
+    > **备注**：可能需要刷新队列。
 
 #### 回顾
 
-在本练习中，使用 .NET 控制台应用程序将新事件发布到事件网格主题上。
+在本练习中，使用 .NET 库从存储队列中读取和删除了现有消息。
 
-### 练习 4：清理订阅 
+### 练习 4：使用 .NET 对新消息进行排队
 
-#### 任务 1：打开 Azure Cloud Shell
+#### 任务 1：编写代码以创建队列消息
 
-1.  在 Azure 门户中，选择 **“Cloud Shell”** 图标以打开一个新的 shell 实例。
+1.  在 **“Visual Studio Code”** 窗口的“资源管理器”窗格中，打开 **Program.cs** 文件。
 
-    > **注意**： **Cloud Shell** 图标使用大于符号 (\>) 和下划线字符 (\_) 表示。
+1.  在 **Program.cs** 文件的代码编辑器选项卡上，找到现有 **Main** 方法。
 
-1.  如果这是你第一次使用订阅打开 Cloud Shell，你可以使用 **欢迎来到 Azure Cloud Shell 向导** 来配置 Cloud Shell 的初次使用。在向导中执行以下操作：
+1.  在 **Main** 方法中，添加一行新代码以呈现“新消息”部分的标题：
+
+    ```
+    Console.WriteLine($"---New Messages---");
+    ```
+
+1.  在 **Main** 方法中，执行以下操作，通过异步方式创建和发送消息：
+
+    1.  添加以下代码行，以创建一个值为 **Hi, Developer!** 的新字符串变量 *greeting*：
+
+        ```
+        string greeting = "Hi, Developer!";        
+        ```
+
+    1.  添加以下代码行，以使用 *greeting* 变量作为参数来调用 **QueueClient** 类的 **SendMessageAsync** 方法
+
+        ```
+        await client.SendMessageAsync(Convert.ToBase64String(Encoding.UTF8.GetBytes(greeting)));        
+        ```
+
+    1.  添加以下代码行以呈现发送的消息内容：
+
+        ```
+        Console.WriteLine($"Sent Message:\t{greeting}");        
+        ```
+
+1.  查看 **Main** 方法，该方法现在应包括：
+
+    ```
+    public static async Task Main(string[] args)
+    {
+        // Existing code removed for brevity
+        
+        Console.WriteLine($"---New Messages---");
+        string greeting = "Hi, Developer!";
+        await client.SendMessageAsync(Convert.ToBase64String(Encoding.UTF8.GetBytes(greeting)));
+        
+        Console.WriteLine($"Sent Message:\t{greeting}");
+    }
+    ```
+
+1.  **保存** **Program.cs** 文件。
+
+1.  在 **“Visual Studio Code”** 窗口中，右键单击或激活“资源管理器”窗格的快捷菜单，然后选择 **“在终端中打开”**。
+
+1.  在打开的命令提示符处，输入以下命令并按 “Enter” 键，以运行 .NET Web 应用程序：
+
+    ```
+    dotnet run
+    ```
+
+    > **备注**：如果出现任何生成错误，请查看位 于 **“Allfiles (F):\\Allfiles\\Labs\\10\\Solution\\MessageProcessor”** 文件夹中的 **“Program.cs”** 文件。
+
+1.  观察当前运行的控制台应用程序的输出。发送的新消息内容应该会在输出中。
+
+1.  选择 **“终止终端”** 或者 **“回收站”** 图标以关闭当前打开的终端和所有关联的进程。
+
+#### 任务 2：使用存储资源管理器查看排队的消息
+
+1.  返回“存储资源管理器”，然后查找之前在本实验室中创建的 “**asyncstor*[yourname]***” 存储帐户。
+
+1.  在 “**asyncstor*[yourname]***” 存储帐户中，找到并展开 **“队列”** 节点。
+
+1.  在 **“队列”** 节点中，使用 .NET 代码打开之前在本实验室中创建的 **messagequeue** 队列。
+
+1.  查看队列消息列表中的单条新消息。
+
+    > **备注**：可能需要刷新队列。
+
+#### 回顾
+
+在本练习中，通过使用存储队列的 .NET 库在队列中创建了新消息。
+
+### 练习 5：清理订阅 
+
+#### 任务 1：打开 Azure Cloud Shell 并列出资源组
+
+1.  在 Azure 门户的“导航”窗格中，选择 **“Cloud Shell”** 图标以打开一个新的 shell 实例。
+
+    > **备注**：**“Cloud Shell”** 图标使用大于符号 (\>) 和下划线字符 (\_) 表示。
+
+1.  如果这是你第一次使用订阅打开 Cloud Shell，则可以使用 **“欢迎使用 Azure Cloud Shell 向导”** 来配置 Cloud Shell，以便首次使用。在向导中执行以下操作：
     
-    1.  对话框提示你在开始使用 shell 前，先新建一个存储帐户。接受默认设置并选择 **“创建存储”**。
+    -   对话框提示你配置 shell。选择 **“Bash”**，查看选定的订阅，然后选择 **“创建存储”**。 
 
-    > **注意**：等待 Cloud Shell 完成首次设置过程后，再继续本实验室内容。如果 Cloud Shell 配置选项未显示，很可能是因为你使用的是本课程实验中的现有订阅。实验是假设你使用的是新订阅的情况下编写的。
+    > **备注**：等待 Cloud Shell 完成首次设置过程后，再继续本实验室。如果 Cloud Shell 配置选项未显示，这很可能是因为你在本课程实验室中使用的是现有订阅。实验是假设你使用的是新订阅的情况下编写的。
 
 #### 任务 2：删除资源组
 
-1.  输入以下命令，然后按 Enter 删除 **PubSubEvents** 资源组：
+1.  在命令提示符处，输入以下命令，然后按 Enter 删除 **AsyncProcessor** 资源组：
 
     ```
-    az group delete --name PubSubEvents --no-wait --yes
+    az group delete --name AsyncProcessor --no-wait --yes
     ```
     
-1.  关闭门户里的 Cloud Shell 窗格。
+1.  关闭门户中的 Cloud Shell 窗格。
 
-#### 任务 3：关闭活动应用程序
+#### 任务 3：关闭活动的应用程序
 
 1.  关闭当前正在运行的 Microsoft Edge 应用程序。
 
-1.  关闭当前正在运行的“Visual Studio Code”应用程序。
+1.  关闭当前正在运行的 “Visual Studio Code” 应用程序。
 
-#### 概述
+1.  关闭当前正在运行的 “Azure 存储资源管理器”应用程序。
 
-在本练习中，你通过删除本实验室中使用的资源组清理订阅。
+#### 回顾
+
+在本练习中，你通过删除本实验室中曾经使用的资源组来清理订阅。
