@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     az204Title: 'Lab 01: 在 Azure 平台即服务 (PaaS) 产品上构建 Web 应用程序'
     az020Title: 'Lab 01: 在 Azure 平台即服务 (PaaS) 产品上构建 Web 应用程序'
