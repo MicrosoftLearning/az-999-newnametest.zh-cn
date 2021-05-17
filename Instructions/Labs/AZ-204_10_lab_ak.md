@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     az204Title: 'Lab 10: 使用 Azure 队列存储异步处理消息'
     az020Title: 'Lab 10: 使用 Azure 队列存储异步处理消息'
