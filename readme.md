@@ -1,6 +1,6 @@
 ﻿# AZ-204：为 Microsoft Azure 开发解决方案
 
-- **将学生导向**至 [https://aka.ms/az204labs](https://aka.ms/az204labs-chs) 以查看易于使用的实验室说明列表。
+- **将学生导向**至 [https://aka.ms/az204labs-chs](https://aka.ms/az204labs-chs) 以查看易于使用的实验室说明列表。 
 - **[下载最新的学生手册和 AllFiles 内容](../../releases/latest)**
 - **你是 MCT 吗？** - 请查看[适用于 MCT 的 GitHub 用户指南](https://microsoftlearning.github.io/MCT-User-Guide-ZH/)
 - **是否需要手动生成实验说明？** - 可在 [MicrosoftLearning/Docker-Build](https://github.com/MicrosoftLearning/Docker-Build) 存储库中找到说明

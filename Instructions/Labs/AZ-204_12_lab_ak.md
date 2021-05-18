@@ -1,7 +1,7 @@
 ﻿---
 lab:
-    az204Title: 'Lab 12: 使用 Azure 内容分发网络增强 Web 应用程序'
-    az204Module: 'Module 12: 在解决方案中集成缓存和内容交付'
+    az204Title: '实验室 12: 使用 Azure 内容分发网络增强 Web 应用程序'
+    az204Module: '模块 12: 在解决方案中集成缓存和内容交付'
     type: '答案要点'
 ---
 
@@ -69,7 +69,7 @@ lab:
 
     1.  在 **“资源组”** 部分，选择 **“新建”**，输入 **“MonitoredAssets”**，然后选择 **“确定”**。
 
-    1.  在 **“存储帐户名称”** 文本框中，输入**contenthost*[yourname]***。
+    1.  在 **“存储帐户名称”** 文本框中，输入**contenthost[yourname]**。
 
     1.  在 **“位置”** 下拉列表中，选择 **“(美国)美国东部”** 区域。
 
@@ -109,7 +109,7 @@ lab:
     
     1.  在 **“资源组”** 部分，选择 **“MarketingContent”**。
 
-    1.  在 **“名称”** 文本框中，输入 **landingpage*[yourname]***。
+    1.  在 **“名称”** 文本框中，输入 **landingpage[yourname]**。
 
     1.  在 **“发布”** 部分，选择 **“Docker 容器”**。
 
@@ -145,7 +145,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，选择之前在本实验室中创建的 **MarketingContent** 资源组。
 
-1.  在 **“MarketingContent”** 边栏选项卡中，选择你之前在本实验室中创建的 **landingpage*[yourname*** Web 应用。
+1.  在 **“MarketingContent”** 边栏选项卡中，选择你之前在本实验室中创建的 **landingpage*[yourname]*** Web 应用。
 
 1.  在 **“应用服务”** 边栏选项卡的 **“设置”** 部分，选择 **“属性”** 链接。
 
@@ -255,7 +255,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，选择之前在本实验室中创建的 **MarketingContent** 资源组。
 
-1.  在 **“MarketingContent”** 边栏选项卡中，选择你之前在本实验室中创建的 **contenthost*[yourname]*** 存储帐户。
+1.  在 **“MarketingContent”** 边栏选项卡中，选择你之前在本实验室中创建的 **contenthost[yourname]** 存储帐户。
 
 1.  在 **“存储帐户”** 边栏选项卡中，选择 **“Blob 服务”** 部分的 **“容器”** 链接。
 
@@ -293,11 +293,11 @@ lab:
 
 1.  在 **“添加终结点”** 弹出对话框中，执行以下操作：
 
-    1.  在 **“名称”** 文本框中，输入 **cdnmedia*[yourname]***。
+    1.  在 **“名称”** 文本框中，输入 **cdnmedia[yourname]**。
 
     1.  在 **“源类型”** 下拉列表中，选择 **“存储”**。
 
-    1.  在 **“源主机名”** 下拉列表中，选择你之前在本实验室中为存储帐户创建的 **contenthost*[yourname]*.Blob.core.windows.net** 选项。
+    1.  在 **“源主机名”** 下拉列表中，选择你之前在本实验室中为存储帐户创建的 **contenthost[yourname].blob.core.windows.net** 选项。
 
     1.  在 **“源路径”** 文本框中，输入 **“/media”**。
 
@@ -313,11 +313,11 @@ lab:
 
 1.  在 **“添加终结点”** 弹出对话框中，执行以下操作：
 
-    1.  在 **“名称”** 文本框中，输入 **cdnvideo*[yourname]***。
+    1.  在 **“名称”** 文本框中，输入 **cdnvideo[yourname]**。
 
     1.  在 **“源类型”** 下拉列表中，选择 **“存储”**。
 
-    1.  在 **“源主机名”** 下拉列表中，选择你之前在本实验室中为存储帐户创建的 **contenthost*[yourname]*.blob.core.windows.net** 选项。
+    1.  在 **“源主机名”** 下拉列表中，选择你之前在本实验室中为存储帐户创建的 **contenthost[yourname].blob.core.windows.net** 选项。
 
     1.  在 **“源路径”** 文本框中，输入 **“/video”**。
 
@@ -333,11 +333,11 @@ lab:
 
 1.  在 **“添加终结点”** 弹出对话框中，执行以下操作：
 
-    1.  在 **“名称”** 文本框中，输入**cdnweb*[yourname]***。
+    1.  在 **“名称”** 文本框中，输入**cdnweb[yourname]**。
 
     1.  在 **“源类型”** 下拉列表中，选择 **“Web 应用”**。
 
-    1.  在 **“源主机名”** 下拉列表中，为你之前在本实验室中创建的 Web 应用选择 **landingpage*[yourname]*.azurewebsites.net** 选项。
+    1.  在 **“源主机名”** 下拉列表中，为你之前在本实验室中创建的 Web 应用选择 **landingpage[yourname].azurewebsites.net** 选项。
 
     1.  将 **“源路径”** 文本框设置为其默认值。
 
@@ -361,7 +361,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，选择之前在本实验室中创建的 **MarketingContent** 资源组。
 
-1.  在 **“MarketingContent”** 边栏选项卡中，选择你之前在本实验室中创建的 **landingpage*[yourname]*** Web 应用。
+1.  在 **“MarketingContent”** 边栏选项卡中，选择你之前在本实验室中创建的 **landingpage[yourname]** Web 应用。
 
 1.  在 **“应用服务”** 边栏选项卡中，选择 **“浏览”**。将打开一个新的浏览器窗口或选项卡，并返回到当前网站。
 
@@ -375,7 +375,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，选择之前在本实验室中创建的 **MarketingContent** 资源组。
 
-1.  在 **“MarketingContent”** 边栏选项卡中，选择你之前在本实验室中创建的 **contenthost*[yourname]*** 存储帐户。
+1.  在 **“MarketingContent”** 边栏选项卡中，选择你之前在本实验室中创建的 **contenthost[yourname]** 存储帐户。
 
 1.  在 **“存储帐户”** 边栏选项卡中，选择 **“Blob 服务”** 部分的 **“容器”** 链接。
 
@@ -429,7 +429,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，选择之前在本实验室中创建的 **MarketingContent** 资源组。
 
-1.  在 **“MarketingContent”** 边栏选项卡中，选择你之前在本实验室中创建的 **landingpage*[yourname]*** Web 应用。
+1.  在 **“MarketingContent”** 边栏选项卡中，选择你之前在本实验室中创建的 **landingpage[yourname]** Web 应用。
 
 1.  在 **“应用服务”** 边栏选项卡的 **“设置”** 部分，选择 **“配置”** 链接。
 
@@ -439,7 +439,7 @@ lab:
     
     1.  在 **“添加/编辑应用程序设置”** 弹出窗口中的 **“名称”** 文本框，输入 **“CDNMediaEndpoint”**。
     
-    1.  在 **“值”** 文本框中，输入你之前在本实验记录的 **contenthost*[yourname]*** 存储帐户中的 **“media”** 容器的 **“URI”** 值。
+    1.  在 **“值”** 文本框中，输入你之前在本实验记录的 **contenthost[yourname]** 存储帐户中的 **“media”** 容器的 **“URI”** 值。
     
     1.  将 **“部署插槽设置”** 文本框设置为默认值，然后选择 **“确定”** 以关闭弹出窗口。
     
@@ -447,7 +447,7 @@ lab:
     
     1.  在 **“添加/编辑应用程序设置”** 弹出窗口的 **“名称”** 文本框中，输入 **“CDNVideoEndpoint”**。
     
-    1.  在 **“值”** 文本框中，输入你之前在本实验室记录的 **contenthost*[yourname]*** 存储帐户中 **“视频”** 容器的 **“URI”** 值。
+    1.  在 **“值”** 文本框中，输入你之前在本实验室记录的 **contenthost[yourname]** 存储帐户中 **“视频”** 容器的 **“URI”** 值。
     
     1.  将 **“部署插槽设置”** 文本框设置为默认值，然后选择 **“确定”** 以关闭弹出窗口。
     
@@ -461,7 +461,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，选择之前在本实验室中创建的 **MarketingContent** 资源组。
 
-1.  在 **“MarketingContent”** 边栏选项卡中，选择你之前在本实验室中创建的 **landingpage*[yourname]*** Web 应用。
+1.  在 **“MarketingContent”** 边栏选项卡中，选择你之前在本实验室中创建的 **landingpage[yourname]** Web 应用。
 
 1.  在 **“应用服务”** 边栏选项卡中，选择 **“重启”**。此操作将重新启动 Web 应用。
 
@@ -487,13 +487,13 @@ lab:
 
 1.  在 **“MarketingContent”** 边栏选项卡中，选择你之前在本实验室中创建的 **“contentdeliverynetwork”** CDN 配置文件。
 
-1.  在 **“CDN 配置文件”** 边栏选项卡上，选择 **cdnmedia*[yourname]*** 终结点。
+1.  在 **“CDN 配置文件”** 边栏选项卡上，选择 **cdnmedia[yourname]** 终结点。
 
 1.  在 **“终结点”** 边栏选项卡上，复制 **“终结点主机名”** 文本框的值。你稍后将在实验室中使用此值。
 
 1.  关闭 **“终结点”** 边栏选项卡。
 
-1.  返回到 **“CDN 配置文件”** 边栏选项卡，选择 **cdnvideo*[yourname]*** 终结点。
+1.  返回到 **“CDN 配置文件”** 边栏选项卡，选择 **cdnvideo[yourname]** 终结点。
 
 1.  在 **“终结点”** 边栏选项卡上，复制 **“终结点主机名”** 文本框的值。你稍后将在实验室中使用此值。
 
@@ -501,21 +501,21 @@ lab:
 
 #### 任务 2：测试多媒体内容
 
-1.  通过将之前在实验室中复制的 “**cdnmedia*[yourname]***” 终结点的 **“终结点主机名”** URL 与相对路径 **“/campus.jpg”** 合并，为 **“campus.jpg”** 资源构建 URL。
+1.  通过将之前在实验室中复制的 “**cdnmedia[yourname]**” 终结点的 **“终结点主机名”** URL 与相对路径 **“/campus.jpg”** 合并，为 **“campus.jpg”** 资源构建 URL。
 
-    > **备注**：例如，如果你的 **“终结点主机名”** URL 是 **https://cdnmediastudent.azureedge.net/**，则新建的 URL 将是 **https://cdnmediastudent.azureedge.net/campus.jpg**。
+    > **备注**：例如，如果你的 **“终结点主机名”** URL 是 **https://cdnmediastudent.azureedge.net/** ，则新建的 URL 将是 **https://cdnmediastudent.azureedge.net/campus.jpg**。
 
-1.  通过将之前在实验室中复制的 **cdnmedia*[yourname]*** 终结点的 **“终结点主机名”** URL 与相对路径 **/conference.jpg** 合并，为 **conference.jpg** 资源构建 URL。
+1.  通过将之前在实验室中复制的 **cdnmedia[yourname]** 终结点的 **“终结点主机名”** URL 与相对路径 **/conference.jpg** 合并，为 **conference.jpg** 资源构建 URL。
 
-    > **备注**：例如，如果你的**终结点主机名** URL 为 **https://cdnmediastudent.azureedge.net/**，则新建的 URL 为 **https://cdnmediastudent.azureedge.net/conference.jpg**。
+    > **备注**：例如，如果你的**终结点主机名** URL 为 **https://cdnmediastudent.azureedge.net/** ，则新建的 URL 为 **https://cdnmediastudent.azureedge.net/conference.jpg**。
 
-1.  通过将之前在实验室中复制的 **cdnmedia*[yourname]*** 终结点的**终结点主机名** URL 与相对路径 **/poster.jpg** 合并，为 **poster.jpg** 资源构建 URL。
+1.  通过将之前在实验室中复制的 **cdnmedia[yourname]** 终结点的**终结点主机名** URL 与相对路径 **/poster.jpg** 合并，为 **poster.jpg** 资源构建 URL。
 
-    > **备注**：例如，如果你的**终结点主机名** URL 为 **https://cdnmediastudent.azureedge.net/**，则新建的 URL 为 **https://cdnmediastudent.azureedge.net/poster.jpg**。
+    > **备注**：例如，如果你的**终结点主机名** URL 为 **https://cdnmediastudent.azureedge.net/** ，则新建的 URL 为 **https://cdnmediastudent.azureedge.net/poster.jpg**。
 
-1.  通过将你之前在实验室中复制的 **cdnvideo*[yourname]*** 终结点的**终结点主机名** URL 与相对路径 **/welcome.mp4** 合并，为 **Welcome.mp4** 资源构建 URL。
+1.  通过将你之前在实验室中复制的 **cdnvideo[yourname]** 终结点的**终结点主机名** URL 与相对路径 **/welcome.mp4** 合并，为 **Welcome.mp4** 资源构建 URL。
 
-    > **备注**：例如，如果你的**终结点主机名** URL 为 **https://cdnvideostudent.azureedge.net/**，则新构建的 URL 为 **https://cdnvideostudent.azureedge.net/welcome.mp4**。
+    > **备注**：例如，如果你的**终结点主机名** URL 为 **https://cdnvideostudent.azureedge.net/** ，则新构建的 URL 为 **https://cdnvideostudent.azureedge.net/welcome.mp4**。
 
 1.  在任务栏上，右键单击 **“Microsoft Edge”** 图标或激活快捷菜单，然后选择 **“新建窗口”**。
 
@@ -537,7 +537,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，选择之前在本实验室中创建的 **MarketingContent** 资源组。
 
-1.  在 **“MarketingContent”** 边栏选项卡中，选择你之前在本实验室中创建的 **landingpage*[yourname]*** Web 应用。
+1.  在 **“MarketingContent”** 边栏选项卡中，选择你之前在本实验室中创建的 **landingpage[yourname]** Web 应用。
 
 1.  在 **“应用服务”** 边栏选项卡的 **“设置”** 部分，选择 **“配置”** 链接。
 
@@ -547,11 +547,11 @@ lab:
     
     1.  选择现有的 **“CDNMediaEndpoint”** 应用程序设置。
 
-    1.  在 **“添加/编辑应用程序设置”** 弹出对话框中，通过从之前在实验室中复制的 **cdnmedia*[yourname]*** 终结点输入**终结点主机名** URL 来更新 **“值”** 文本框，然后选择 **“确定”**。
+    1.  在 **“添加/编辑应用程序设置”** 弹出对话框中，通过从之前在实验室中复制的 **cdnmedia[yourname]** 终结点输入**终结点主机名** URL 来更新 **“值”** 文本框，然后选择 **“确定”**。
     
     1.  选择现有的 **CDNVideoEndpoint** 应用程序设置。
 
-    1.  在 **“添加 / 编辑应用程序设置”** 弹出对话框中，通过从你之前在实验室中复制的 **cdnmedia*[yourname]*** 终结点输入**终结点主机名** URL 来更新 **“值”** 文本框，然后选择 **“确定”**。
+    1.  在 **“添加 / 编辑应用程序设置”** 弹出对话框中，通过从你之前在实验室中复制的 **cdnmedia[yourname]** 终结点输入**终结点主机名** URL 来更新 **“值”** 文本框，然后选择 **“确定”**。
     
     1.  选择边栏选项卡上的 **“保存”** 以保留设置。  
 
@@ -571,13 +571,13 @@ lab:
 
 1.  在 **“MarketingContent”** 边栏选项卡中，选择你之前在本实验室中创建的 **“contentdeliverynetwork”** CDN 配置文件。
 
-1.  在 **“CDN 配置文件”** 边栏选项卡上，选择 “**cdnweb*[yourname]***”终结点。
+1.  在 **“CDN 配置文件”** 边栏选项卡上，选择 “**cdnweb[yourname]**”终结点。
 
 1.  在 **“终结点”** 边栏选项卡上，复制 **“终结点主机名”** 文本框的值。
 
 1.  在任务栏上，右键单击 **“Microsoft Edge”** 图标或激活快捷菜单，然后选择 **“新建窗口”**。
 
-1.  在新浏览器窗口中，转到 **cdnweb*[yourname]*** 终结点的**终结点主机名** URL。
+1.  在新浏览器窗口中，转到 **cdnweb[yourname]** 终结点的**终结点主机名** URL。
 
 1.  参考所有使用内容分发网络提供的网站和多媒体内容。
 
@@ -611,7 +611,7 @@ lab:
 
 #### 任务 3：关闭活动的应用程序
 
-1.     当前正在运行的 Microsoft Edge 应用程序。
+1.  当前正在运行的 Microsoft Edge 应用程序。
 
 #### 回顾
 

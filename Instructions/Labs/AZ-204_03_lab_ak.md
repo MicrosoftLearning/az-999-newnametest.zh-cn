@@ -1,9 +1,9 @@
 ﻿---
 lab:
-    az204Title: 'Lab 03: 使用适用于 .NET 的 Azure 存储 SDK 检索 Azure 存储资源和元数据'
-    az020Title: 'Lab 03: 使用适用于 .NET 的 Azure 存储 SDK 检索 Azure 存储资源和元数据'
-    az204Module: 'Module 03: 开发使用 Blob 存储的解决方案'
-    az020Module: 'Module 03: 开发使用 Blob 存储的解决方案'
+    az204Title: '实验室 03: 使用适用于 .NET 的 Azure 存储 SDK 检索 Azure 存储资源和元数据'
+    az020Title: '实验室 03: 使用适用于 .NET 的 Azure 存储 SDK 检索 Azure 存储资源和元数据'
+    az204Module: '模块 03: 开发使用 Blob 存储的解决方案'
+    az020Module: '模块 03: 开发使用 Blob 存储的解决方案'
     type: '答案要点'
 ---
 
@@ -72,7 +72,7 @@ lab:
 
     1.  在 **“资源组”** 部分，选择 **“新建”**，输入 **“StorageMedia”**，然后选择 **“确定”**。
 
-    1.  在 **“存储帐户名称”** 文本框中，输入 **mediastor*[yourname]***。
+    1.  在 **“存储帐户名称”** 文本框中，输入 **mediastor[yourname]**。
 
     1.  在 **“位置”** 下拉列表中，选择 **“(美国)美国东部”** 区域。
 
@@ -94,7 +94,7 @@ lab:
 
 1.  在 **“所有服务”** 边栏选项卡中，选择 **“存储帐户”**。
 
-1.  在 **“存储帐户”** 边栏选项卡，选择 **mediastor*[yourname]*** 存储帐户实例。
+1.  在 **“存储帐户”** 边栏选项卡，选择 **mediastor[yourname]** 存储帐户实例。
 
 1.  在 **“存储帐户”** 边栏选项卡中，找到 **“设置”** 部分并选择 **“属性”** 链接。
 
@@ -124,7 +124,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，找到并选择你之前在本实验室中创建的 **“StorageMedia”** 资源组。
 
-1.  在 **“StorageMedia”** 边栏选项卡中，选择你之前在本实验室中创建的 **mediastor*[yourname]*** 存储帐户。
+1.  在 **“StorageMedia”** 边栏选项卡中，选择你之前在本实验室中创建的 **mediastor[yourname]** 存储帐户。
 
 1.  在 **“存储帐户”** 边栏选项卡中，选择 **“Blob 服务”** 部分的 **“容器”** 链接。
 
@@ -152,7 +152,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，找到并选择你之前在本实验室中创建的 **“StorageMedia”** 资源组。
 
-1.  在 **“StorageMedia”** 边栏选项卡中，选择你之前在本实验室中创建的 **mediastor*[yourname]*** 存储帐户。
+1.  在 **“StorageMedia”** 边栏选项卡中，选择你之前在本实验室中创建的 **mediastor[yourname]** 存储帐户。
 
 1.  在 **“存储帐户”** 边栏选项卡中，选择 **“Blob 服务”** 部分的 **“容器”** 链接。
 
@@ -639,7 +639,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，找到并选择你之前在本实验室中创建的 **“StorageMedia”** 资源组。
 
-1.  在 **“StorageMedia”** 边栏选项卡中，选择你之前在本实验室中创建的 **mediastor*[yourname]*** 存储帐户。
+1.  在 **“StorageMedia”** 边栏选项卡中，选择你之前在本实验室中创建的 **mediastor[yourname]** 存储帐户。
 
 1.  在 **“存储帐户”** 边栏选项卡中，选择 **“Blob 服务”** 部分的 **“容器”** 链接。
 
@@ -679,7 +679,7 @@ lab:
     await Console.Out.WriteLineAsync($"Blob Found:\t{blob.Name}");
     ```
 
-1.  在 **GetBlobAsync** 方法中，输入以下代码，返回名为 **blob** 的 **BlobClient**类实例，作为 ** GetBlobAsync** 方法的结果：
+1.  在 **GetBlobAsync** 方法中，输入以下代码，返回名为 **blob** 的 **BlobClient**类实例，作为 **GetBlobAsync** 方法的结果：
 
     ```
     return blob;
@@ -750,7 +750,7 @@ lab:
 
 1.  观察当前运行的控制台应用程序的输出。更新后的输出包括在线访问 Blob 的最终 URL。记录本 URL 的值，以便稍后在本实验室中使用。
 
-    > **备注**：该 URL 可能类似于以下字符串：**https://mediastor*[yourname]*.blob.core.windows.net/vector-graphics/graph.svg**
+    > **备注**：该 URL 可能类似于以下字符串：**https://mediastor[yourname].blob.core.windows.net/vector-graphics/graph.svg**
 
 1.  选择 **“终止终端”** 或者 **“回收站”** 图标以关闭当前打开的终端和所有关联的进程。
 
@@ -792,7 +792,7 @@ lab:
 
 #### 任务 3：关闭活动的应用程序
 
-1.     当前正在运行的 Microsoft Edge 应用程序。
+1.  当前正在运行的 Microsoft Edge 应用程序。
 
 #### 回顾
 

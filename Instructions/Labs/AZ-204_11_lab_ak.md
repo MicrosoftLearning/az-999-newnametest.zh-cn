@@ -1,9 +1,9 @@
 ﻿---
 lab:
-    az204Title: 'Lab 11: 监视部署到 Azure 的服务'
-    az020Title: 'Lab 11: 监视部署到 Azure 的服务'
-    az204Module: 'Module 11: 监视和优化 Azure 解决方案'
-    az020Module: 'Module 11: 监视和优化 Azure 解决方案'
+    az204Title: '实验室 11: 监视部署到 Azure 的服务'
+    az020Title: '实验室 11: 监视部署到 Azure 的服务'
+    az204Module: '模块 11: 监视和优化 Azure 解决方案'
+    az020Module: '模块 11: 监视和优化 Azure 解决方案'
     type: '答案要点'
 ---
 
@@ -78,7 +78,7 @@ lab:
     
     1.  在 **“资源组”** 部分，选择 **“新建”**，输入 **“MonitoredAssets”**，然后选择 **“确定”**。
     
-    1.  在 **“名称”** 文本框中，输入 “**instrm*[yourname]***”。
+    1.  在 **“名称”** 文本框中，输入 “**instrm[yourname]**”。
     
     1.  在 **“区域”** 下拉列表中，选择 **“(美国)美国东部”** 区域。
     
@@ -96,7 +96,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，选择之前在本实验室中创建的 **“MonitoredAssets”** 资源组。
 
-1.  在 **“MonitoredAssets”** 边栏选项卡中，选择你之前在本实验室中创建的 “**instrm*[yourname]***” Application Insights 帐户。
+1.  在 **“MonitoredAssets”** 边栏选项卡中，选择你之前在本实验室中创建的 “**instrm[yourname]**” Application Insights 帐户。
 
 1.  在 **“Application Insights”** 边栏选项卡的 **“配置”** 类别中，选择 **“属性”** 链接。
 
@@ -124,7 +124,7 @@ lab:
     
     1.  在 **“资源组”** 下拉列表中，选择 **MonitoredAssets**。
     
-    1.  在 **“名称”** 文本框中，输入 “***smpapi\***[yourname]***”。
+    1.  在 **“名称”** 文本框中，输入 “**smpapi[yourname]**”。
 
     1.  在 **“发布”** 部分，选择 **“代码”**。
 
@@ -144,7 +144,7 @@ lab:
 
     1.  在 **“启用 Application Insights”** 部分，选择 **“是”**。
 
-    1.  在 **“Application Insights”** 下拉列表中，选择你之前在本实验室中创建的 **instrm*[yourname]*** Application Insights 帐户。
+    1.  在 **“Application Insights”** 下拉列表中，选择你之前在本实验室中创建的 **instrm[yourname]** Application Insights 帐户。
 
     1.  选择 **“查看 + 创建”**。
 
@@ -158,7 +158,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，选择之前在本实验室中创建的 **“MonitoredAssets”** 资源组。
 
-1.  在 **“MonitoredAssets”** 边栏选项卡中，选择你之前在本实验室中创建的 “***smpapi\***[yourname]***” Web 应用。
+1.  在 **“MonitoredAssets”** 边栏选项卡中，选择你之前在本实验室中创建的 “**smpapi[yourname]**” Web 应用。
 
 1.  在 **“应用服务”** 边栏选项卡的 **“设置”** 类别，选择 **“配置”** 链接。
 
@@ -332,7 +332,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，找到并选择你之前在本实验室中创建的 **“MonitoredAssets”** 资源组。
 
-1.  在 **“MonitoredAssets”** 边栏选项卡中，选择你之前在本实验室中创建的 “**instrm*[yourname]***” Application Insights 帐户。
+1.  在 **“MonitoredAssets”** 边栏选项卡中，选择你之前在本实验室中创建的 “**instrm[yourname]**” Application Insights 帐户。
 
 1.  在 **“Application Insights”** 边栏选项卡中心的磁贴中，找到显示的指标。具体来说，找到已经发生的服务器请求数量和平均服务器响应时间。
 
@@ -412,13 +412,13 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，选择之前在本实验室中创建的 **“MonitoredAssets”** 资源组。
 
-1.  在 **“MonitoredAssets”** 边栏选项卡中，选择你之前在本实验室中创建的 “***smpapi\***[yourname]***” Web 应用。
+1.  在 **“MonitoredAssets”** 边栏选项卡中，选择你之前在本实验室中创建的 “**smpapi[yourname]**” Web 应用。
 
 1.  在 **“应用服务”** 边栏选项卡中，选择 **“浏览”**。将打开一个新的浏览器窗口或选项卡并返回 “404（未找到）” 错误。
 
 1.  在浏览器地址栏中，通过将后缀 **/weatherforecast** 添加到当前 URL 的末尾并按 Enter 来更新 URL。
 
-    > **备注**：例如，如果你的 URL 为 https://smpapistudent.azurewebsites.net，则新的 URL 为 https://smpapistudent.azurewebsites.net/weatherforecast。
+    > **备注**：例如，如果你的 URL 为 https://smpapistudent.azurewebsites.net， 则新的 URL 为 https://smpapistudent.azurewebsites.net/weatherforecast。
 
 1.  找到作为使用 API 的结果返回的 JavaScript 对象表示法 (JSON) 数组。
 
@@ -430,7 +430,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，选择之前在本实验室中创建的 **“MonitoredAssets”** 资源组。
 
-1.  在 **“MonitoredAssets”** 边栏选项卡中，选择你之前在本实验室中创建的 “***smpapi\***[yourname]***” Web 应用。
+1.  在 **“MonitoredAssets”** 边栏选项卡中，选择你之前在本实验室中创建的 “**smpapi[yourname]**” Web 应用。
 
 1.  在 **“应用服务”** 边栏选项卡中，选择 **“Application Insights”**。
 
@@ -458,7 +458,7 @@ lab:
 
 1.  在浏览器地址栏中，通过将后缀 **/weatherforecast** 添加到当前 URL 的末尾并按 Enter 来更新 URL。
 
-    > **备注**：例如，如果你的 URL 为 https://smpapistudent.azurewebsites.net，则新的 URL 为 https://smpapistudent.azurewebsites.net/weatherforecast。
+    > **备注**：例如，如果你的 URL 为 https://smpapistudent.azurewebsites.net， 则新的 URL 为 https://smpapistudent.azurewebsites.net/weatherforecast。
 
 1.  观察作为使用 API 结果返回的 JSON 数组。
 
@@ -474,7 +474,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，找到并选择你之前在本实验室中创建的 **“MonitoredAssets”** 资源组。
 
-1.  在 **“MonitoredAssets”** 边栏选项卡中，选择你之前在本实验室中创建的 “**instrm*[yourname]***” Application Insights 帐户。
+1.  在 **“MonitoredAssets”** 边栏选项卡中，选择你之前在本实验室中创建的 “**instrm[yourname]**” Application Insights 帐户。
 
 1.  在 **“Application Insights”** 边栏选项卡中心的磁贴中，找到显示的指标。具体来说，找到已经发生的服务器请求数量和平均服务器响应时间。
 
@@ -488,7 +488,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，找到并选择你之前在本实验室中创建的 **“MonitoredAssets”** 资源组。
 
-1.  在 **“MonitoredAssets”** 边栏选项卡中，选择你之前在本实验室中创建的 “**instrm*[yourname]***” Application Insights 帐户。
+1.  在 **“MonitoredAssets”** 边栏选项卡中，选择你之前在本实验室中创建的 “**instrm[yourname]**” Application Insights 帐户。
 
 1.  在 **“Application Insights”** 边栏选项卡中，选择 **“调查”** 部分中的 **“实时指标流”**。
 

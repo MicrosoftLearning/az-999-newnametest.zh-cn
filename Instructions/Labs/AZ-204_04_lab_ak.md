@@ -1,9 +1,9 @@
 ﻿---
 lab:
-    az204Title: 'Lab 04: 构造多语言数据解决方案'
-    az020Title: 'Lab 04: 构造多语言数据解决方案'
-    az204Module: 'Module 04: 开发使用 Cosmos DB 存储的解决方案'
-    az020Module: 'Module 04: 开发使用 Cosmos DB 存储的解决方案'
+    az204Title: '实验室 04: 构造多语言数据解决方案'
+    az020Title: '实验室 04: 构造多语言数据解决方案'
+    az204Module: '模块 04: 开发使用 Cosmos DB 存储的解决方案'
+    az020Module: '模块 04: 开发使用 Cosmos DB 存储的解决方案'
     type: '答案要点'
 ---
 
@@ -74,7 +74,7 @@ lab:
     
     1.  在 **“资源组”** 部分，选择 **“新建”**，输入 **“PolyglotData”**，然后选择 **“确定”**。
     
-    1.  在 **“服务器名称”** 文本框中，输入 **polysqlsrvr*[yourname]***。
+    1.  在 **“服务器名称”** 文本框中，输入 **polysqlsrvr[yourname]**。
     
     1.  在 **“位置”** 下拉列表中，选择 **“(美国)美国东部”**。
     
@@ -144,7 +144,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，找到并选择你之前在本实验室中创建的 **“PolyglotData”** 资源组。
 
-1.  在 **“PolyglotData”** 边栏选项卡中，选择你之前在本实验室中创建的 **polycosmos*[yourname]*** Azure Cosmos DB 帐户。
+1.  在 **“PolyglotData”** 边栏选项卡中，选择你之前在本实验室中创建的 **polycosmos[yourname]** Azure Cosmos DB 帐户。
 
 1.  在 **“Azure Cosmos DB 帐户”** 边栏选项卡中，找到边栏选项卡中的 **“设置”** 部分，然后选择 **“密钥”** 链接。
 
@@ -200,7 +200,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，找到并选择你之前在本实验室中创建的 **“PolyglotData”** 资源组。
 
-1.  在 **“PolyglotData”** 边栏选项卡中，选择你之前在本实验室中创建的 “**polystor*[yourname]***” 存储帐户。
+1.  在 **“PolyglotData”** 边栏选项卡中，选择你之前在本实验室中创建的 “**polystor[yourname]**” 存储帐户。
 
 1.  在 **“存储帐户”** 边栏选项卡中，选择边栏选项卡中 **“Blob 服务”** 部分中的 **“容器”** 链接。
 
@@ -240,7 +240,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，找到并选择你之前在本实验室中创建的 **“PolyglotData”** 资源组。
 
-1.  在 **“PolyglotData”** 边栏选项卡中，选择你之前在本实验室中创建的 **“polystor*[yourname]*”** 存储帐户。
+1.  在 **“PolyglotData”** 边栏选项卡中，选择你之前在本实验室中创建的 **“polystor[yourname]”** 存储帐户。
 
 1.  在 **“存储帐户”** 边栏选项卡中，选择边栏选项卡中 **“Blob 服务”** 部分中的 **“容器”** 链接。
 
@@ -274,7 +274,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，找到并选择你之前在本实验室中创建的 **“PolyglotData”** 资源组。
 
-1.  在 **“PolyglotData”** 边栏选项卡中，选择你之前在本实验室中创建的 “**polysqlsrvr*[yourname]***” SQL 服务器。
+1.  在 **“PolyglotData”** 边栏选项卡中，选择你之前在本实验室中创建的 “**polysqlsrvr[yourname]**” SQL 服务器。
 
 1.  在 **“SQL 服务器”** 边栏选项卡中，选择 **“导入数据库”**。
 
@@ -284,7 +284,7 @@ lab:
 
     1.  选择 **“存储”** 选项。
 
-    1.  在 **“存储帐户”** 边栏选项卡中，选择你之前在本实验室中创建的 “**polystor*[yourname]***” 存储帐户*。 
+    1.  在 **“存储帐户”** 边栏选项卡中，选择你之前在本实验室中创建的 “**polystor[yourname]**” 存储帐户。 
 
     1.  在 **“容器”** 边栏选项卡中，选择你之前在本实验室中创建的 **databases** 容器。 
 
@@ -310,7 +310,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，找到并选择你之前在本实验室中创建的 **“PolyglotData”** 资源组。
 
-1.  在 **“PolyglotData”** 边栏选项卡中，选择你之前在本实验室中创建的 “**polysqlsrvr*[yourname]***” SQL 服务器。
+1.  在 **“PolyglotData”** 边栏选项卡中，选择你之前在本实验室中创建的 “**polysqlsrvr[yourname]**” SQL 服务器。
 
 1.  在 **“SQL 服务器”** 边栏选项卡中，找到边栏选项卡中的 **“安全性”** 部分，然后选择 **“防火墙和虚拟网络”** 链接。
 
@@ -763,7 +763,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，找到并选择你之前在本实验室中创建的 **“PolyglotData”** 资源组。
 
-1.  在 **“PolyglotData”** 边栏选项卡中，选择你之前在本实验室中创建的 **polycosmos*[yourname]*** Azure Cosmos DB 帐户。
+1.  在 **“PolyglotData”** 边栏选项卡中，选择你之前在本实验室中创建的 **polycosmos[yourname]** Azure Cosmos DB 帐户。
 
 1.  在 **Azure Cosmos DB 帐户**边栏选项卡中，查找并选择边栏选项卡中的 **“数据资源管理器”** 链接。
 

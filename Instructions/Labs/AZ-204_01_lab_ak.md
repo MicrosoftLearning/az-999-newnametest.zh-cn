@@ -1,9 +1,9 @@
 ﻿---
 lab:
-    az204Title: 'Lab 01: 在 Azure 平台即服务 (PaaS) 产品上构建 Web 应用程序'
-    az020Title: 'Lab 01: 在 Azure 平台即服务 (PaaS) 产品上构建 Web 应用程序'
-    az204Module: 'Module 01: 创建 Azure 应用服务 Web 应用'
-    az020Module: 'Module 01: 创建 Azure 应用服务 Web 应用'
+    az204Title: '实验室 01: 在 Azure 平台即服务 (PaaS) 产品上构建 Web 应用程序'
+    az020Title: '实验室 01: 在 Azure 平台即服务 (PaaS) 产品上构建 Web 应用程序'
+    az204Module: '模块 01: 创建 Azure 应用服务 Web 应用'
+    az020Module: '模块 01: 创建 Azure 应用服务 Web 应用'
     type: '答案要点'
 ---
 
@@ -76,7 +76,7 @@ lab:
     
     1.  在 **“资源组”** 部分，选择 **“新建”**，输入 **ManagedPlatform**，然后选择 **“确定”**。
     
-    1.  在 **“存储帐户名称”** 文本框中，输入 **imgstor*[yourname]***。
+    1.  在 **“存储帐户名称”** 文本框中，输入 **imgstor[yourname]**。
     
     1.  在 **“位置”** 列表中，选择 **“(美国)美国东部”** 区域。
     
@@ -108,7 +108,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，选择之前在本实验室中创建的 **ManagedPlatform** 资源组。
 
-1.  在 **“ManagedPlatform”** 边栏选项卡中，选择你之前在本实验室中创建的 **imgstor*[yourname]*** 存储帐户。
+1.  在 **“ManagedPlatform”** 边栏选项卡中，选择你之前在本实验室中创建的 **imgstor[yourname]** 存储帐户。
 
 1.  在 **“存储帐户”** 边栏选项卡中，在 **“Blob 服务”** 部分，选择 **“容器”** 链接。
 
@@ -154,7 +154,7 @@ lab:
     
     1.  在 **“资源组”** 下拉列表中，选择 **ManagedPlatform**。
     
-    1.  在 **“名称”** 文本框中，输入 **imgapi*[yourname]***。
+    1.  在 **“名称”** 文本框中，输入 **imgapi[yourname]**。
 
     1.  在 **“发布”** 部分，选择 **“代码”**。
 
@@ -186,7 +186,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，选择之前在本实验室中创建的 **ManagedPlatform** 资源组。
 
-1.  在 **“ManagedPlatform”** 边栏选项卡中，选择你之前在本实验室中创建的 **imgapi*[yourname]*** Web 应用。
+1.  在 **“ManagedPlatform”** 边栏选项卡中，选择你之前在本实验室中创建的 **imgapi[yourname]** Web 应用。
 
 1.  在 **“Web 应用”** 边栏选项卡的 **“设置”** 部分，选择 **“配置”** 链接。
 
@@ -280,7 +280,7 @@ lab:
 
 1.	在 **“资源组”** 边栏选项卡中，找到并选择你之前在本实验室中创建的 **ManagedPlatform** 资源组。
 
-1.	在 **“ManagedPlatform”** 边栏选项卡中，选择你之前在本实验室中创建的 **imgapi*[yourname]*** Web 应用。
+1.	在 **“ManagedPlatform”** 边栏选项卡中，选择你之前在本实验室中创建的 **imgapi[yourname]** Web 应用。
 
 1.	在 **“Web 应用”** 边栏选项卡中，选择 **“浏览”**。
 
@@ -318,7 +318,7 @@ lab:
     
     1.  在 **“资源组”** 下拉列表中，选择 **ManagedPlatform**。
     
-    1.  在 **“名称”** 文本框中，输入 **imgweb*[yourname]***。
+    1.  在 **“名称”** 文本框中，输入 **imgweb[yourname]**。
 
     1.  在 **“发布”** 部分，选择 **“代码”**。
 
@@ -348,7 +348,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，选择之前在本实验室中创建的 **ManagedPlatform** 资源组。
 
-1.  在 **“ManagedPlatform”** 边栏选项卡中，选择你之前在本实验室中创建的 **imgweb*[yourname]*** Web 应用。
+1.  在 **“ManagedPlatform”** 边栏选项卡中，选择你之前在本实验室中创建的 **imgweb[yourname]** Web 应用。
 
 1.  在 **“Web 应用”** 边栏选项卡的 **“设置”** 部分，选择 **“配置”** 链接。
 
@@ -438,7 +438,7 @@ lab:
 
 1.	在 **“资源组”** 边栏选项卡中，选择之前在本实验室中创建的 **ManagedPlatform** 资源组。
 
-1.	在 **“ManagedPlatform”** 边栏选项卡中，选择你之前在本实验室中创建的 **imgweb*[yourname]*** Web 应用。
+1.	在 **“ManagedPlatform”** 边栏选项卡中，选择你之前在本实验室中创建的 **imgweb[yourname]** Web 应用。
 
 1.	在 **“Web 应用”** 边栏选项卡中，选择 **“浏览”**。
 

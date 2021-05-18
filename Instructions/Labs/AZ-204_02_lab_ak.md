@@ -1,13 +1,13 @@
 ﻿---
 lab:
-    az204Title: 'Lab 02: 使用 Azure Functions 实现任务处理操作逻辑'
-    az020Title: 'Lab 02: 使用 Azure Functions 实现任务处理操作逻辑'
-    az204Module: 'Module 02: 实现 Azure Functions'
-    az020Module: 'Module 02: 实现 Azure Functions'
+    az204Title: '实验室 02: 使用 Azure Functions 实现任务处理操作逻辑'
+    az020Title: '实验室 02: 使用 Azure Functions 实现任务处理操作逻辑'
+    az204Module: '模块 02: 实现 Azure Functions'
+    az020Module: '模块 02: 实现 Azure Functions'
     type: '答案要点'
 ---
 
-# 实验室 02： 使用 Azure Functions 实现任务处理逻辑
+# 实验室 02： 使用 Azure Functions 实现任务处理操作逻辑
 # 学生实验室答案要点
 
 ## Microsoft Azure 用户界面

@@ -1,9 +1,9 @@
 ﻿---
 lab:
-    az204Title: 'Lab 08: 使用 Azure 中的服务创建多层解决方案'
-    az020Title: 'Lab 08: 使用 Azure 中的服务创建多层解决方案'
-    az204Module: 'Module 08: 实现 API 管理'
-    az020Module: 'Module 08: 实现 API 管理'
+    az204Title: '实验室 08: 使用 Azure 中的服务创建多层解决方案'
+    az020Title: '实验室 08: 使用 Azure 中的服务创建多层解决方案'
+    az204Module: '模块 08: 实现 API 管理'
+    az020Module: '模块 08: 实现 API 管理'
     type: '答案要点'
 ---
 
@@ -72,7 +72,7 @@ lab:
     
     1.  在 **“资源组”** 部分，选择 **“新建”**，输入 **“ApiService”**，然后选择 **“确定”**。
     
-    1.  在 **“名称”** 文本框中，输入 **httpapi*[yourname]***。
+    1.  在 **“名称”** 文本框中，输入 **httpapi[yourname]**。
 
     1.  在 **“发布”** 部分，选择 **“Docker 容器”**。
 
@@ -110,7 +110,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，选择之前在本实验室中创建的 **ApiService** 资源组。
 
-1.  在 **“ApiService”** 边栏选项卡中选择之前在本实验室中创建的 **httpapi*[yourname]*** Web 应用.
+1.  在 **“ApiService”** 边栏选项卡中选择之前在本实验室中创建的 **httpapi[yourname]** Web 应用.
 
 1.	在 **“Web 应用”** 边栏选项卡中，选择 **“浏览”**。
 
@@ -130,7 +130,7 @@ lab:
 
 1.  关闭显示 Web 应用程序的浏览器窗口。
 
-1.  返回到 Azure 门户，在 **“Web 应用”** 边栏选项卡中查找 **httpapi*[yourname]*** web 应用。
+1.  返回到 Azure 门户，在 **“Web 应用”** 边栏选项卡中查找 **httpapi[yourname]** web 应用。
 
 1.  在 **“Web 应用”** 边栏选项卡的 **“设置”** 部分，选择 **“属性”** 链接。
 
@@ -156,7 +156,7 @@ lab:
 
 1.  在 **“API 管理服务”** 边栏选项卡中，执行以下操作：
     
-    1.  在 **“名称”** 文本框中，输入 **prodapi*[yourname]***。
+    1.  在 **“名称”** 文本框中，输入 **prodapi[yourname]**。
     
     1.  将 **“订阅”** 文本框设置为默认值。
     
@@ -182,7 +182,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，选择之前在本实验室中创建的 **ApiService** 资源组。
 
-1.  在 **“ApiService”** 边栏选项卡中，选择你之前在本实验室中创建的 **prodapi*[yourname]*** API 管理帐户。
+1.  在 **“ApiService”** 边栏选项卡中，选择你之前在本实验室中创建的 **prodapi[yourname]** API 管理帐户。
 
 1.  在 **“API 管理服务”** 边栏选项卡中，在边栏选项卡左侧的 **“API 管理”** 部分，选择 **“API”**。
 
@@ -244,7 +244,7 @@ lab:
 
     1.  在 **服务 URL** 文本框中，附加 **/headers** 值到当前值。
 
-        > **备注**：例如，如果当前值为 **http://httpapi*[yourname]*.azurewebsites.net**，新值将是 **http://httpapi*[yourname]*.azurewebsites.net/headers**
+        > **备注**：例如，如果当前值为 **http://httpapi[yourname].azurewebsites.net**， 新值将是 **http://httpapi[yourname].azurewebsites.net/headers**
 
     1.  选择 **“保存”**。
 

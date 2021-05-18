@@ -1,9 +1,9 @@
 ﻿---
 lab:
-    az204Title: 'Lab 06: 使用 MSAL 和 .NET SDK 对 Microsoft Graph 进行身份验证和查询'
-    az020Title: 'Lab 06: 使用 MSAL 和 .NET SDK 对 Microsoft Graph 进行身份验证和查询'
-    az204Module: 'Module 06: 实现用户身份验证和授权'
-    az020Module: 'Module 06: 实现用户身份验证和授权'
+    az204Title: '实验室 06: 使用 MSAL 和 .NET SDK 对 Microsoft Graph 进行身份验证和查询'
+    az020Title: '实验室 06: 使用 MSAL 和 .NET SDK 对 Microsoft Graph 进行身份验证和查询'
+    az204Module: '模块 06: 实现用户身份验证和授权'
+    az020Module: '模块 06: 实现用户身份验证和授权'
     type: '答案要点'
 ---
 
