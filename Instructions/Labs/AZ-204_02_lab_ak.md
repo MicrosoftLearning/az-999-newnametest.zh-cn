@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     az204Title: '实验室 02: 使用 Azure Functions 实现任务处理操作逻辑'
     az020Title: '实验室 02: 使用 Azure Functions 实现任务处理操作逻辑'

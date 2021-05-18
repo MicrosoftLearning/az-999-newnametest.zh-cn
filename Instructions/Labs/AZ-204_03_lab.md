@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     az204Title: '实验室 03: 使用适用于 .NET 的 Azure 存储 SDK 检索 Azure 存储资源和元数据'
     az020Title: '实验室 03: 使用适用于 .NET 的 Azure 存储 SDK 检索 Azure 存储资源和元数据'
