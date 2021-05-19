@@ -1,4 +1,4 @@
----
+﻿---
 lab:
     az204Title: '实验室 08: 使用 Azure 中的服务创建多层解决方案'
     az020Title: '实验室 08: 使用 Azure 中的服务创建多层解决方案'
@@ -244,7 +244,7 @@ lab:
 
     1.  在 **服务 URL** 文本框中，附加 **/headers** 值到当前值。
 
-        > **备注**：例如，如果当前值为 **http://httpapi[yourname].azurewebsites.net**， 新值将是 **http://httpapi[yourname].azurewebsites.net/headers**
+        > **备注**：例如，如果当前值为 **http://httpapi[yourname].azurewebsites.net** ，新值将是 **http://httpapi[yourname].azurewebsites.net/headers**
 
     1.  选择 **“保存”**。
 

@@ -1,4 +1,4 @@
----
+﻿---
 lab:
     az204Title: '实验室 12: 使用 Azure 内容分发网络增强 Web 应用程序'
     az204Module: '模块 12: 在解决方案中集成缓存和内容交付'
@@ -145,7 +145,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，选择之前在本实验室中创建的 **MarketingContent** 资源组。
 
-1.  在 **“MarketingContent”** 边栏选项卡中，选择你之前在本实验室中创建的 **landingpage*[yourname]*** Web 应用。
+1.  在 **“MarketingContent”** 边栏选项卡中，选择你之前在本实验室中创建的 **landingpage*[yourname]** Web 应用。
 
 1.  在 **“应用服务”** 边栏选项卡的 **“设置”** 部分，选择 **“属性”** 链接。
 
@@ -503,19 +503,19 @@ lab:
 
 1.  通过将之前在实验室中复制的 “**cdnmedia[yourname]**” 终结点的 **“终结点主机名”** URL 与相对路径 **“/campus.jpg”** 合并，为 **“campus.jpg”** 资源构建 URL。
 
-    > **备注**：例如，如果你的 **“终结点主机名”** URL 是 **https://cdnmediastudent.azureedge.net/** ，则新建的 URL 将是 **https://cdnmediastudent.azureedge.net/campus.jpg**。
+    > **备注**：例如，如果你的 **“终结点主机名”** URL 是 **https://cdnmediastudent.azureedge.net/** ，则新建的 URL 将是 **https://cdnmediastudent.azureedge.net/campus.jpg**
 
 1.  通过将之前在实验室中复制的 **cdnmedia[yourname]** 终结点的 **“终结点主机名”** URL 与相对路径 **/conference.jpg** 合并，为 **conference.jpg** 资源构建 URL。
 
-    > **备注**：例如，如果你的**终结点主机名** URL 为 **https://cdnmediastudent.azureedge.net/** ，则新建的 URL 为 **https://cdnmediastudent.azureedge.net/conference.jpg**。
+    > **备注**：例如，如果你的**终结点主机名** URL 为 **https://cdnmediastudent.azureedge.net/** ，则新建的 URL 为 **https://cdnmediastudent.azureedge.net/conference.jpg**
 
 1.  通过将之前在实验室中复制的 **cdnmedia[yourname]** 终结点的**终结点主机名** URL 与相对路径 **/poster.jpg** 合并，为 **poster.jpg** 资源构建 URL。
 
-    > **备注**：例如，如果你的**终结点主机名** URL 为 **https://cdnmediastudent.azureedge.net/** ，则新建的 URL 为 **https://cdnmediastudent.azureedge.net/poster.jpg**。
+    > **备注**：例如，如果你的**终结点主机名** URL 为 **https://cdnmediastudent.azureedge.net/** ，则新建的 URL 为 **https://cdnmediastudent.azureedge.net/poster.jpg**
 
 1.  通过将你之前在实验室中复制的 **cdnvideo[yourname]** 终结点的**终结点主机名** URL 与相对路径 **/welcome.mp4** 合并，为 **Welcome.mp4** 资源构建 URL。
 
-    > **备注**：例如，如果你的**终结点主机名** URL 为 **https://cdnvideostudent.azureedge.net/** ，则新构建的 URL 为 **https://cdnvideostudent.azureedge.net/welcome.mp4**。
+    > **备注**：例如，如果你的**终结点主机名** URL 为 **https://cdnvideostudent.azureedge.net/** ，则新构建的 URL 为 **https://cdnvideostudent.azureedge.net/welcome.mp4**
 
 1.  在任务栏上，右键单击 **“Microsoft Edge”** 图标或激活快捷菜单，然后选择 **“新建窗口”**。
 
