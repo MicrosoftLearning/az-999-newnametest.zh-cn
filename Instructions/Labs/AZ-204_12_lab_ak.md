@@ -145,7 +145,7 @@ lab:
 
 1.  在 **“资源组”** 边栏选项卡中，选择之前在本实验室中创建的 **MarketingContent** 资源组。
 
-1.  在 **“MarketingContent”** 边栏选项卡中，选择你之前在本实验室中创建的 **landingpage*[yourname]** Web 应用。
+1.  在 **“MarketingContent”** 边栏选项卡中，选择你之前在本实验室中创建的 **landingpage[yourname]** Web 应用。
 
 1.  在 **“应用服务”** 边栏选项卡的 **“设置”** 部分，选择 **“属性”** 链接。
 
