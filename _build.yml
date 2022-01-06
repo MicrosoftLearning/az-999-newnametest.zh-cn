@@ -20,7 +20,7 @@ jobs:
       - task: GitHubRelease@0
         displayName: 'Create GitHub Release'
         inputs:
-          gitHubConnection: 'github-microsoftlearning-organization'
+          gitHubConnection: 'github.com_QijieXue'
           repositoryName: '$(Build.Repository.Name)'
           tagSource: manual
           tag: 'v$(Build.BuildNumber)'
